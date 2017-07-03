@@ -57,7 +57,7 @@ private fun <T, V : View> optional(ids: IntArray, finder: T.(Int) -> View?)
         = Lazy { t: T, _ -> ids.map { t.finder(it) as V? }.filterNotNull() }
 
 // Like Kotlin's lazy delegate but the initializer gets the target and metadata passed to it
-private class Lazy<T, V>(private val initializer: (T, KProperty<*>) -> V) : ReadOnlyProperty<T, V> {
+class Lazy<T, V>(private val initializer: (T, KProperty<*>) -> V) : ReadOnlyProperty<T, V> {
     private object EMPTY
     private var value: Any? = EMPTY
 
