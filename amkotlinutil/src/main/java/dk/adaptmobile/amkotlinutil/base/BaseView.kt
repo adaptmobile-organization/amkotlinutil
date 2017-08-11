@@ -1,4 +1,4 @@
-package dk.adaptmobile.amkotlinutil.main
+package dk.adaptmobile.amkotlinutil.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
