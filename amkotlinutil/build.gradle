@@ -47,17 +47,17 @@ android {
 }
 
 dependencies {
-    compile "com.android.support:appcompat-v7:$supportLibVersion"
-    compile "com.android.support:design:$supportLibVersion"
-    compile 'com.intellij:annotations:+@jar'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    provided "com.android.support:appcompat-v7:$supportLibVersion"
+    provided "com.android.support:design:$supportLibVersion"
+    provided 'com.intellij:annotations:+@jar'
+    provided "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    compile 'org.greenrobot:eventbus:3.0.0'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'jp.wasabeef:glide-transformations:2.0.1'
-    compile 'uk.co.chrisjenx:calligraphy:2.3.0'
-    compile "com.bluelinelabs:conductor:$conductorVersion"
-    compile "com.bluelinelabs:conductor-support:$conductorVersion"
+    provided 'org.greenrobot:eventbus:3.0.0'
+    provided 'com.github.bumptech.glide:glide:3.7.0'
+    provided 'jp.wasabeef:glide-transformations:2.0.1'
+    provided 'uk.co.chrisjenx:calligraphy:2.3.0'
+    provided "com.bluelinelabs:conductor:$conductorVersion"
+    provided "com.bluelinelabs:conductor-support:$conductorVersion"
     provided 'com.jakewharton:butterknife:8.8.1'
 
 
