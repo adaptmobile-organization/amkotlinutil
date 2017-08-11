@@ -58,6 +58,8 @@ dependencies {
     compile 'uk.co.chrisjenx:calligraphy:2.3.0'
     compile "com.bluelinelabs:conductor:$conductorVersion"
     compile "com.bluelinelabs:conductor-support:$conductorVersion"
+    provided 'com.jakewharton:butterknife:8.8.1'
+
 
     // Test dependencies
 //    testCompile 'junit:junit:4.12'
