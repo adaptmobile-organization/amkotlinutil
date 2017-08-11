@@ -16,6 +16,14 @@ fun ViewPager.next() {
     }
 }
 
+fun ViewPager.next(lastCallback: () -> Unit) {
+    if (!isLastView()) {
+        currentItem += 1
+    }else {
+        lastCallback()
+    }
+}
+
 fun ViewPager.nextCircular() {
     if (!isLastView()) {
         currentItem += 1
