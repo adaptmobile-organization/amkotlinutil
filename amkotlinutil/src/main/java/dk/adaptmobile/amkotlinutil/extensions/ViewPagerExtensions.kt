@@ -1,4 +1,4 @@
-package dk.adaptmobile.higgo.extensions
+package dk.adaptmobile.amkotlinutil.extensions
 
 import android.support.v4.view.ViewPager
 

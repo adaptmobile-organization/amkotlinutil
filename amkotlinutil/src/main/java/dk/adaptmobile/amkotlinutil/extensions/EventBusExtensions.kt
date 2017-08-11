@@ -1,6 +1,6 @@
-package dk.adaptmobile.higgo.extensions
+package dk.adaptmobile.amkotlinutil.extensions
 
-import dk.adaptmobile.amkotlinutil.main.BaseView
+import dk.adaptmobile.amkotlinutil.base.BaseView
 import org.greenrobot.eventbus.EventBus
 
 /**
