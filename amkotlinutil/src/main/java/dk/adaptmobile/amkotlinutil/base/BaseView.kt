@@ -1,5 +1,6 @@
-package dk.adaptmobile.amkotlinutil.base
+package dk.adaptmobile.amkotlinutil.main
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +10,15 @@ import com.bluelinelabs.conductor.Controller
 import dk.adaptmobile.amkotlinutil.util.ViewBinder
 
 /**
- * Created by christiansteffensen on 23/05/2017.
+ * Created by bjarkeseverinsen on 11/08/2017.
  */
 
-abstract class BaseView : Controller() {
+abstract class BaseView : Controller {
+
+    protected constructor()
+
+    protected constructor(args: Bundle) : super(args)
+
     private lateinit var unbinder: Unbinder
 
     protected abstract fun inflateView(inflater: LayoutInflater, container: ViewGroup): View
@@ -33,6 +39,4 @@ abstract class BaseView : Controller() {
         unbinder.unbind()
         ViewBinder.tearDown(this)
     }
-
-
 }
