@@ -6,8 +6,12 @@ import android.support.v4.view.ViewPager
  * Created by bjarkeseverinsen on 11/08/2017.
  */
 
+fun ViewPager.length(): Int {
+    return adapter.count
+}
+
 fun ViewPager.isLastView(): Boolean {
-    return currentItem == adapter.count - 1
+    return currentItem == length() - 1
 }
 
 fun ViewPager.next() {

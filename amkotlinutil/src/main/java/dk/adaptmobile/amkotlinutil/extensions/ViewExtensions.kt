@@ -2,6 +2,7 @@ package dk.adaptmobile.amkotlinutil.extensions
 
 import android.content.Context
 import android.view.View
+import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
 
 /**
@@ -48,4 +49,16 @@ fun View.setSize(height: Int, width: Int) {
     params.width = width
     params.height = height
     layoutParams = params
+}
+
+// https://antonioleiva.com/kotlin-ongloballayoutlistener/
+inline fun <T: View> T.afterMeasured(crossinline f: T.() -> Unit) {
+    viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+        override fun onGlobalLayout() {
+            if (measuredWidth > 0 && measuredHeight > 0) {
+                viewTreeObserver.removeOnGlobalLayoutListener(this)
+                f()
+            }
+        }
+    })
 }
