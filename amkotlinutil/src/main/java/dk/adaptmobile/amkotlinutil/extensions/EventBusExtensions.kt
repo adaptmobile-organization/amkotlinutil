@@ -1,6 +1,5 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
-import dk.adaptmobile.amkotlinutil.base.BaseView
 import org.greenrobot.eventbus.EventBus
 
 /**
@@ -19,14 +18,14 @@ fun EventBus.unRegisterMe(subscriber: Any) {
     }
 }
 
-fun BaseView.registerEventBus() {
-    if (!org.greenrobot.eventbus.EventBus.getDefault().isRegistered(this)) {
-        org.greenrobot.eventbus.EventBus.getDefault().register(this)
+fun <T> T.registerEventBus() {
+    if (!EventBus.getDefault().isRegistered(this)) {
+        EventBus.getDefault().register(this)
     }
 }
 
-fun BaseView.unRegisterEventBus() {
-    if (org.greenrobot.eventbus.EventBus.getDefault().isRegistered(this)) {
-        org.greenrobot.eventbus.EventBus.getDefault().unregister(this)
+fun <T> T.unRegisterEventBus() {
+    if (EventBus.getDefault().isRegistered(this)) {
+        EventBus.getDefault().unregister(this)
     }
 }

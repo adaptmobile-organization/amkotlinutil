@@ -14,7 +14,7 @@ ext {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "26.0.0"
+    buildToolsVersion "26.0.1"
 
     defaultConfig {
         minSdkVersion 19
@@ -43,7 +43,6 @@ android {
 
     //used for robolectric (because robolectric 3.0 only supports API 21 and httpclient was removed in API 23 and this project is running API 25)
     useLibrary 'org.apache.http.legacy'
-
 }
 
 dependencies {
@@ -59,6 +58,9 @@ dependencies {
     provided "com.bluelinelabs:conductor:$conductorVersion"
     provided "com.bluelinelabs:conductor-support:$conductorVersion"
     provided 'com.jakewharton:butterknife:8.8.1'
+
+    provided 'com.github.salomonbrys.kodein:kodein:4.1.0'
+    provided 'com.github.salomonbrys.kodein:kodein-android:4.1.0'
 
 
     // Test dependencies
