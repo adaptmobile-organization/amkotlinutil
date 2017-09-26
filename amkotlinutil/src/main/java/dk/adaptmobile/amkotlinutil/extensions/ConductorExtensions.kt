@@ -7,27 +7,35 @@ import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.changehandler.FadeChangeHandler
 import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
 import com.bluelinelabs.conductor.changehandler.VerticalChangeHandler
+import dk.adaptmobile.amkotlinutil.model.FlipChangeHandler
 
 /**
  * Created by christiansteffensen on 05/06/2017.
  */
 
 enum class AnimationType {
-    SLIDE, FADE, BOTTOM, NONE
+    SLIDE, FADE, BOTTOM, FLIP_RIGHT, FLIP_LEFT, FLIP_UP, FLIP_DOWN, NONE
 }
 
 fun Router.setFadeChangeHandler(transaction: RouterTransaction) {
     transaction.pushChangeHandler(FadeChangeHandler()).popChangeHandler(FadeChangeHandler())
 }
 
-fun Router.pushView(controller: Controller, retain: Boolean, asRoot: Boolean, type: AnimationType) {
+fun Router.pushView(controller: Controller, retain: Boolean, type: AnimationType, asRoot: Boolean = false, tag: String? = null, hidekeyboard: Boolean = true) {
     if (retain) {
         controller.retainViewMode = Controller.RetainViewMode.RETAIN_DETACH
     }
 
-    controller.hideKeyboard()
+    if (hidekeyboard) {
+        controller.hideKeyboard()
+    }
 
     val transaction = RouterTransaction.with(controller)
+
+    if (!tag.isNullOrEmpty()) {
+        transaction.tag(tag)
+    }
+
     when (type) {
         AnimationType.SLIDE -> {
             transaction.pushChangeHandler(HorizontalChangeHandler(true))
@@ -41,6 +49,22 @@ fun Router.pushView(controller: Controller, retain: Boolean, asRoot: Boolean, ty
             transaction.pushChangeHandler(FadeChangeHandler(true))
             transaction.popChangeHandler(FadeChangeHandler(true))
         }
+        AnimationType.FLIP_RIGHT -> {
+            transaction.pushChangeHandler(FlipChangeHandler())
+            transaction.popChangeHandler(FlipChangeHandler())
+        }
+        AnimationType.FLIP_LEFT -> {
+            transaction.pushChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.LEFT))
+            transaction.popChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.LEFT))
+        }
+        AnimationType.FLIP_UP -> {
+            transaction.pushChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.UP))
+            transaction.popChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.UP))
+        }
+        AnimationType.FLIP_DOWN -> {
+            transaction.pushChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.DOWN))
+            transaction.popChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.DOWN))
+        }
         AnimationType.NONE -> {
             transaction.pushChangeHandler()
             transaction.popChangeHandler()
@@ -51,14 +75,13 @@ fun Router.pushView(controller: Controller, retain: Boolean, asRoot: Boolean, ty
         }
     }
 
-    if(asRoot) {
+    if (asRoot) {
         this.setRoot(transaction)
     } else {
         this.pushController(transaction)
     }
 
 }
-
 
 fun Controller.getString(@StringRes stringRes: Int): String? {
     return resources?.getString(stringRes)
