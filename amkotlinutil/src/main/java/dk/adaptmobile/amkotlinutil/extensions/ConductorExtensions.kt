@@ -21,7 +21,7 @@ fun Router.setFadeChangeHandler(transaction: RouterTransaction) {
     transaction.pushChangeHandler(FadeChangeHandler()).popChangeHandler(FadeChangeHandler())
 }
 
-fun Router.pushView(controller: Controller, retain: Boolean, type: AnimationType, asRoot: Boolean = false, tag: String? = null, hidekeyboard: Boolean = true) {
+fun Router.pushView(controller: Controller, type: AnimationType, retain: Boolean = false, asRoot: Boolean = false, tag: String? = null, hidekeyboard: Boolean = true) {
     if (retain) {
         controller.retainViewMode = Controller.RetainViewMode.RETAIN_DETACH
     }
