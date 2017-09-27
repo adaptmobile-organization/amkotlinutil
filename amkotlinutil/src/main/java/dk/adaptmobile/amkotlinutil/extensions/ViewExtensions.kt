@@ -32,6 +32,10 @@ fun View.gone() {
     visibility = View.GONE
 }
 
+fun View.toggle() {
+    visibility = if (visibility == View.VISIBLE) View.GONE else View.VISIBLE
+}
+
 fun View.setHeight(height: Int) {
     val params = layoutParams
     params.height = height
