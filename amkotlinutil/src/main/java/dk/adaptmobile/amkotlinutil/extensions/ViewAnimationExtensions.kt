@@ -76,14 +76,20 @@ fun View.enterFromTop(duration: Long = 400): ViewPropertyAnimator? {
  * Animation: Enter from bottom
  */
 fun View.enterFromBottom(duration: Long = 400): ViewPropertyAnimator? {
-    val heightPixels = Resources.getSystem().displayMetrics.heightPixels    // get device height
+    val screenHeight = Resources.getSystem().displayMetrics.heightPixels.toFloat()    // get device height
 
-    val y = this.y    // store initial y
-    this.y = heightPixels.toFloat()   // move to bottom
+    var viewPropertyAnimator: ViewPropertyAnimator? = null
 
-    return animate()
-            .y(y)
-            .setDuration(duration)
+    this.invisible()
+
+    this.afterMeasured {
+        val y = this.y          // store initial y
+        this.y = screenHeight   // move to bottom
+        this.visible()
+        viewPropertyAnimator = animate().y(y).setDuration(duration)
+    }
+
+    return viewPropertyAnimator
 }
 
 /**
@@ -120,8 +126,26 @@ fun View.exitToTop(duration: Long = 400): ViewPropertyAnimator? {
  */
 fun View.exitToBottom(duration: Long = 400): ViewPropertyAnimator? {
     val heightPixels = Resources.getSystem().displayMetrics.heightPixels    // get device height
+    val y = this.y  // store initial y
+    return animate().y(heightPixels.toFloat()).setDuration(duration).withEndAction {
+        this.y = y
+        this.gone()
+    }
+}
 
-    return animate()
-            .y(heightPixels.toFloat())
-            .setDuration(duration)
+/**
+ * Animation: Slide up its own height to its original position
+ */
+fun View.slideUp(duration: Long = 400): ViewPropertyAnimator? {
+    var viewPropertyAnimator: ViewPropertyAnimator? = null
+
+    this.invisible()
+
+    this.afterMeasured {
+        this.translationY = this.height.toFloat()
+        this.visible()
+        this.animate().translationY(0f).setDuration(duration).start()
+    }
+
+    return viewPropertyAnimator
 }

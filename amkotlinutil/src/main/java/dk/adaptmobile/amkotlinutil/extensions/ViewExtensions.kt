@@ -32,8 +32,20 @@ fun View.gone() {
     visibility = View.GONE
 }
 
+fun View.isVisible(): Boolean {
+    return this.visibility == View.VISIBLE
+}
+
+fun View.isInvisible(): Boolean {
+    return this.visibility == View.INVISIBLE
+}
+
+fun View.isGone(): Boolean {
+    return this.visibility == View.GONE
+}
+
 fun View.toggle() {
-    visibility = if (visibility == View.VISIBLE) View.GONE else View.VISIBLE
+    if (isVisible()) gone() else visible()
 }
 
 fun View.setHeight(height: Int) {
