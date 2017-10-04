@@ -11,10 +11,10 @@ fun Long.toDate(): Date {
     return Date(this)
 }
 
-fun Long.getDate(format: String = "dd-MM-yyyy"): String {
-    return SimpleDateFormat().format(Date(this))
+fun Long.getDate(format: String = "dd-MM-yyyy", locale: Locale = Locale("da", "DK")): String {
+    return SimpleDateFormat(format, locale).format(Date(this))
 }
 
-fun Long.getTime(format: String = "HH:mm"): String {
-    return SimpleDateFormat(format).format(Date(this))
+fun Long.getTime(format: String = "HH:mm", locale: Locale = Locale("da", "DK")): String {
+    return SimpleDateFormat(format, locale).format(Date(this))
 }
