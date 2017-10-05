@@ -42,3 +42,7 @@ fun TextView.setTextWithDifferentFonts(firstText : String, secondText : String, 
 
     this.text = sBuilder
 }
+
+fun TextView.setTextColorId(id: Int){
+    this.setTextColor(this.context.getColorCompat(id))
+}
