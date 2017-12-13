@@ -51,19 +51,19 @@ fun Router.pushView(controller: Controller, type: AnimationType, retain: Boolean
         }
         AnimationType.FLIP_RIGHT -> {
             transaction.pushChangeHandler(FlipChangeHandler())
-            transaction.popChangeHandler(FlipChangeHandler())
+            transaction.popChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.LEFT))
         }
         AnimationType.FLIP_LEFT -> {
             transaction.pushChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.LEFT))
-            transaction.popChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.LEFT))
+            transaction.popChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.RIGHT))
         }
         AnimationType.FLIP_UP -> {
             transaction.pushChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.UP))
-            transaction.popChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.UP))
+            transaction.popChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.DOWN))
         }
         AnimationType.FLIP_DOWN -> {
             transaction.pushChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.DOWN))
-            transaction.popChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.DOWN))
+            transaction.popChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.UP))
         }
         AnimationType.NONE -> {
             transaction.pushChangeHandler()
