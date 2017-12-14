@@ -28,6 +28,10 @@ Kotlin extensions and utility
 ## Development
 
   Push a new/the next tag for a new version of amkotlinutil on jitpack
+  
+  ```
+  git tag -a 1.0.0 -m "Release 1.0.0"
+  ```
 
 ## Jitpack
 
