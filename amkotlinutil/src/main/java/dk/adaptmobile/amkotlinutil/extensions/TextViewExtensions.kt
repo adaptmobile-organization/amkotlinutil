@@ -23,7 +23,7 @@ fun TextInputLayout.clearError() {
     isErrorEnabled = false
 }
 
-val EditText.textString: String
+val TextView.textString: String
     get() = text.toString()
 
 fun TextView.setTextWithDifferentFonts(firstText : String, secondText : String, typeFaceFirst : CalligraphyTypefaceSpan, typeFaceSecond : CalligraphyTypefaceSpan, sizeFirst : Int, siceSecond : Int) {
