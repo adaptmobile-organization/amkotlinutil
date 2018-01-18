@@ -23,3 +23,12 @@ fun Context.showViews(vararg views: View) = views.forEach { it.visibility = View
 fun Context.getColorCompat(id: Int): Int = ContextCompat.getColor(this, id)
 
 fun Context.getDrawableCompat(id: Int): Drawable = ContextCompat.getDrawable(this, id)
+
+fun Context.getStatusBarHeight(): Int {
+    var result = 0
+    val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
+    if (resourceId > 0) {
+        result = resources.getDimensionPixelSize(resourceId)
+    }
+    return result
+}
