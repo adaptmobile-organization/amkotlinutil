@@ -13,14 +13,13 @@ import android.view.ViewPropertyAnimator
  */
 fun View.fadeIn(duration: Long = 400): ViewPropertyAnimator? {
     return animate().alpha(1.0f).setDuration(duration).withStartAction {
-        if (!isVisible()) {
-            visible()
-        }
-
         if (alpha > 0f) {
             alpha = 0f
         }
 
+        if (!isVisible()) {
+            visible()
+        }
     }
 }
 
