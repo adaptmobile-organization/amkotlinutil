@@ -20,9 +20,9 @@ fun Context.hideViews(vararg views: View) = views.forEach { it.visibility = View
 fun Context.showViews(vararg views: View) = views.forEach { it.visibility = View.VISIBLE }
 
 
-fun Context.getColorCompat(id: Int): Int = ContextCompat.getColor(this, id)
+fun Context.getColorCompat(resId: Int): Int = ContextCompat.getColor(this, resId)
 
-fun Context.getDrawableCompat(id: Int): Drawable = ContextCompat.getDrawable(this, id)
+fun Context.getDrawableCompat(resId: Int): Drawable = ContextCompat.getDrawable(this, resId)
 
 fun Context.getStatusBarHeight(): Int {
     var result = 0
@@ -33,4 +33,4 @@ fun Context.getStatusBarHeight(): Int {
     return result
 }
 
-fun Context.getDimension(id: Int): Float = this.resources.getDimension(id)
+fun Context.getDimension(resId: Int): Float = this.resources.getDimension(resId)

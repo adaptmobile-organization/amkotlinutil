@@ -79,6 +79,6 @@ inline fun <T: View> T.afterMeasured(crossinline f: T.() -> Unit) {
     })
 }
 
-fun View.setbackgroundColor(id: Int){
+fun View.setbackgroundColorResource(resId: Int){
     setBackgroundColor(context.getColorCompat(id))
 }
