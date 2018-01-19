@@ -22,7 +22,7 @@ fun View.fadeIn(duration: Long = 400): ViewPropertyAnimator? {
 
     return animate().alpha(1.0f).setDuration(duration)
 }
-
+ 
 /**
  * Fades out the View
  */
