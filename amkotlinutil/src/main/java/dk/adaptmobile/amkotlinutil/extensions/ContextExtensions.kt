@@ -32,3 +32,5 @@ fun Context.getStatusBarHeight(): Int {
     }
     return result
 }
+
+fun Context.getDimension(id: Int): Float = this.resources.getDimension(id)

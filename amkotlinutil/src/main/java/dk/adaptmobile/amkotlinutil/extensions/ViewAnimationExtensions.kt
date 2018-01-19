@@ -12,18 +12,26 @@ import android.view.ViewPropertyAnimator
  * Fades in the View
  */
 fun View.fadeIn(duration: Long = 400): ViewPropertyAnimator? {
-    return animate()
-            .alpha(1.0f)
-            .setDuration(duration)
+    return animate().alpha(1.0f).setDuration(duration).withStartAction {
+        if (!isVisible()) {
+            visible()
+        }
+
+        if (alpha > 0f) {
+            alpha = 0f
+        }
+
+    }
 }
 
 /**
  * Fades out the View
  */
 fun View.fadeOut(duration: Long = 400): ViewPropertyAnimator? {
-    return animate()
-            .alpha(0.0f)
-            .setDuration(duration)
+    return animate().alpha(0.0f).setDuration(duration)
+            .withEndAction {
+                gone()
+            }
 }
 
 /**
@@ -42,9 +50,7 @@ inline fun View.enterFromLeft(duration: Long = 400): ViewPropertyAnimator? {
     val x = this.x    // store initial x
     this.x = 0f - this.width    // move to left
 
-    return animate()
-            .x(x)
-            .setDuration(duration)
+    return animate().x(x).setDuration(duration)
 }
 
 /**
@@ -107,9 +113,7 @@ fun View.exitToLeft(duration: Long = 400): ViewPropertyAnimator? {
 fun View.exitToRight(duration: Long = 400): ViewPropertyAnimator? {
     val widthPixels = Resources.getSystem().displayMetrics.widthPixels    // get device width
 
-    return animate()
-            .x(widthPixels.toFloat())
-            .setDuration(duration)
+    return animate().x(widthPixels.toFloat()).setDuration(duration)
 }
 
 /**
