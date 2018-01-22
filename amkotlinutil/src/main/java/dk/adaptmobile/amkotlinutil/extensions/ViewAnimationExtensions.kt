@@ -22,7 +22,7 @@ fun View.fadeIn(duration: Long = 400): ViewPropertyAnimator? {
 
     return animate().alpha(1.0f).setDuration(duration)
 }
- 
+
 /**
  * Fades out the View
  */
@@ -151,4 +151,10 @@ fun View.slideUp(duration: Long = 400): ViewPropertyAnimator? {
     }
 
     return viewPropertyAnimator
+}
+
+fun View.getLocationOnScreen(): Pair<Int, Int> {
+    val location = IntArray(2)
+    getLocationOnScreen(location)
+    return Pair(location[0], location[1])
 }
