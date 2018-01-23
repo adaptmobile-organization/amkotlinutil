@@ -3,6 +3,7 @@ package dk.adaptmobile.amkotlinutil.extensions
 import android.content.res.Resources
 import android.view.View
 import android.view.ViewPropertyAnimator
+import android.view.animation.LinearInterpolator
 
 /**
  * Created by bjarkeseverinsen on 27/09/2017.
@@ -12,6 +13,7 @@ import android.view.ViewPropertyAnimator
  * Fades in the View
  */
 fun View.fadeIn(duration: Long = 400): ViewPropertyAnimator? {
+
     if (alpha > 0f) {
         alpha = 0f
     }
@@ -20,26 +22,23 @@ fun View.fadeIn(duration: Long = 400): ViewPropertyAnimator? {
         visible()
     }
 
-    return animate().alpha(1.0f).setDuration(duration)
+    return animate(true).alpha(1.0f).setDuration(duration)
 }
 
 /**
  * Fades out the View
  */
 fun View.fadeOut(duration: Long = 400): ViewPropertyAnimator? {
-    return animate().alpha(0.0f).setDuration(duration)
-            .withEndAction {
-                gone()
-            }
+    return animate(true).alpha(0.0f).setDuration(duration).withEndAction {
+        gone()
+    }
 }
 
 /**
  * Fades to a specific alpha between 0 to 1
  */
 fun View.fadeTo(alpha: Float, duration: Long = 400): ViewPropertyAnimator? {
-    return animate()
-            .alpha(alpha)
-            .setDuration(duration)
+    return animate(true).alpha(alpha).setDuration(duration)
 }
 
 /**
@@ -49,7 +48,7 @@ inline fun View.enterFromLeft(duration: Long = 400): ViewPropertyAnimator? {
     val x = this.x    // store initial x
     this.x = 0f - this.width    // move to left
 
-    return animate().x(x).setDuration(duration)
+    return animate(true).x(x).setDuration(duration)
 }
 
 /**
@@ -60,7 +59,7 @@ inline fun View.enterFromRight(duration: Long = 400): ViewPropertyAnimator? {
     val x = this.x    // store initial x
     this.x = widthPixels.toFloat()    // move to right
 
-    return animate()
+    return animate(true)
             .x(x)
             .setDuration(duration)
 }
@@ -72,7 +71,7 @@ fun View.enterFromTop(duration: Long = 400): ViewPropertyAnimator? {
     val y = this.y    // store initial y
     this.y = 0f - this.height    // move to top
 
-    return animate()
+    return animate(true)
             .y(y)
             .setDuration(duration)
 }
@@ -101,7 +100,7 @@ fun View.enterFromBottom(duration: Long = 400): ViewPropertyAnimator? {
  * Animation: Exit to left
  */
 fun View.exitToLeft(duration: Long = 400): ViewPropertyAnimator? {
-    return animate()
+    return animate(true)
             .x(0f - this.width)
             .setDuration(duration)
 }
@@ -112,14 +111,14 @@ fun View.exitToLeft(duration: Long = 400): ViewPropertyAnimator? {
 fun View.exitToRight(duration: Long = 400): ViewPropertyAnimator? {
     val widthPixels = Resources.getSystem().displayMetrics.widthPixels    // get device width
 
-    return animate().x(widthPixels.toFloat()).setDuration(duration)
+    return animate(true).x(widthPixels.toFloat()).setDuration(duration)
 }
 
 /**
  * Animation: Exit to top
  */
 fun View.exitToTop(duration: Long = 400): ViewPropertyAnimator? {
-    return animate()
+    return animate(true)
             .y(0f - this.height)
             .setDuration(duration)
 }
@@ -130,7 +129,7 @@ fun View.exitToTop(duration: Long = 400): ViewPropertyAnimator? {
 fun View.exitToBottom(duration: Long = 400): ViewPropertyAnimator? {
     val heightPixels = Resources.getSystem().displayMetrics.heightPixels    // get device height
     val y = this.y  // store initial y
-    return animate().y(heightPixels.toFloat()).setDuration(duration).withEndAction {
+    return animate(true).y(heightPixels.toFloat()).setDuration(duration).withEndAction {
         this.y = y
         this.gone()
     }
@@ -147,7 +146,7 @@ fun View.slideUp(duration: Long = 400): ViewPropertyAnimator? {
     this.afterMeasured {
         this.translationY = this.height.toFloat()
         this.visible()
-        this.animate().translationY(0f).setDuration(duration).start()
+        this.animate(true).translationY(0f).setDuration(duration).start()
     }
 
     return viewPropertyAnimator
@@ -157,4 +156,17 @@ fun View.getLocationOnScreen(): Pair<Int, Int> {
     val location = IntArray(2)
     getLocationOnScreen(location)
     return Pair(location[0], location[1])
+}
+
+// ViewPropertyAnimator is singleton, so it is needed to reset settings in order to chain animations as wanted
+fun View.animate(reset: Boolean = false): ViewPropertyAnimator {
+    return this.animate().reset()
+}
+
+fun ViewPropertyAnimator.reset(): ViewPropertyAnimator {
+    return this
+            .setListener(null)
+            .setDuration(400)
+            .setStartDelay(0)
+            .setInterpolator(LinearInterpolator())
 }
