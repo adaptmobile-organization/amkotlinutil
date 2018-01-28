@@ -3,6 +3,7 @@ package dk.adaptmobile.amkotlinutil.extensions
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.support.v4.content.ContextCompat
+import android.util.TypedValue
 import android.view.View
 
 /**
@@ -34,3 +35,19 @@ fun Context.getStatusBarHeight(): Int {
 }
 
 fun Context.getDimension(resId: Int): Float = this.resources.getDimension(resId)
+
+fun Context.convertSpToPixels(sp: Float): Float {
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, resources.displayMetrics)
+}
+
+fun Context.convertSpToPixels(redId: Int): Float {
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, this.getDimension(redId), resources.displayMetrics)
+}
+
+fun Context.convertDpToPixels(dp: Float): Float {
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.displayMetrics)
+}
+
+fun Context.convertDpToPixels(redId: Int): Float {
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this.getDimension(redId), resources.displayMetrics)
+}
