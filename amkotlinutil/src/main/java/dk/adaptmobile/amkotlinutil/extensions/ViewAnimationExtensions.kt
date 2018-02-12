@@ -1,6 +1,7 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.content.res.Resources
+import android.graphics.Point
 import android.view.View
 import android.view.ViewPropertyAnimator
 import android.view.animation.LinearInterpolator
@@ -152,10 +153,10 @@ fun View.slideUp(duration: Long = 400): ViewPropertyAnimator? {
     return viewPropertyAnimator
 }
 
-fun View.getLocationOnScreen(): Pair<Int, Int> {
+fun View.getLocationOnScreen(): Point {
     val location = IntArray(2)
     getLocationOnScreen(location)
-    return Pair(location[0], location[1])
+    return Point(location[0], location[1])
 }
 
 // ViewPropertyAnimator is singleton, so it is needed to reset settings in order to chain animations as wanted
