@@ -15,7 +15,19 @@ fun ImageView.loadImageResource(imageResource: String?) {
     }
 }
 
+fun ImageView.loadImageResource(imageResource: Int?) {
+    imageResource?.let {
+        Glide.with(context).load(imageResource).into(this)
+    }
+}
+
 fun ImageView.loadImageResourceAsCircle(imageResource: String?) {
+    imageResource?.let {
+        Glide.with(context).load(imageResource).bitmapTransform(CropCircleTransformation(context)).into(this)
+    }
+}
+
+fun ImageView.loadImageResourceAsCircle(imageResource: Int?) {
     imageResource?.let {
         Glide.with(context).load(imageResource).bitmapTransform(CropCircleTransformation(context)).into(this)
     }
