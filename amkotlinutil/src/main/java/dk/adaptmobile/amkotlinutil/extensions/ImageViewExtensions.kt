@@ -9,14 +9,14 @@ import jp.wasabeef.glide.transformations.CropCircleTransformation
  * Created by christiansteffensen on 05/06/2017.
  */
 
-fun ImageView.loadUrl(url: String) {
-    Glide.with(context).load(url).into(this)
+fun ImageView.loadImageResource(imageResource: String?) {
+    imageResource?.let {
+        Glide.with(context).load(imageResource).into(this)
+    }
 }
 
-fun ImageView.loadUrlAsCircle(url : String?) {
-    Glide.with(context).load(url).bitmapTransform(CropCircleTransformation(context)).into(this)
-}
-
-fun ImageView.setImageUriAsCircle(uri: Uri) {
-    Glide.with(context).load(uri).bitmapTransform(CropCircleTransformation(context)).into(this)
+fun ImageView.loadImageResourceAsCircle(imageResource: String?) {
+    imageResource?.let {
+        Glide.with(context).load(imageResource).bitmapTransform(CropCircleTransformation(context)).into(this)
+    }
 }

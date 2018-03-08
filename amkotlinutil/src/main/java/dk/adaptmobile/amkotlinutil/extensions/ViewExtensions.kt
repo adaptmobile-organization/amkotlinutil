@@ -4,6 +4,11 @@ import android.content.Context
 import android.view.View
 import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
+import android.R.attr.right
+import android.R.attr.left
+import android.widget.LinearLayout
+
+
 
 /**
  * Created by christiansteffensen on 05/06/2017.
