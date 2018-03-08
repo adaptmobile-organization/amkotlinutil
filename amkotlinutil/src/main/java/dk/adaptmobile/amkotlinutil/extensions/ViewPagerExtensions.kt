@@ -6,11 +6,11 @@ import android.support.v4.view.ViewPager
  * Created by bjarkeseverinsen on 11/08/2017.
  */
 
-val ViewPager.length: Int
-    get() = adapter.count
+val ViewPager.length: Int?
+    get() = adapter?.count
 
 val ViewPager.isLastView: Boolean
-    get() = currentItem == length - 1
+    get() = currentItem == length?.minus(1)
 
 fun ViewPager.next() {
     if (!isLastView) {

@@ -23,7 +23,7 @@ fun Context.showViews(vararg views: View) = views.forEach { it.visibility = View
 
 fun Context.getColorCompat(resId: Int): Int = ContextCompat.getColor(this, resId)
 
-fun Context.getDrawableCompat(resId: Int): Drawable = ContextCompat.getDrawable(this, resId)
+fun Context.getDrawableCompat(resId: Int): Drawable? = ContextCompat.getDrawable(this, resId)
 
 fun Context.getStatusBarHeight(): Int {
     var result = 0
