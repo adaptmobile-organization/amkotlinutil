@@ -7,7 +7,7 @@ import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.changehandler.FadeChangeHandler
 import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
 import com.bluelinelabs.conductor.changehandler.VerticalChangeHandler
-import dk.adaptmobile.amkotlinutil.model.FlipChangeHandler
+import dk.adaptmobile.amkotlinutil.conductor.FlipChangeHandler
 
 /**
  * Created by christiansteffensen on 05/06/2017.

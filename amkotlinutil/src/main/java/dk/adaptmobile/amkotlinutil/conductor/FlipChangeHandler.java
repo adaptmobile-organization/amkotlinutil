@@ -1,4 +1,4 @@
-package dk.adaptmobile.amkotlinutil.model;
+package dk.adaptmobile.amkotlinutil.conductor;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
