@@ -6,22 +6,25 @@ import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.changehandler.FadeChangeHandler
 import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
+import com.bluelinelabs.conductor.changehandler.SimpleSwapChangeHandler
 import com.bluelinelabs.conductor.changehandler.VerticalChangeHandler
+import dk.adaptmobile.amkotlinutil.conductor.ArcFadeMoveChangeHandler
 import dk.adaptmobile.amkotlinutil.conductor.FlipChangeHandler
+import dk.adaptmobile.amkotlinutil.conductor.ScaleFadeChangeHandler
 
 /**
  * Created by christiansteffensen on 05/06/2017.
  */
 
 enum class AnimationType {
-    SLIDE, FADE, BOTTOM, FLIP_RIGHT, FLIP_LEFT, FLIP_UP, FLIP_DOWN, NONE
+    SLIDE, FADE, BOTTOM, FLIP_RIGHT, FLIP_LEFT, FLIP_UP, FLIP_DOWN, NONE, SHARED_TRANSITION, SCALE_FADE
 }
 
 fun Router.setFadeChangeHandler(transaction: RouterTransaction) {
     transaction.pushChangeHandler(FadeChangeHandler()).popChangeHandler(FadeChangeHandler())
 }
 
-fun Router.pushView(controller: Controller, type: AnimationType, retain: Boolean = false, asRoot: Boolean = false, tag: String? = null, hidekeyboard: Boolean = true) {
+fun Router.pushView(controller: Controller, type: AnimationType, removesFromViewOnPush: Boolean = true, retain: Boolean = false, asRoot: Boolean = false, tag: String? = null, hidekeyboard: Boolean = true) {
     if (retain) {
         controller.retainViewMode = Controller.RetainViewMode.RETAIN_DETACH
     }
@@ -38,16 +41,16 @@ fun Router.pushView(controller: Controller, type: AnimationType, retain: Boolean
 
     when (type) {
         AnimationType.SLIDE -> {
-            transaction.pushChangeHandler(HorizontalChangeHandler(true))
-            transaction.popChangeHandler(HorizontalChangeHandler(true))
+            transaction.pushChangeHandler(HorizontalChangeHandler(removesFromViewOnPush))
+            transaction.popChangeHandler(HorizontalChangeHandler(removesFromViewOnPush))
         }
         AnimationType.BOTTOM -> {
-            transaction.pushChangeHandler(VerticalChangeHandler(true))
-            transaction.popChangeHandler(VerticalChangeHandler(true))
+            transaction.pushChangeHandler(VerticalChangeHandler(removesFromViewOnPush))
+            transaction.popChangeHandler(VerticalChangeHandler(removesFromViewOnPush))
         }
         AnimationType.FADE -> {
-            transaction.pushChangeHandler(FadeChangeHandler(true))
-            transaction.popChangeHandler(FadeChangeHandler(true))
+            transaction.pushChangeHandler(FadeChangeHandler(removesFromViewOnPush))
+            transaction.popChangeHandler(FadeChangeHandler(removesFromViewOnPush))
         }
         AnimationType.FLIP_RIGHT -> {
             transaction.pushChangeHandler(FlipChangeHandler())
@@ -65,9 +68,17 @@ fun Router.pushView(controller: Controller, type: AnimationType, retain: Boolean
             transaction.pushChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.DOWN))
             transaction.popChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.UP))
         }
+        AnimationType.SHARED_TRANSITION -> {
+            transaction.pushChangeHandler(ArcFadeMoveChangeHandler())
+            transaction.popChangeHandler(ArcFadeMoveChangeHandler())
+        }
+        AnimationType.SCALE_FADE -> {
+            transaction.pushChangeHandler(ScaleFadeChangeHandler())
+            transaction.popChangeHandler(ScaleFadeChangeHandler())
+        }
         AnimationType.NONE -> {
-            transaction.pushChangeHandler()
-            transaction.popChangeHandler()
+            transaction.pushChangeHandler(SimpleSwapChangeHandler())
+            transaction.popChangeHandler(SimpleSwapChangeHandler())
         }
         else -> {
             transaction.pushChangeHandler()
