@@ -1,5 +1,13 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.os.Build
+import android.telephony.PhoneNumberUtils
+import android.text.Html
+import android.text.Spanned
+import android.text.TextUtils
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,4 +25,55 @@ fun String.toDate(pattern: String): Date {
 
 fun String.parseDate(pattern: String): Date {
     return this.toDate(pattern)
+}
+
+fun String.openInBrowser(context: Context?) {
+    val page = Uri.parse(this)
+    val intent = Intent(Intent.ACTION_VIEW, page)
+    context?.startActivity(intent)
+}
+
+fun String.isPhoneNumber(): Boolean {
+    return PhoneNumberUtils.isGlobalPhoneNumber(this)
+}
+
+fun String.removeSpaces(): String {
+    return this.replace(" ", "")
+}
+
+fun String.isDanishPhoneNumber(): Boolean {
+    var number = this.removeSpaces()
+    val isPhoneNumber = number.isPhoneNumber()
+
+    when {
+        number.startsWith("+45") -> number = number.substring(3)
+        number.startsWith("0045") -> number = number.substring(4)
+        number.startsWith("45") -> number = number.substring(2)
+    }
+
+    return isPhoneNumber && number.length == 8
+}
+
+fun String.cleanedDanishPhoneNumber(): String {
+    var number = this.removeSpaces()
+
+    when {
+        number.startsWith("+45") -> number = number.substring(3)
+        number.startsWith("0045") -> number = number.substring(4)
+        number.startsWith("45") -> number = number.substring(2)
+    }
+
+    return number
+}
+
+fun String.isEmail(): Boolean {
+    return !TextUtils.isEmpty(this) && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
+}
+
+fun String.fromHtml(): Spanned {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        Html.fromHtml(this, Html.FROM_HTML_MODE_LEGACY)
+    } else {
+        Html.fromHtml(this)
+    }
 }

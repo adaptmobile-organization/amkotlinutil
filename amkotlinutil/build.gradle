@@ -64,6 +64,8 @@ dependencies {
     compileOnly "com.bluelinelabs:conductor-support:$conductorVersion"
     compileOnly "com.bluelinelabs:conductor-rxlifecycle2:$conductorVersion"
     compileOnly "com.jakewharton:butterknife:$butterknifeVersion"
+    compileOnly 'jp.wasabeef:blurry:2.1.1'
+
 
 
     // Test dependencies
