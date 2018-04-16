@@ -1,4 +1,4 @@
-package dk.normal.normal.util
+package dk.adaptmobile.amkotlinutil.conductor
 
 import android.os.Parcelable
 import com.bluelinelabs.conductor.Controller
@@ -9,25 +9,26 @@ import kotlin.reflect.KProperty
 /**
  * An abstract argument delegate that uses the property to infer the key name for the bundle.
  */
-class ArgumentDelegate<T> : ReadWriteProperty<Controller, T> {
+class ArgumentDelegateNullable<T> : ReadWriteProperty<Controller, T?> {
 
     private var value: T? = null
 
-    override fun getValue(thisRef: Controller, property: KProperty<*>): T {
+    override fun getValue(thisRef: Controller, property: KProperty<*>): T? {
         if (value == null) {
             val key = property.name
-            value = thisRef.args.get(key) as T
+            value = thisRef.args.get(key) as? T?
         }
 
-        return value ?: throw IllegalStateException("Property ${property.name} could not be read")
+//        return value ?: throw IllegalStateException("Property ${property.name} could not be read")
+        return value
     }
 
-    override fun setValue(thisRef: Controller, property: KProperty<*>, value: T) {
+    override fun setValue(thisRef: Controller, property: KProperty<*>, value: T?) {
         val bundle = thisRef.args
         val key = property.name
 
         when (value) {
-            is Parcelable -> bundle.putParcelable(key, value)
+            is Parcelable? -> bundle.putParcelable(key, value)
             is Serializable -> bundle.putSerializable(key, value)
             is String -> bundle.putString(key, value)
             is Int -> bundle.putInt(key, value)
