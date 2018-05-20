@@ -76,7 +76,7 @@ fun View.enterFromTop(duration: Long = 400): ViewPropertyAnimator {
 /**
  * Animation: Enter from bottom
  */
-fun View.enterFromBottom(duration: Long = 400, callback: ((viewPropertyAnimator: ViewPropertyAnimator) -> Unit)? = null) {
+fun View.enterFromBottom(duration: Long = 400): ViewPropertyAnimator {
     val screenHeight = Resources.getSystem().displayMetrics.heightPixels.toFloat()    // get device height
 
     this.invisible()
@@ -84,7 +84,7 @@ fun View.enterFromBottom(duration: Long = 400, callback: ((viewPropertyAnimator:
     val y = this.y          // store initial y
     this.y = screenHeight   // move to bottom
     this.visible()
-    callback?.invoke(animate().y(y).setDuration(duration))
+    return animate().y(y).setDuration(duration)
 }
 
 /**
