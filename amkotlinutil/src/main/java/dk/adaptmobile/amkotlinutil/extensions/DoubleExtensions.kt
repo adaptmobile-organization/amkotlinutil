@@ -1,5 +1,6 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
+import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormat
 
@@ -28,3 +29,4 @@ fun Double.roundDown(pattern: String): String {
     return format(pattern, RoundingMode.DOWN)
 }
 
+fun Double.roundHalfUp() = BigDecimal(this).setScale(0, BigDecimal.ROUND_HALF_UP).toDouble()

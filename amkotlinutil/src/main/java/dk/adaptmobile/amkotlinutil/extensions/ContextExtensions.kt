@@ -1,7 +1,6 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -10,11 +9,11 @@ import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.Uri
+import android.support.annotation.DimenRes
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.res.ResourcesCompat
 import android.util.TypedValue
 import android.view.View
-import java.util.*
 
 /**
  * Created by bjarkeseverinsen on 27/09/2017.
@@ -46,20 +45,16 @@ fun Context.getStatusBarHeight(): Int {
 
 fun Context.getDimension(resId: Int): Float = this.resources.getDimension(resId)
 
-fun Context.convertSpToPixels(sp: Float): Float {
-    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, resources.displayMetrics)
+fun Int.dp(context: Context?): Float {
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this.toFloat(), context?.resources?.displayMetrics)
 }
 
-fun Context.convertSpToPixels(redId: Int): Float {
-    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, this.getDimension(redId), resources.displayMetrics)
-}
-
-fun Context.convertDpToPixels(dp: Float): Float {
-    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.displayMetrics)
+fun Float.dp(context: Context?): Float {
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this, context?.resources?.displayMetrics)
 }
 
 fun Context.convertDpToPixels(redId: Int): Float {
-    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this.getDimension(redId), resources.displayMetrics)
+    return this.getDimension(redId)
 }
 
 fun Context.unRegisterReceiverSafe(broadcastReceiver: BroadcastReceiver) {
@@ -78,7 +73,6 @@ fun Context.registerReceiverSafe(broadcastReceiver: BroadcastReceiver, intentFil
     } catch (e: IllegalArgumentException) {
         e.printStackTrace()
     }
-
 }
 
 fun Context?.openInBrowser(url: String) {
@@ -97,4 +91,17 @@ fun Context.isOnline(): Boolean {
 
 fun Context.getFontCompat(fontRes: Int): Typeface? {
     return ResourcesCompat.getFont(this, fontRes)
+}
+
+fun Context?.composeEmail(addresses: Array<String>, subject: String, text: String) {
+    this?.let {
+        val intent = Intent(Intent.ACTION_SENDTO)
+        intent.data = Uri.parse("mailto:") // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, addresses)
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject)
+        intent.putExtra(Intent.EXTRA_TEXT, text)
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }
+    }
 }
