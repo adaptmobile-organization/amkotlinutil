@@ -46,8 +46,10 @@ fun View.fadeTo(alpha: Float, duration: Long = 400): ViewPropertyAnimator {
  * Animation: Enter from left
  */
 fun View.enterFromLeft(duration: Long = 400): ViewPropertyAnimator {
+    this.invisible()
     val x = this.x    // store initial x
     this.x = 0f - this.width    // move to left outside screen
+    this.visible()
 
     return animate(true).x(x).setDuration(duration)
 }
@@ -56,9 +58,11 @@ fun View.enterFromLeft(duration: Long = 400): ViewPropertyAnimator {
  * Animation: Enter from right
  */
 fun View.enterFromRight(duration: Long = 400): ViewPropertyAnimator {
+    this.invisible()
     val widthPixels = Resources.getSystem().displayMetrics.widthPixels    // get device width
     val x = this.x    // store initial x
     this.x = widthPixels.toFloat()    // move to right outside screen
+    this.visible()
 
     return animate(true).x(x).setDuration(duration)
 }
@@ -67,8 +71,10 @@ fun View.enterFromRight(duration: Long = 400): ViewPropertyAnimator {
  * Animation: Enter from top
  */
 fun View.enterFromTop(duration: Long = 400): ViewPropertyAnimator {
+    this.invisible()
     val y = this.y    // store initial y
     this.y = 0f - this.height    // move to top
+    this.visible()
 
     return animate(true).y(y).setDuration(duration)
 }
@@ -77,10 +83,8 @@ fun View.enterFromTop(duration: Long = 400): ViewPropertyAnimator {
  * Animation: Enter from bottom
  */
 fun View.enterFromBottom(duration: Long = 400): ViewPropertyAnimator {
-    val screenHeight = Resources.getSystem().displayMetrics.heightPixels.toFloat()    // get device height
-
     this.invisible()
-
+    val screenHeight = Resources.getSystem().displayMetrics.heightPixels.toFloat()    // get device height
     val y = this.y          // store initial y
     this.y = screenHeight   // move to bottom
     this.visible()
@@ -99,7 +103,6 @@ fun View.exitToLeft(duration: Long = 400): ViewPropertyAnimator {
  */
 fun View.exitToRight(duration: Long = 400): ViewPropertyAnimator {
     val widthPixels = Resources.getSystem().displayMetrics.widthPixels    // get device width
-
     return animate(true).x(widthPixels.toFloat()).setDuration(duration)
 }
 
@@ -129,7 +132,6 @@ fun View.slideUp(duration: Long = 400): ViewPropertyAnimator {
     this.invisible()
     this.translationY = this.height.toFloat()
     this.visible()
-
     return animate(true).translationY(0f).setDuration(duration)
 }
 
