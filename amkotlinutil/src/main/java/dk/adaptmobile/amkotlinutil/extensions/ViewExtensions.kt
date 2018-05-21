@@ -82,7 +82,7 @@ fun View.setSize(height: Int, width: Int) {
 
 // https://antonioleiva.com/kotlin-ongloballayoutlistener/
 inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
-    if (this.isLaidOutCompat()) {
+    if (this != null && this.isLaidOutCompat()) {
         f()
     } else {
         viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
