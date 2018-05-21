@@ -6,8 +6,8 @@ import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
 import android.R.attr.right
 import android.R.attr.left
+import android.support.v4.view.ViewCompat
 import android.widget.LinearLayout
-
 
 
 /**
@@ -29,6 +29,7 @@ fun View.showKeyboard() {
 fun View.visible() {
     visibility = View.VISIBLE
 }
+
 fun View.invisible() {
     visibility = View.INVISIBLE
 }
@@ -80,17 +81,23 @@ fun View.setSize(height: Int, width: Int) {
 }
 
 // https://antonioleiva.com/kotlin-ongloballayoutlistener/
-inline fun <T: View> T.afterMeasured(crossinline f: T.() -> Unit) {
-    viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
-        override fun onGlobalLayout() {
-            if (measuredWidth > 0 && measuredHeight > 0) {
+inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
+    if (this.isLaidOutCompat()) {
+        f()
+    } else {
+        viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
                 viewTreeObserver.removeOnGlobalLayoutListener(this)
                 f()
             }
-        }
-    })
+        })
+    }
 }
 
-fun View.setbackgroundColorResource(resId: Int){
+fun View.isLaidOutCompat(): Boolean {
+    return ViewCompat.isLaidOut(this)
+}
+
+fun View.setbackgroundColorResource(resId: Int) {
     setBackgroundColor(context.getColorCompat(id))
 }
