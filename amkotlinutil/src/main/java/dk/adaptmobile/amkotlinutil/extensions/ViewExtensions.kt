@@ -45,6 +45,13 @@ fun View.setVisibility(visible: Boolean) {
     }
 }
 
+fun View.setInvisibility(visible: Boolean) {
+    when (visible) {
+        true -> this.visible()
+        false -> this.invisible()
+    }
+}
+
 fun View.isVisible(): Boolean {
     return this.visibility == View.VISIBLE
 }
