@@ -1,5 +1,6 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
+import android.support.annotation.DimenRes
 import android.support.annotation.StringRes
 import com.bluelinelabs.conductor.Controller
 import com.bluelinelabs.conductor.ControllerChangeHandler
@@ -107,6 +108,9 @@ fun Router.pushView(controller: Controller?, type: AnimationType, removesFromVie
     }
 }
 
+val Router.lastController: Controller?
+    get() = if (!this.backstack.isEmpty()) this.backstack.last().controller() else null
+
 fun Controller.getString(@StringRes stringRes: Int): String? {
     return resources?.getString(stringRes)
 }
@@ -115,6 +119,15 @@ fun Controller.hideKeyboard() {
     view?.hideKeyboard()
 }
 
+fun Controller.getDimenstion(@DimenRes dimenRes: Int): Float? {
+    return resources?.getDimension(dimenRes)
+}
 
-val Router.lastController: Controller?
-    get() = if (!this.backstack.isEmpty()) this.backstack.last().controller() else null
+var Controller.brightness: Float?
+    get() = this.activity?.window?.attributes?.screenBrightness
+    set(value) {
+        val window = this.activity?.window
+        val layoutParams = window?.attributes
+        layoutParams?.screenBrightness = value //0 is turned off, 1 is full brightness
+        window?.attributes = layoutParams
+    }
