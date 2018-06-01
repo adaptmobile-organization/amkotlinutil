@@ -1,6 +1,7 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.os.Handler
+import dk.adaptmobile.amkotlinutil.model.PostDelay
 import java.util.*
 
 /**
@@ -14,6 +15,9 @@ fun danishLocale(): Locale {
     return Locale("da", "da_DK")
 }
 
-fun wait(delayMillis: Long, function: () -> Unit) {
-    Handler().postDelayed(function, delayMillis)
+inline fun wait(delayMillis: Long, crossinline function: () -> Unit): PostDelay {
+    val handler = Handler()
+    val runnable = Runnable { function() }
+    handler.postDelayed(runnable, delayMillis)
+    return PostDelay(handler, runnable)
 }

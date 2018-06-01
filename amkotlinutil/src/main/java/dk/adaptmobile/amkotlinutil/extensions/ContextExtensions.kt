@@ -1,10 +1,7 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.annotation.SuppressLint
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
+import android.content.*
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
@@ -12,8 +9,10 @@ import android.net.Uri
 import android.support.annotation.DimenRes
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.res.ResourcesCompat
+import android.util.Log
 import android.util.TypedValue
 import android.view.View
+import dk.adaptmobile.amkotlinutil.BuildConfig
 
 /**
  * Created by bjarkeseverinsen on 27/09/2017.
@@ -103,5 +102,24 @@ fun Context?.composeEmail(addresses: Array<String>, subject: String, text: Strin
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
         }
+    }
+}
+
+fun Context.goToPlayStoreDetails() {
+    val uri = Uri.parse("market://details?id=${this.getProductionApplicationId()}")
+    val linkToMarket = Intent(Intent.ACTION_VIEW, uri)
+    try {
+        startActivity(linkToMarket)
+    } catch (e: ActivityNotFoundException) {
+        Log.e(TAG, "Unable to find market app")
+    }
+}
+
+fun Context.getProductionApplicationId(): String {
+    val applicationId = packageName
+    return when {
+        applicationId.contains(".stage") -> applicationId.dropLast(6)
+        applicationId.contains(".debug") -> applicationId.dropLast(6)
+        else -> applicationId
     }
 }
