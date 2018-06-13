@@ -27,10 +27,12 @@ fun String.parseDate(pattern: String): Date {
     return this.toDate(pattern)
 }
 
-fun String.openInBrowser(context: Context?) {
-    val page = Uri.parse(this)
-    val intent = Intent(Intent.ACTION_VIEW, page)
-    context?.startActivity(intent)
+fun String?.openInBrowser(context: Context?) {
+    if (this != null && this.isNotEmpty()) {
+        val page = Uri.parse(this)
+        val intent = Intent(Intent.ACTION_VIEW, page)
+        context?.startActivity(intent)
+    }
 }
 
 fun String.isPhoneNumber(): Boolean {
@@ -77,3 +79,5 @@ fun String.fromHtml(): Spanned {
         Html.fromHtml(this)
     }
 }
+
+fun String?.orText(text: String) = this ?: text

@@ -74,10 +74,12 @@ fun Context.registerReceiverSafe(broadcastReceiver: BroadcastReceiver, intentFil
     }
 }
 
-fun Context?.openInBrowser(url: String) {
-    val page = Uri.parse(url)
-    val intent = Intent(Intent.ACTION_VIEW, page)
-    this?.startActivity(intent)
+fun Context?.openInBrowser(url: String?) {
+    if (url != null && url.isNotEmpty()) {
+        val page = Uri.parse(url)
+        val intent = Intent(Intent.ACTION_VIEW, page)
+        this?.startActivity(intent)
+    }
 }
 
 @SuppressLint("MissingPermission")

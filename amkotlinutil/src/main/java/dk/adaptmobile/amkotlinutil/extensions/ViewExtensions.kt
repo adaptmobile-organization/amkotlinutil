@@ -52,6 +52,13 @@ fun View.setInvisibility(visible: Boolean) {
     }
 }
 
+fun View.setVisibility(visible: Boolean, animated: Boolean) {
+    when (visible) {
+        true -> if (animated) this.slideUp() else this.visible()
+        false -> this.invisible()
+    }
+}
+
 fun View.isVisible(): Boolean {
     return this.visibility == View.VISIBLE
 }
