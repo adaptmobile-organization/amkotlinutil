@@ -35,7 +35,7 @@ sealed class AnimationType {
     object ScaleFade : AnimationType()
     object Dialog : AnimationType()
     object None : AnimationType()
-    data class Custom(val controllerChangeHandler: ControllerChangeHandler) : AnimationType()
+    data class Custom(val pushControllerChangeHandler: ControllerChangeHandler, val popControllerChangeHandler: ControllerChangeHandler? = null) : AnimationType()
 }
 
 fun Router.pushView(controller: Controller?, type: AnimationType, removesFromViewOnPush: Boolean = true, retain: Boolean = false, asRoot: Boolean = false, replace: Boolean = false, tag: String? = null, hidekeyboard: Boolean = true) {
@@ -95,8 +95,12 @@ fun Router.pushView(controller: Controller?, type: AnimationType, removesFromVie
                 transaction.popChangeHandler(SimpleSwapChangeHandler())
             }
             is AnimationType.Custom -> {
-                transaction.pushChangeHandler(type.controllerChangeHandler)
-                transaction.popChangeHandler(type.controllerChangeHandler)
+                transaction.pushChangeHandler(type.pushControllerChangeHandler)
+                if (type.popControllerChangeHandler == null) {
+                    transaction.popChangeHandler(type.pushControllerChangeHandler.copy())
+                } else {
+                    transaction.popChangeHandler(type.popControllerChangeHandler)
+                }
             }
         }
 
