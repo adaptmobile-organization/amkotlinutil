@@ -43,11 +43,10 @@ fun Router.pushView(controller: Controller?, type: AnimationType, removesFromVie
 
         val transaction = RouterTransaction.with(controller)
 
-        when {
-            retain -> controller.retainViewMode = Controller.RetainViewMode.RETAIN_DETACH
-            hidekeyboard -> controller.hideKeyboard()
-            !tag.isNullOrEmpty() -> transaction.tag(tag)
-        }
+        if (retain) controller.retainViewMode = Controller.RetainViewMode.RETAIN_DETACH
+        if (hidekeyboard) controller.hideKeyboard()
+
+        transaction.tag(tag)
 
         when (type) {
             is AnimationType.Slide -> {
@@ -96,11 +95,7 @@ fun Router.pushView(controller: Controller?, type: AnimationType, removesFromVie
             }
             is AnimationType.Custom -> {
                 transaction.pushChangeHandler(type.pushControllerChangeHandler)
-                if (type.popControllerChangeHandler == null) {
-                    transaction.popChangeHandler(type.pushControllerChangeHandler.copy())
-                } else {
-                    transaction.popChangeHandler(type.popControllerChangeHandler)
-                }
+                transaction.popChangeHandler(type.pushControllerChangeHandler.copy())
             }
         }
 
