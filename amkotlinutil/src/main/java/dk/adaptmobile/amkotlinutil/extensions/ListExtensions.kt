@@ -7,3 +7,7 @@ package dk.adaptmobile.amkotlinutil.extensions
 fun <T> List<T>?.isLast(index: Int): Boolean {
     return index == this?.lastIndex
 }
+
+fun <T> List<T>?.sizeOrZero(): Int {
+    return this?.size ?: 0
+}

@@ -6,7 +6,10 @@ import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
 import android.R.attr.right
 import android.R.attr.left
+import android.graphics.Bitmap
+import android.support.annotation.StringRes
 import android.support.v4.view.ViewCompat
+import android.view.ViewGroup
 import android.widget.LinearLayout
 
 
@@ -114,4 +117,36 @@ fun View.isLaidOutCompat(): Boolean {
 
 fun View.setbackgroundColorResource(resId: Int) {
     setBackgroundColor(context.getColorCompat(id))
+}
+
+fun View.toBitmap(): Bitmap? { //Take "screenshot" of a view from: http://stackoverflow.com/questions/2801116/converting-a-view-to-bitmap-without-displaying-it-in-android
+    this.clearFocus()
+    this.isPressed = false
+
+    val willNotCache = this.willNotCacheDrawing()
+    this.setWillNotCacheDrawing(false)
+
+    // Reset the drawing cache background color to fully transparent
+    // for the duration of this operation
+    val color = this.drawingCacheBackgroundColor
+    this.drawingCacheBackgroundColor = 0
+
+    if (color != 0) {
+        this.destroyDrawingCache()
+    }
+    this.buildDrawingCache()
+    val cacheBitmap = this.drawingCache ?: return null
+
+    val bitmap = Bitmap.createBitmap(cacheBitmap)
+
+    // Restore the view
+    this.destroyDrawingCache()
+    this.setWillNotCacheDrawing(willNotCache)
+    this.drawingCacheBackgroundColor = color
+
+    return bitmap
+}
+
+fun ViewGroup.getString(@StringRes stringRes: Int): String? {
+    return this.context.getString(stringRes)
 }

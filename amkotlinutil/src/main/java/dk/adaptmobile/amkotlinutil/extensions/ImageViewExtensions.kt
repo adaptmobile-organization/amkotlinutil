@@ -3,6 +3,8 @@ package dk.adaptmobile.amkotlinutil.extensions
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.net.Uri
+import android.support.annotation.ColorRes
+import android.util.Base64
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -57,5 +59,19 @@ fun ImageView.loadImageResourceAsCircle(imageResource: String?) {
 fun ImageView.loadImageResourceAsCircle(imageResource: Int?) {
     imageResource?.let {
         Glide.with(context).load(imageResource).apply(RequestOptions().circleCrop()).into(this)
+    }
+}
+
+fun ImageView.setTint(@ColorRes colorRes: Int) {
+    this.setColorFilter(context.getColorCompat(colorRes), android.graphics.PorterDuff.Mode.SRC_IN)
+}
+
+fun ImageView.loadBase64Image(base64Image: String?) {
+    base64Image?.let {
+        //        val data = base64Image.split(',')[1] //Get the second part
+        Glide.with(context)
+                .asBitmap()
+                .load(Base64.decode(base64Image, Base64.DEFAULT))
+                .into(this)
     }
 }

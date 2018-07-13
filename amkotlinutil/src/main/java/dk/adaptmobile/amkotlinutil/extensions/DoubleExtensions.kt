@@ -3,6 +3,7 @@ package dk.adaptmobile.amkotlinutil.extensions
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
 
 /**
  * Created by bjarkeseverinsen on 20/09/2017.
@@ -25,8 +26,16 @@ fun Double.format(pattern: String, roundingMode: RoundingMode): String {
     }
 }
 
+fun Double.format(pattern: String, groupingSeperator: Char): String {
+    val symbols = DecimalFormatSymbols()
+    symbols.groupingSeparator = groupingSeperator
+    val df = DecimalFormat(pattern, symbols)
+    return df.format(this)
+}
+
 fun Double.roundDown(pattern: String): String {
     return format(pattern, RoundingMode.DOWN)
 }
 
 fun Double.roundHalfUp() = BigDecimal(this).setScale(0, BigDecimal.ROUND_HALF_UP).toDouble()
+

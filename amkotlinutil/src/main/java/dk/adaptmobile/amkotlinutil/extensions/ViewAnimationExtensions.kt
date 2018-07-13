@@ -146,7 +146,12 @@ fun View?.exitToRight(duration: Long = 400): ViewPropertyAnimator? {
  */
 fun View?.exitToTop(duration: Long = 400): ViewPropertyAnimator? {
     this?.let {
-        return animate(true).y(0f - this.height).setDuration(duration)
+        val y = this.y    // store initial y
+        return animate(true).y(0f - this.height).setDuration(duration).withEndAction {
+            // reset to original pos
+            this.y = y
+            this.invisible()
+        }
     }
 
     return null
