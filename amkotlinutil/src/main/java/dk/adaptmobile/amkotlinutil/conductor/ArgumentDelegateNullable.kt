@@ -30,20 +30,22 @@ class ArgumentDelegateNullable<T> : ReadWriteProperty<Controller, T?> {
         val bundle = thisRef.args
         val key = property.name
 
-        when (value) {
-            is Controller -> thisRef.targetController = value
-            is Parcelable -> bundle.putParcelable(key, value)
-            is Serializable -> bundle.putSerializable(key, value)
-            is String -> bundle.putString(key, value)
-            is Int -> bundle.putInt(key, value)
-            is Boolean -> bundle.putBoolean(key, value)
-            is Float -> bundle.putFloat(key, value)
-            is Long -> bundle.putLong(key, value)
-            is Double -> bundle.putDouble(key, value)
-            is Byte -> bundle.putByte(key, value)
-            is ByteArray -> bundle.putByteArray(key, value)
-            is Char -> bundle.putChar(key, value)
-            else -> throw UnsupportedOperationException("Not yet implemented")
+        if (value != null) {
+            when (value) {
+                is Controller -> thisRef.targetController = value
+                is Parcelable -> bundle.putParcelable(key, value)
+                is Serializable -> bundle.putSerializable(key, value)
+                is String -> bundle.putString(key, value)
+                is Int -> bundle.putInt(key, value)
+                is Boolean -> bundle.putBoolean(key, value)
+                is Float -> bundle.putFloat(key, value)
+                is Long -> bundle.putLong(key, value)
+                is Double -> bundle.putDouble(key, value)
+                is Byte -> bundle.putByte(key, value)
+                is ByteArray -> bundle.putByteArray(key, value)
+                is Char -> bundle.putChar(key, value)
+                else -> throw UnsupportedOperationException("Not yet implemented")
+            }
         }
     }
 
