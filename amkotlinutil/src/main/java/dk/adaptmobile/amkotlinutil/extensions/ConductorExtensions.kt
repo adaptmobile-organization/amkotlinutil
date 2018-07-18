@@ -95,7 +95,7 @@ fun Router.pushView(controller: Controller?, type: AnimationType, removesFromVie
             }
             is AnimationType.Custom -> {
                 transaction.pushChangeHandler(type.pushControllerChangeHandler)
-                transaction.popChangeHandler(type.pushControllerChangeHandler.copy())
+                transaction.popChangeHandler(type.popControllerChangeHandler)
             }
         }
 

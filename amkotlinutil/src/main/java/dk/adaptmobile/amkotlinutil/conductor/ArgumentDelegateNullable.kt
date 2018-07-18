@@ -19,8 +19,11 @@ class ArgumentDelegateNullable<T> : ReadWriteProperty<Controller, T?> {
             value = thisRef.args.get(key) as? T?
         }
 
-//        return value ?: throw IllegalStateException("Property ${property.name} could not be read")
-        return value
+        if (value == null) {
+            value = thisRef.targetController as T
+        }
+
+        return value ?: throw IllegalStateException("Property ${property.name} could not be read")
     }
 
     override fun setValue(thisRef: Controller, property: KProperty<*>, value: T?) {
@@ -28,7 +31,8 @@ class ArgumentDelegateNullable<T> : ReadWriteProperty<Controller, T?> {
         val key = property.name
 
         when (value) {
-            is Parcelable? -> bundle.putParcelable(key, value)
+            is Controller -> thisRef.targetController = value
+            is Parcelable -> bundle.putParcelable(key, value)
             is Serializable -> bundle.putSerializable(key, value)
             is String -> bundle.putString(key, value)
             is Int -> bundle.putInt(key, value)

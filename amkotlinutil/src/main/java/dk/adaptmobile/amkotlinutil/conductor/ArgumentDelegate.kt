@@ -1,4 +1,4 @@
-package dk.adaptmobile.amkotlinutil.conductor
+package dk.dkt.dkt.util
 
 import android.os.Parcelable
 import com.bluelinelabs.conductor.Controller
@@ -19,6 +19,10 @@ class ArgumentDelegate<T> : ReadWriteProperty<Controller, T> {
             value = thisRef.args.get(key) as T
         }
 
+        if (value == null) {
+            value = thisRef.targetController as T
+        }
+
         return value ?: throw IllegalStateException("Property ${property.name} could not be read")
     }
 
@@ -27,6 +31,7 @@ class ArgumentDelegate<T> : ReadWriteProperty<Controller, T> {
         val key = property.name
 
         when (value) {
+            is Controller -> thisRef.targetController = value
             is Parcelable -> bundle.putParcelable(key, value)
             is Serializable -> bundle.putSerializable(key, value)
             is String -> bundle.putString(key, value)
