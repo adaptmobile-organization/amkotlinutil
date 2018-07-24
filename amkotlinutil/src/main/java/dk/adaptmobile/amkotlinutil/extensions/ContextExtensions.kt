@@ -44,16 +44,12 @@ fun Context.getStatusBarHeight(): Int {
 
 fun Context.getDimension(resId: Int): Float = this.resources.getDimension(resId)
 
-fun Int.dp(context: Context?): Float {
+fun Int.dpToPixels(context: Context?): Float {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this.toFloat(), context?.resources?.displayMetrics)
 }
 
-fun Float.dp(context: Context?): Float {
+fun Float.dpToPixels(context: Context?): Float {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this, context?.resources?.displayMetrics)
-}
-
-fun Context.convertDpToPixels(redId: Int): Float {
-    return this.getDimension(redId)
 }
 
 fun Context.unRegisterReceiverSafe(broadcastReceiver: BroadcastReceiver) {
