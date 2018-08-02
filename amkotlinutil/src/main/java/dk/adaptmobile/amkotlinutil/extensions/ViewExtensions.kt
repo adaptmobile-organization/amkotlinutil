@@ -8,9 +8,12 @@ import android.R.attr.right
 import android.R.attr.left
 import android.graphics.Bitmap
 import android.support.annotation.StringRes
+import android.support.constraint.ConstraintLayout
 import android.support.v4.view.ViewCompat
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 
 
 /**
@@ -149,4 +152,28 @@ fun View.toBitmap(): Bitmap? { //Take "screenshot" of a view from: http://stacko
 
 fun ViewGroup.getString(@StringRes stringRes: Int): String? {
     return this.context.getString(stringRes)
+}
+
+
+fun View.setMargins(left: Int, top: Int, right: Int, bottom: Int) {
+    val params = layoutParams
+
+    when (params) {
+        is ConstraintLayout.LayoutParams -> {
+            params.setMargins(left, top, right, bottom)
+            this.layoutParams = params
+        }
+        is LinearLayout.LayoutParams -> {
+            params.setMargins(left, top, right, bottom)
+            this.layoutParams = params
+        }
+        is FrameLayout.LayoutParams -> {
+            params.setMargins(left, top, right, bottom)
+            this.layoutParams = params
+        }
+        is RelativeLayout.LayoutParams -> {
+            params.setMargins(left, top, right, bottom)
+            this.layoutParams = params
+        }
+    }
 }
