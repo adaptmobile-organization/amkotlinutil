@@ -52,6 +52,14 @@ fun Float.dpToPixels(context: Context?): Float {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this, context?.resources?.displayMetrics)
 }
 
+fun Int.dp(context: Context?): Float {
+    return this.dpToPixels(context)
+}
+
+fun Float.dp(context: Context?): Float {
+    return this.dpToPixels(context)
+}
+
 fun Context.unRegisterReceiverSafe(broadcastReceiver: BroadcastReceiver) {
     // needs to be in try catch in order to avoid crashing on Samsung Lollipop devices https://issuetracker.google.com/issues/37001269#c3
     try {
