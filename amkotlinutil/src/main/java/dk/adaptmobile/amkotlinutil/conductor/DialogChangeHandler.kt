@@ -11,7 +11,7 @@ import com.bluelinelabs.conductor.changehandler.TransitionChangeHandler
 import jp.wasabeef.blurry.Blurry
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-class DialogChangeHandler : TransitionChangeHandler() {
+class DialogChangeHandler(val removesFromViewOnPush: Boolean = false) : TransitionChangeHandler() {
 
     override fun getTransition(container: ViewGroup, from: View?, to: View?, isPush: Boolean): Transition {
 
@@ -31,7 +31,7 @@ class DialogChangeHandler : TransitionChangeHandler() {
     }
 
     override fun removesFromViewOnPush(): Boolean {
-        return false
+        return removesFromViewOnPush
     }
 
 }

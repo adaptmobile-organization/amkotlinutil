@@ -62,7 +62,7 @@ fun Router.pushView(controller: Controller?, type: AnimationType, removesFromVie
                 transaction.popChangeHandler(FadeChangeHandler(removesFromViewOnPush))
             }
             is AnimationType.FlipRight -> {
-                transaction.pushChangeHandler(FlipChangeHandler())
+                transaction.pushChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.RIGHT))
                 transaction.popChangeHandler(FlipChangeHandler(FlipChangeHandler.FlipDirection.LEFT))
             }
             is AnimationType.FlipLeft -> {
@@ -86,12 +86,12 @@ fun Router.pushView(controller: Controller?, type: AnimationType, removesFromVie
                 transaction.popChangeHandler(ScaleFadeChangeHandler())
             }
             is AnimationType.Dialog -> {
-                transaction.pushChangeHandler(DialogChangeHandler())
-                transaction.popChangeHandler(DialogChangeHandler())
+                transaction.pushChangeHandler(DialogChangeHandler(removesFromViewOnPush))
+                transaction.popChangeHandler(DialogChangeHandler(removesFromViewOnPush))
             }
             is AnimationType.None -> {
-                transaction.pushChangeHandler(SimpleSwapChangeHandler())
-                transaction.popChangeHandler(SimpleSwapChangeHandler())
+                transaction.pushChangeHandler(SimpleSwapChangeHandler(removesFromViewOnPush))
+                transaction.popChangeHandler(SimpleSwapChangeHandler(removesFromViewOnPush))
             }
             is AnimationType.Custom -> {
                 transaction.pushChangeHandler(type.pushControllerChangeHandler)
