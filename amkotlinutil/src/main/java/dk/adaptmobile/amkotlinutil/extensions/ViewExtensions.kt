@@ -150,7 +150,7 @@ fun View.toBitmap(): Bitmap? { //Take "screenshot" of a view from: http://stacko
     return bitmap
 }
 
-fun ViewGroup.getString(@StringRes stringRes: Int): String? {
+fun ViewGroup.getString(@StringRes stringRes: Int): String {
     return this.context.getString(stringRes)
 }
 
