@@ -86,8 +86,8 @@ fun Router.pushView(controller: Controller?, type: AnimationType, removesFromVie
                 transaction.popChangeHandler(ScaleFadeChangeHandler())
             }
             is AnimationType.Dialog -> {
-                transaction.pushChangeHandler(DialogChangeHandler(removesFromViewOnPush))
-                transaction.popChangeHandler(DialogChangeHandler(removesFromViewOnPush))
+                transaction.pushChangeHandler(DialogChangeHandler(false))
+                transaction.popChangeHandler(DialogChangeHandler(false))
             }
             is AnimationType.None -> {
                 transaction.pushChangeHandler(SimpleSwapChangeHandler(removesFromViewOnPush))

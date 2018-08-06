@@ -10,6 +10,9 @@ import android.graphics.Bitmap
 import android.support.annotation.StringRes
 import android.support.constraint.ConstraintLayout
 import android.support.v4.view.ViewCompat
+import android.transition.Scene
+import android.transition.TransitionManager
+import android.transition.TransitionSet
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.LinearLayout
@@ -177,3 +180,4 @@ fun View.setMargins(left: Int, top: Int, right: Int, bottom: Int) {
         }
     }
 }
+

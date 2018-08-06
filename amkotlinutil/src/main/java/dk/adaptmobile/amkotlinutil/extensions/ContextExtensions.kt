@@ -129,3 +129,10 @@ fun Context.getProductionApplicationId(): String {
         else -> applicationId
     }
 }
+
+fun Context?.dial(number: String) {
+    this?.let {
+        val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number"))
+        this.startActivity(intent)
+    }
+}
