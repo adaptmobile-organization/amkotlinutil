@@ -1,4 +1,4 @@
-package dk.dkt.dkt.util
+package dk.adaptmobile.amkotlinutil.conductor
 
 import android.os.Parcelable
 import com.bluelinelabs.conductor.Controller

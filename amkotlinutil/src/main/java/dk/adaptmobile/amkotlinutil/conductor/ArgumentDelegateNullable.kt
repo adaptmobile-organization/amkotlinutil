@@ -19,11 +19,11 @@ class ArgumentDelegateNullable<T> : ReadWriteProperty<Controller, T?> {
             value = thisRef.args.get(key) as? T?
         }
 
-        if (value == null) {
+        if (value == null && value is Controller) {
             value = thisRef.targetController as T
         }
 
-        return value ?: throw IllegalStateException("Property ${property.name} could not be read")
+        return value
     }
 
     override fun setValue(thisRef: Controller, property: KProperty<*>, value: T?) {
