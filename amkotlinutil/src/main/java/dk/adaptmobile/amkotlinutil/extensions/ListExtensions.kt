@@ -11,3 +11,7 @@ fun <T> List<T>?.isLast(index: Int): Boolean {
 fun <T> List<T>?.sizeOrZero(): Int {
     return this?.size ?: 0
 }
+
+fun <T> List<T>?.orEmptyString(string: String): String {
+    return if(this?.isEmpty() == true) "" else string
+}

@@ -82,7 +82,9 @@ fun Context?.openInBrowser(url: String?) {
     if (url != null && url.isNotEmpty()) {
         val page = Uri.parse(url)
         val intent = Intent(Intent.ACTION_VIEW, page)
-        this?.startActivity(intent)
+        if (intent.resolveActivity(this?.packageManager) != null) {
+            this?.startActivity(intent)
+        }
     }
 }
 

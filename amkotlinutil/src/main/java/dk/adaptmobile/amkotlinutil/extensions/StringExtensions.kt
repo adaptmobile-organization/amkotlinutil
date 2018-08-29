@@ -20,6 +20,7 @@ fun String.capitalizeFirstLetter(): String {
 }
 
 fun String.toDate(pattern: String): Date {
+    
     return SimpleDateFormat(pattern, Locale("da", "DK")).parse(this)
 }
 
@@ -31,7 +32,10 @@ fun String?.openInBrowser(context: Context?) {
     if (this != null && this.isNotEmpty()) {
         val page = Uri.parse(this)
         val intent = Intent(Intent.ACTION_VIEW, page)
-        context?.startActivity(intent)
+
+        if (intent.resolveActivity(context?.packageManager) != null) {
+            context?.startActivity(intent)
+        }
     }
 }
 
@@ -81,3 +85,4 @@ fun String.fromHtml(): Spanned {
 }
 
 fun String?.orText(text: String) = this ?: text
+
