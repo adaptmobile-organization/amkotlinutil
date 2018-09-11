@@ -14,9 +14,11 @@ import android.transition.Scene
 import android.transition.TransitionManager
 import android.transition.TransitionSet
 import android.view.ViewGroup
+import android.view.ViewPropertyAnimator
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
+import dk.adaptmobile.amkotlinutil.util.KotlinAnimationListener
 
 
 /**
@@ -179,5 +181,12 @@ fun View.setMargins(left: Int, top: Int, right: Int, bottom: Int) {
             this.layoutParams = params
         }
     }
+}
+
+inline fun ViewPropertyAnimator.setAnimationListener(func: KotlinAnimationListener.() -> Unit): ViewPropertyAnimator {
+    val listener = KotlinAnimationListener()
+    listener.func()
+    setListener(listener)
+    return this
 }
 
