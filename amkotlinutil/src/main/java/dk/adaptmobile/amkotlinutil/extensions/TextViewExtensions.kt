@@ -1,11 +1,12 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
+import android.support.annotation.FontRes
 import android.support.annotation.StringRes
 import android.support.design.widget.TextInputLayout
+import android.support.v4.content.res.ResourcesCompat
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.AbsoluteSizeSpan
-import android.widget.EditText
 import android.widget.TextView
 import uk.co.chrisjenx.calligraphy.CalligraphyTypefaceSpan
 import uk.co.chrisjenx.calligraphy.CalligraphyUtils
@@ -21,6 +22,10 @@ fun TextView.applyFont(@StringRes stringRes: Int) {
 fun TextInputLayout.clearError() {
     error = null
     isErrorEnabled = false
+}
+
+fun TextView.setFont(@FontRes fontRes: Int) {
+    this.typeface = ResourcesCompat.getFont(context, fontRes)
 }
 
 val TextView.textString: String

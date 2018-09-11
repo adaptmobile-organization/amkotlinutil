@@ -114,6 +114,10 @@ fun Controller.getString(@StringRes stringRes: Int): String? {
     return resources?.getString(stringRes)
 }
 
+fun Controller.getString(@StringRes stringRes: Int, vararg formatArgs: Any): String? {
+    return resources?.getString(stringRes, *formatArgs)
+}
+
 fun Controller.hideKeyboard() {
     view?.hideKeyboard()
 }
