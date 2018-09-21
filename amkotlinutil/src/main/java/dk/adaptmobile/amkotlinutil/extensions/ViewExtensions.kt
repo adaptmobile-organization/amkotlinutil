@@ -7,6 +7,7 @@ import android.view.inputmethod.InputMethodManager
 import android.R.attr.right
 import android.R.attr.left
 import android.graphics.Bitmap
+import android.support.annotation.ColorRes
 import android.support.annotation.StringRes
 import android.support.constraint.ConstraintLayout
 import android.support.v4.view.ViewCompat
@@ -123,8 +124,8 @@ fun View.isLaidOutCompat(): Boolean {
     return ViewCompat.isLaidOut(this)
 }
 
-fun View.setbackgroundColorResource(resId: Int) {
-    setBackgroundColor(context.getColorCompat(id))
+fun View.setbackgroundColorResource(@ColorRes resId: Int) {
+    setBackgroundColor(context.getColorCompat(resId))
 }
 
 fun View.toBitmap(): Bitmap? { //Take "screenshot" of a view from: http://stackoverflow.com/questions/2801116/converting-a-view-to-bitmap-without-displaying-it-in-android
