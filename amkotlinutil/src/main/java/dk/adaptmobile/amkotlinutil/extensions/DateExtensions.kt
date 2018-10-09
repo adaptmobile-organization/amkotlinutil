@@ -27,7 +27,7 @@ fun Date.compareDateSameDay(date2: Date): Boolean {
 }
 
 fun Date.format(pattern: String): String {
-    return SimpleDateFormat(pattern, Locale("da", "DK")).format(this)
+    return SimpleDateFormat(pattern, Locale.getDefault()).format(this)
 }
 
 fun Date.isDateThisYear(): Boolean {

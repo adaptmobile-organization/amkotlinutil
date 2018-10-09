@@ -20,8 +20,7 @@ fun String.capitalizeFirstLetter(): String {
 }
 
 fun String.toDate(pattern: String): Date {
-    
-    return SimpleDateFormat(pattern, Locale("da", "DK")).parse(this)
+    return SimpleDateFormat(pattern, Locale.getDefault()).parse(this)
 }
 
 fun String.parseDate(pattern: String): Date {
