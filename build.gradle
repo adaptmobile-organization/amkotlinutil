@@ -5,8 +5,8 @@ buildscript {
     //Fix for gradle not accepting 2.10 - https://discuss.gradle.org/t/gradle-thinks-2-10-is-less-than-2-2-when-resolving-plugins/13434/2
     System.properties['com.android.build.gradle.overrideVersionCheck'] = 'true'
     repositories {
-        jcenter()
         google()
+        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
@@ -20,8 +20,8 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
         google()
+        jcenter()
         maven { url 'https://maven.google.com' }
         maven { url 'https://jitpack.io' }
         mavenCentral()

@@ -38,4 +38,3 @@ fun Double.roundDown(pattern: String): String {
 }
 
 fun Double.roundHalfUp() = BigDecimal(this).setScale(0, BigDecimal.ROUND_HALF_UP).toDouble()
-
