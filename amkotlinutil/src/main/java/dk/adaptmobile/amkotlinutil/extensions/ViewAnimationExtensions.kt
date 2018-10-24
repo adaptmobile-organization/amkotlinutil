@@ -188,6 +188,8 @@ fun View?.slideUp(duration: Long = 400): ViewPropertyAnimator? {
     return null
 }
 
+
+
 fun View.getLocationOnScreen(): Point {
     val location = IntArray(2)
     getLocationOnScreen(location)
@@ -205,4 +207,13 @@ fun ViewPropertyAnimator.reset(): ViewPropertyAnimator {
             .setDuration(400)
             .setStartDelay(0)
             .setInterpolator(LinearInterpolator())
+}
+
+
+
+fun View.rotate(rotation: Float, animated: Boolean = true, animationDuration: Long = 400) {
+    when (animated) {
+        true -> this.animate().rotationBy(rotation).setDuration(animationDuration).start()
+        false -> this.rotation = this.rotation + rotation
+    }
 }

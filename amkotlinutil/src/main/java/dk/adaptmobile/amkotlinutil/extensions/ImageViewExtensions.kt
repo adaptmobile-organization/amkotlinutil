@@ -75,3 +75,4 @@ fun ImageView.loadBase64Image(base64Image: String?) {
                 .into(this)
     }
 }
+

@@ -1,5 +1,7 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
+import android.graphics.Typeface
+import android.support.annotation.DrawableRes
 import android.support.annotation.FontRes
 import android.support.annotation.StringRes
 import android.support.design.widget.TextInputLayout
@@ -24,9 +26,6 @@ fun TextInputLayout.clearError() {
     isErrorEnabled = false
 }
 
-fun TextView.setFont(@FontRes fontRes: Int) {
-    this.typeface = ResourcesCompat.getFont(context, fontRes)
-}
 
 val TextView.textString: String
     get() = text.toString()
@@ -50,4 +49,16 @@ fun TextView.setTextWithDifferentFonts(firstText : String, secondText : String, 
 
 fun TextView.setTextColorId(id: Int){
     this.setTextColor(this.context.getColorCompat(id))
+}
+
+fun TextView.setRightDrawable(@DrawableRes resId: Int) {
+    setCompoundDrawablesWithIntrinsicBounds(0,0,resId,0)
+}
+
+fun TextView.setFont(@FontRes font: Int) {
+    this.typeface = context.getFontCompat(font)
+}
+
+fun TextView.setFont(typeface: Typeface?) {
+    this.typeface = typeface
 }

@@ -7,12 +7,21 @@ import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.support.annotation.DimenRes
+import android.support.v4.app.NotificationManagerCompat
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.res.ResourcesCompat
 import android.util.Log
+import android.util.Log.d
 import android.util.TypedValue
 import android.view.View
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
 import dk.adaptmobile.amkotlinutil.BuildConfig
+import io.reactivex.Observable
+import java.io.File
 
 /**
  * Created by bjarkeseverinsen on 27/09/2017.
@@ -88,13 +97,6 @@ fun Context?.openInBrowser(url: String?) {
     }
 }
 
-@SuppressLint("MissingPermission")
-fun Context.isOnline(): Boolean {
-    val connectivityManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-    val networkInfo = connectivityManager.activeNetworkInfo
-    val isOffline = networkInfo == null || !networkInfo.isConnectedOrConnecting
-    return !isOffline
-}
 
 fun Context.getFontCompat(fontRes: Int): Typeface? {
     return ResourcesCompat.getFont(this, fontRes)
@@ -147,4 +149,45 @@ fun Context?.openGoogleMaps(query: String, placeId: String) {
     if (mapIntent.resolveActivity(this?.packageManager) != null) {
         this?.startActivity(mapIntent)
     }
+}
+
+@SuppressLint("MissingPermission")
+fun Context.isOnline(): Boolean {
+    val connectivityManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val networkInfo = connectivityManager.activeNetworkInfo
+    val isOffline = networkInfo == null || !networkInfo.isConnectedOrConnecting
+    return !isOffline
+}
+
+fun Context.cacheImage(url: String): Observable<Boolean> {
+    return Observable.create {
+
+        if (url.isEmpty()) {
+            it.onNext(false)
+        } else {
+            Glide.with(applicationContext)
+                    .downloadOnly()
+                    .load(url)
+                    .listener(object : RequestListener<File> {
+                        override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<File>?, isFirstResource: Boolean): Boolean {
+                            if (e != null) {
+                                it.onNext(false)
+                            }
+                            return false
+                        }
+
+                        override fun onResourceReady(resource: File?, model: Any?, target: Target<File>?, dataSource: DataSource?, isFirstResource: Boolean): Boolean {
+                            it.onNext(true)
+                            return false
+                        }
+
+                    })
+                    .submit()
+        }
+
+    }
+}
+
+fun Context.areNotificationsEnabled(): Boolean {
+    return NotificationManagerCompat.from(this).areNotificationsEnabled()
 }

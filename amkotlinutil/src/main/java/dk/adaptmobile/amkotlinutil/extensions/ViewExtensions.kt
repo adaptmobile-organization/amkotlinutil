@@ -184,6 +184,14 @@ fun View.setMargins(left: Int, top: Int, right: Int, bottom: Int) {
     }
 }
 
+fun View.modifyPadding(left: Int? = null, top: Int? = null, right: Int? = null, bottom: Int? = null) {
+    val l = left ?: this.paddingLeft
+    val t = top ?: this.paddingTop
+    val r = right ?: this.paddingRight
+    val b = bottom ?: this.paddingBottom
+    this.setPadding(l, t, r, b)
+}
+
 inline fun ViewPropertyAnimator.setAnimationListener(func: KotlinAnimationListener.() -> Unit): ViewPropertyAnimator {
     val listener = KotlinAnimationListener()
     listener.func()

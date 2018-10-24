@@ -22,8 +22,8 @@ fun Date.isDateToday(): Boolean {
     return this.resetHourMinSecForDate() == Date().resetHourMinSecForDate()
 }
 
-fun Date.compareDateSameDay(date2: Date): Boolean {
-    return this.resetHourMinSecForDate() == date2.resetHourMinSecForDate()
+fun Date.isDateSameDay(compareDate: Date): Boolean {
+    return this.resetHourMinSecForDate() == compareDate.resetHourMinSecForDate()
 }
 
 fun Date.format(pattern: String): String {
@@ -37,4 +37,28 @@ fun Date.isDateThisYear(): Boolean {
     calendar.time = this
 
     return currentYear == calendar.get(Calendar.YEAR)
+}
+
+fun Date.sameWeekLastYear(): Date {
+    val calendar = Calendar.getInstance(danishLocale())
+    calendar.time = this
+    val currentWeek = calendar.get(Calendar.WEEK_OF_YEAR)
+    val currentYear = calendar.get(Calendar.YEAR)
+    calendar.set(Calendar.YEAR, currentYear - 1)
+    calendar.set(Calendar.WEEK_OF_YEAR, currentWeek)
+    return calendar.time
+}
+
+fun Date.lastDayOfMonth(): Date {
+    val c = Calendar.getInstance()
+    c.time = this
+    c.set(Calendar.DAY_OF_MONTH, c.getActualMaximum(Calendar.DAY_OF_MONTH))
+    return c.time
+}
+
+fun Date.lastDayOfWeek(): Date {
+    val c = Calendar.getInstance()
+    c.time = this
+    c.set(Calendar.DAY_OF_MONTH, c.getActualMaximum(Calendar.DAY_OF_WEEK))
+    return c.time
 }

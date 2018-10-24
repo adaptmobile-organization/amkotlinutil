@@ -85,3 +85,6 @@ fun String.fromHtml(): Spanned {
 
 fun String?.orText(text: String) = this ?: text
 
+fun String.versionNumberToInt(): Int {
+    return split(".").joinToString("").toInt()
+}

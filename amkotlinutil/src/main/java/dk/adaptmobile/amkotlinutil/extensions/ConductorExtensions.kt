@@ -137,3 +137,4 @@ var Controller.brightness: Float?
 
 val Router.secondLastController: Controller?
     get() = if (this.backstack.size > 1) this.backstack[this.backstack.lastIndex - 1].controller() else null
+
