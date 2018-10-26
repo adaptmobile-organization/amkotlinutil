@@ -50,20 +50,14 @@ fun View.gone() {
     visibility = View.GONE
 }
 
-fun View.setVisibility(visible: Boolean) {
-    when (visible) {
+fun View.visibleIf(predicate: Boolean, invisible: Boolean = false) {
+    when (predicate) {
         true -> this.visible()
-        false -> this.gone()
+        false -> if (!invisible) this.gone() else this.invisible()
     }
 }
 
-fun View.setInvisibility(visible: Boolean) {
-    when (visible) {
-        true -> this.visible()
-        false -> this.invisible()
-    }
-}
-
+// TODO fix this (so it takes animation type instead)
 fun View.setVisibility(visible: Boolean, animated: Boolean) {
     when (visible) {
         true -> if (animated) this.slideUp() else this.visible()
@@ -83,7 +77,7 @@ fun View.isGone(): Boolean {
     return this.visibility == View.GONE
 }
 
-fun View.toggle() {
+fun View.toggleVisibility() {
     if (isVisible()) gone() else visible()
 }
 
