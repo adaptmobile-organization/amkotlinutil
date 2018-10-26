@@ -199,3 +199,25 @@ inline fun ViewPropertyAnimator.setAnimationListener(func: KotlinAnimationListen
     return this
 }
 
+infix fun View.and(v: View): List<View> {
+    return mutableListOf(this, v)
+}
+
+infix fun List<View>.and(v: View): List<View> {
+    val list = mutableListOf<View>()
+    list.addAll(this)
+    list.add(v)
+    return list
+}
+
+fun List<View>.gone() {
+    this.forEach { it.gone() }
+}
+
+fun List<View>.invisible() {
+    this.forEach { it.invisible() }
+}
+
+fun List<View>.visible() {
+    this.forEach { it.visible() }
+}
