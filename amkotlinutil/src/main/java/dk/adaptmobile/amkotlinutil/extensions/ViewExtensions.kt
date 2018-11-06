@@ -7,6 +7,7 @@ import android.view.inputmethod.InputMethodManager
 import android.R.attr.right
 import android.R.attr.left
 import android.graphics.Bitmap
+import android.graphics.PorterDuff
 import android.support.annotation.ColorRes
 import android.support.annotation.StringRes
 import android.support.constraint.ConstraintLayout
@@ -214,4 +215,8 @@ fun List<View>.invisible() {
 
 fun List<View>.visible() {
     this.forEach { it.visible() }
+}
+
+fun View.setBackgroundTint(@ColorRes colorRes: Int, tintMode: PorterDuff.Mode = PorterDuff.Mode.SRC_OVER) {
+    this.background.setColorFilter(context.getColorCompat(colorRes), tintMode);
 }

@@ -26,7 +26,6 @@ fun TextInputLayout.clearError() {
     isErrorEnabled = false
 }
 
-
 val TextView.textString: String
     get() = text.toString()
 

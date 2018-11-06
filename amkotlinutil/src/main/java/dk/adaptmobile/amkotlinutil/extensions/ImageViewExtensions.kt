@@ -1,10 +1,12 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.graphics.Bitmap
+import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.support.annotation.ColorRes
 import android.util.Base64
+import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -63,7 +65,7 @@ fun ImageView.loadImageResourceAsCircle(imageResource: Int?) {
 }
 
 fun ImageView.setTint(@ColorRes colorRes: Int) {
-    this.setColorFilter(context.getColorCompat(colorRes), android.graphics.PorterDuff.Mode.SRC_IN)
+    this.setColorFilter(context.getColorCompat(colorRes), android.graphics.PorterDuff.Mode.SRC_OVER)
 }
 
 fun ImageView.loadBase64Image(base64Image: String?) {
