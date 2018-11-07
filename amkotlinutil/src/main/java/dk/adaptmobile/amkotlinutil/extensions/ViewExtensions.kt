@@ -217,6 +217,10 @@ fun List<View>.visible() {
     this.forEach { it.visible() }
 }
 
-fun View.setBackgroundTint(@ColorRes colorRes: Int, tintMode: PorterDuff.Mode = PorterDuff.Mode.SRC_OVER) {
-    this.background.setColorFilter(context.getColorCompat(colorRes), tintMode);
+fun View.setBackgroundTintRes(@ColorRes colorRes: Int, tintMode: PorterDuff.Mode = PorterDuff.Mode.SRC_OVER) {
+    this.background.setColorFilter(context.getColorCompat(colorRes), tintMode)
+}
+
+fun View.setBackgroundTint(color: Int, tintMode: PorterDuff.Mode = PorterDuff.Mode.SRC_OVER) {
+    this.background.setColorFilter(color, tintMode)
 }
