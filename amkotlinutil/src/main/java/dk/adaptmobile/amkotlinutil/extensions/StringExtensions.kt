@@ -19,8 +19,8 @@ fun String.capitalizeFirstLetter(): String {
     return this.substring(0, 1).toUpperCase() + this.substring(1)
 }
 
-fun String.toDate(pattern: String): Date {
-    return SimpleDateFormat(pattern, Locale.getDefault()).parse(this)
+fun String.toDate(pattern: String, locale: Locale = Locale.getDefault()): Date {
+    return SimpleDateFormat(pattern, locale).parse(this)
 }
 
 fun String.parseDate(pattern: String): Date {

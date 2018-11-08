@@ -9,7 +9,7 @@ import java.util.*
 
 
 fun Date.resetHourMinSecForDate(): Date {
-    val calendar = Calendar.getInstance(Locale("da", "DK"))
+    val calendar = Calendar.getInstance(danishLocale())
     calendar.time = this
     calendar.set(Calendar.HOUR_OF_DAY, 0)
     calendar.set(Calendar.MINUTE, 0)
@@ -31,7 +31,7 @@ fun Date.format(pattern: String, locale: Locale = Locale.getDefault()): String {
 }
 
 fun Date.isDateThisYear(): Boolean {
-    val calendar = Calendar.getInstance(Locale("da", "DK"))
+    val calendar = Calendar.getInstance(danishLocale())
 
     val currentYear = calendar.get(Calendar.YEAR)
     calendar.time = this
