@@ -26,7 +26,7 @@ fun Date.isDateSameDay(compareDate: Date): Boolean {
     return this.resetHourMinSecForDate() == compareDate.resetHourMinSecForDate()
 }
 
-fun Date.format(pattern: String, locale: Locale = Locale.getDefault()): String {
+fun Date.format(pattern: String, locale: Locale = danishLocale()): String {
     return SimpleDateFormat(pattern, locale).format(this)
 }
 
