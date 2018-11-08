@@ -1,11 +1,11 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.graphics.Typeface
-import android.support.annotation.DrawableRes
-import android.support.annotation.FontRes
-import android.support.annotation.StringRes
-import android.support.design.widget.TextInputLayout
-import android.support.v4.content.res.ResourcesCompat
+import androidx.annotation.DrawableRes
+import androidx.annotation.FontRes
+import androidx.annotation.StringRes
+import com.google.android.material.textfield.TextInputLayout
+import androidx.core.content.res.ResourcesCompat
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.AbsoluteSizeSpan

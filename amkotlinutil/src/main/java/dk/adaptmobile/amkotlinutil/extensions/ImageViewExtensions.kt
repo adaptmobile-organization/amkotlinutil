@@ -4,7 +4,7 @@ import android.graphics.Bitmap
 import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.net.Uri
-import android.support.annotation.ColorRes
+import androidx.annotation.ColorRes
 import android.util.Base64
 import android.view.View
 import android.widget.ImageView

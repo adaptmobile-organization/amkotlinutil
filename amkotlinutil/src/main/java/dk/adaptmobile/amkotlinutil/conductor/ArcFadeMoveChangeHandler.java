@@ -2,7 +2,7 @@ package dk.adaptmobile.amkotlinutil.conductor;
 
 import android.annotation.TargetApi;
 import android.os.Build;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.transition.ArcMotion;
 import android.transition.ChangeBounds;
 import android.transition.ChangeClipBounds;

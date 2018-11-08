@@ -1,7 +1,7 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
-import android.support.annotation.DimenRes
-import android.support.annotation.StringRes
+import androidx.annotation.DimenRes
+import androidx.annotation.StringRes
 import com.bluelinelabs.conductor.Controller
 import com.bluelinelabs.conductor.ControllerChangeHandler
 import com.bluelinelabs.conductor.Router

@@ -1,6 +1,6 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
-import android.support.v4.view.ViewPager
+import androidx.viewpager.widget.ViewPager
 
 /**
  * Created by bjarkeseverinsen on 11/08/2017.

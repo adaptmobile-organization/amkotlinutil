@@ -8,10 +8,10 @@ import android.R.attr.right
 import android.R.attr.left
 import android.graphics.Bitmap
 import android.graphics.PorterDuff
-import android.support.annotation.ColorRes
-import android.support.annotation.StringRes
-import android.support.constraint.ConstraintLayout
-import android.support.v4.view.ViewCompat
+import androidx.annotation.ColorRes
+import androidx.annotation.StringRes
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.ViewCompat
 import android.transition.Scene
 import android.transition.TransitionManager
 import android.transition.TransitionSet
