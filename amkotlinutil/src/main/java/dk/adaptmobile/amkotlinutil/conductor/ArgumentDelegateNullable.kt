@@ -19,7 +19,7 @@ class ArgumentDelegateNullable<T> : ReadWriteProperty<Controller, T?> {
             value = thisRef.args.get(key) as? T?
         }
 
-        if (value == null && value is Controller) {
+        if (value == null) {
             value = thisRef.targetController as T
         }
 
