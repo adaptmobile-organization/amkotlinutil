@@ -8,7 +8,7 @@ ext {
     supportLibVersion = '27.1.1'
     playLibVersion = '10.0.1'
     butterknifeVersion = '8.8.1'
-    conductorVersion = '2.1.4'
+    conductorVersion = '2.1.5'
     firebaseVersion = '11.0.0'
 }
 
@@ -52,8 +52,8 @@ dependencies {
     compileOnly 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
 
     compileOnly 'org.greenrobot:eventbus:3.1.1'
-    compileOnly 'com.github.bumptech.glide:glide:4.6.1'
-    compileOnly 'jp.wasabeef:glide-transformations:2.0.1'
+    compileOnly 'com.github.bumptech.glide:glide:4.8.0'
+    compileOnly 'jp.wasabeef:glide-transformations:3.1.1'
     compileOnly 'uk.co.chrisjenx:calligraphy:2.3.0'
     compileOnly "com.bluelinelabs:conductor:$conductorVersion"
     compileOnly "com.bluelinelabs:conductor-support:$conductorVersion"

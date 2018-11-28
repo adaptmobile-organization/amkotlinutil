@@ -115,6 +115,12 @@ inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
     }
 }
 
+fun View.afterLatestMeasured(callback: () -> Unit) {
+    this.post {
+        callback()
+    }
+}
+
 fun View.isLaidOutCompat(): Boolean {
     return ViewCompat.isLaidOut(this)
 }
