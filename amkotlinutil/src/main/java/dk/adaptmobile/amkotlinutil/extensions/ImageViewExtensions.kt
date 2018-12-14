@@ -1,67 +1,79 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.graphics.Bitmap
-import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
-import android.net.Uri
-import androidx.annotation.ColorRes
 import android.util.Base64
-import android.view.View
 import android.widget.ImageView
+import androidx.annotation.ColorRes
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import jp.wasabeef.glide.transformations.CropCircleTransformation
 
 /**
  * Created by christiansteffensen on 05/06/2017.
  */
+sealed class Transformation {
+    object CenterCrop : Transformation()
+    object Circle : Transformation()
+}
 
-fun ImageView.loadImageResource(imageResource: String?) {
+fun ImageView.loadImageResource(imageResource: String?, skipMemoryCache: Boolean = false, transformation: Transformation? = null) {
     imageResource?.let {
-        Glide.with(context).load(imageResource).into(this)
+        loadImage(it, skipMemoryCache, transformation)
     }
 }
 
-fun ImageView.loadImageResource(imageResource: Int?) {
+fun ImageView.loadImageResource(imageResource: Int?, skipMemoryCache: Boolean = false, transformation: Transformation? = null) {
     imageResource?.let {
-        Glide.with(context).load(imageResource).into(this)
+        loadImage(it, skipMemoryCache, transformation)
     }
 }
 
-fun ImageView.loadImageResource(imageResource: Bitmap?) {
+fun ImageView.loadImageResource(imageResource: Bitmap?, skipMemoryCache: Boolean = false, transformation: Transformation? = null) {
     imageResource?.let {
-        Glide.with(context).load(imageResource).into(this)
+        loadImage(it, skipMemoryCache, transformation)
     }
 }
 
-fun ImageView.loadImageResource(imageResource: Drawable?) {
+fun ImageView.loadImageResource(imageResource: Drawable?, skipMemoryCache: Boolean = false, transformation: Transformation? = null) {
     imageResource?.let {
-        Glide.with(context).load(imageResource).into(this)
+        loadImage(it, skipMemoryCache, transformation)
     }
 }
 
+private fun ImageView.loadImage(imageResource: Any, skipMemoryCache: Boolean, transformation: Transformation?) {
+    var requestOptions = RequestOptions()
+            .skipMemoryCache(skipMemoryCache)
+
+    requestOptions = when (transformation) {
+        is Transformation.CenterCrop -> requestOptions.centerCrop()
+        is Transformation.Circle -> requestOptions.circleCrop()
+        else -> requestOptions // Do nothing
+    }
+
+    Glide.with(context)
+            .load(imageResource)
+            .apply(requestOptions)
+            .into(this)
+}
+
+@Deprecated("Deprecated, use loadImageResource with parameters instead", replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.CenterCrop)"))
 fun ImageView.loadImageResourceCenterCrop(imageResource: String?) {
-    imageResource?.let {
-        Glide.with(context).load(imageResource).apply(RequestOptions().centerCrop()).into(this)
-    }
+   loadImageResource(imageResource, transformation =  Transformation.CenterCrop)
 }
 
+@Deprecated("Deprecated, use loadImageResource with parameters instead", replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.CenterCrop)"))
 fun ImageView.loadImageResourceCenterCrop(imageResource: Int?) {
-    imageResource?.let {
-        Glide.with(context).load(imageResource).apply(RequestOptions().centerCrop()).into(this)
-    }
+    loadImageResource(imageResource, transformation =  Transformation.CenterCrop)
 }
 
+@Deprecated("Deprecated, use loadImageResource with parameters instead", replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.Circle)"))
 fun ImageView.loadImageResourceAsCircle(imageResource: String?) {
-    imageResource?.let {
-        Glide.with(context).load(imageResource).apply(RequestOptions().circleCrop()).into(this)
-    }
+    loadImageResource(imageResource, transformation =  Transformation.Circle)
 }
 
+@Deprecated("Deprecated, use loadImageResource with parameters instead", replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.Circle)"))
 fun ImageView.loadImageResourceAsCircle(imageResource: Int?) {
-    imageResource?.let {
-        Glide.with(context).load(imageResource).apply(RequestOptions().circleCrop()).into(this)
-    }
+    loadImageResource(imageResource, transformation =  Transformation.Circle)
 }
 
 fun ImageView.setTint(@ColorRes colorRes: Int) {
