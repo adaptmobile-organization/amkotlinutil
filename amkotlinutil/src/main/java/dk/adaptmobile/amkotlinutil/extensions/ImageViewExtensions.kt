@@ -56,22 +56,26 @@ private fun ImageView.loadImage(imageResource: Any, skipMemoryCache: Boolean, tr
             .into(this)
 }
 
-@Deprecated("Deprecated, use loadImageResource with parameters instead", replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.CenterCrop)"))
+@Deprecated("Deprecated, use loadImageResource with parameters instead",
+        replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.CenterCrop)"))
 fun ImageView.loadImageResourceCenterCrop(imageResource: String?) {
    loadImageResource(imageResource, transformation =  Transformation.CenterCrop)
 }
 
-@Deprecated("Deprecated, use loadImageResource with parameters instead", replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.CenterCrop)"))
+@Deprecated("Deprecated, use loadImageResource with parameters instead",
+        replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.CenterCrop)"))
 fun ImageView.loadImageResourceCenterCrop(imageResource: Int?) {
     loadImageResource(imageResource, transformation =  Transformation.CenterCrop)
 }
 
-@Deprecated("Deprecated, use loadImageResource with parameters instead", replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.Circle)"))
+@Deprecated("Deprecated, use loadImageResource with parameters instead",
+        replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.Circle)"))
 fun ImageView.loadImageResourceAsCircle(imageResource: String?) {
     loadImageResource(imageResource, transformation =  Transformation.Circle)
 }
 
-@Deprecated("Deprecated, use loadImageResource with parameters instead", replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.Circle)"))
+@Deprecated("Deprecated, use loadImageResource with parameters instead",
+        replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.Circle)"))
 fun ImageView.loadImageResourceAsCircle(imageResource: Int?) {
     loadImageResource(imageResource, transformation =  Transformation.Circle)
 }
