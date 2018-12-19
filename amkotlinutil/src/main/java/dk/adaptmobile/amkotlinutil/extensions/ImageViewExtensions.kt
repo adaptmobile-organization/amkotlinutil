@@ -1,6 +1,7 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.graphics.Bitmap
+import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.util.Base64
 import android.widget.ImageView
@@ -80,8 +81,8 @@ fun ImageView.loadImageResourceAsCircle(imageResource: Int?) {
     loadImageResource(imageResource, transformation =  Transformation.Circle)
 }
 
-fun ImageView.setTint(@ColorRes colorRes: Int) {
-    this.setColorFilter(context.getColorCompat(colorRes), android.graphics.PorterDuff.Mode.SRC_OVER)
+fun ImageView.setTint(@ColorRes colorRes: Int, mode: PorterDuff.Mode = PorterDuff.Mode.SRC_OVER) {
+    this.setColorFilter(context.getColorCompat(colorRes), mode)
 }
 
 fun ImageView.loadBase64Image(base64Image: String?) {
