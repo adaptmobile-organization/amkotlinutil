@@ -110,11 +110,13 @@ fun Router.pushView(controller: Controller?, type: AnimationType, removesFromVie
 val Router.lastController: Controller?
     get() = if (!this.backstack.isEmpty()) this.backstack.last().controller() else null
 
-fun Controller.getString(@StringRes stringRes: Int): String? {
+fun Controller.getString(@StringRes stringRes: Int?): String? {
+    if (stringRes == null) return null
     return resources?.getString(stringRes)
 }
 
-fun Controller.getString(@StringRes stringRes: Int, vararg formatArgs: Any): String? {
+fun Controller.getString(@StringRes stringRes: Int?, vararg formatArgs: Any): String? {
+    if (stringRes == null) return null
     return resources?.getString(stringRes, *formatArgs)
 }
 
