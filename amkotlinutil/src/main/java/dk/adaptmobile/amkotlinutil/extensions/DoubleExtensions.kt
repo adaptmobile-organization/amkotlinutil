@@ -33,6 +33,14 @@ fun Double.format(pattern: String, groupingSeperator: Char): String {
     return df.format(this)
 }
 
+fun Double.format(pattern: String, groupingSeperator: Char, decimalSeperator: Char): String {
+    val symbols = DecimalFormatSymbols()
+    symbols.decimalSeparator = decimalSeperator
+    symbols.groupingSeparator = groupingSeperator
+    val df = DecimalFormat(pattern, symbols)
+    return df.format(this)
+}
+
 fun Double.roundDown(pattern: String): String {
     return format(pattern, RoundingMode.DOWN)
 }
