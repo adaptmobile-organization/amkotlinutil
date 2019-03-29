@@ -4,6 +4,8 @@ import android.content.res.Resources
 import android.graphics.Point
 import android.view.View
 import android.view.ViewPropertyAnimator
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.Interpolator
 import android.view.animation.LinearInterpolator
 
 /**
@@ -13,7 +15,7 @@ import android.view.animation.LinearInterpolator
 /**
  * Fades in the View
  */
-fun View?.fadeIn(duration: Long = 400): ViewPropertyAnimator? {
+fun View?.fadeIn(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         if (alpha > 0f) {
             alpha = 0f
@@ -23,7 +25,12 @@ fun View?.fadeIn(duration: Long = 400): ViewPropertyAnimator? {
             visible()
         }
 
-        return animate(true).alpha(1.0f).setDuration(duration)
+        return animate(true)
+                .alpha(1.0f)
+                .setDuration(duration)
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+
     }
 
     return null
@@ -32,11 +39,16 @@ fun View?.fadeIn(duration: Long = 400): ViewPropertyAnimator? {
 /**
  * Fades out the View
  */
-fun View?.fadeOut(duration: Long = 400): ViewPropertyAnimator? {
+fun View?.fadeOut(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
-        return animate(true).alpha(0.0f).setDuration(duration).withEndAction {
-            gone()
-        }
+        return animate(true)
+                .alpha(0.0f)
+                .setDuration(duration)
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+                .withEndAction {
+                    gone()
+                }
     }
 
     return null
@@ -45,9 +57,13 @@ fun View?.fadeOut(duration: Long = 400): ViewPropertyAnimator? {
 /**
  * Fades to a specific alpha between 0 to 1
  */
-fun View?.fadeTo(alpha: Float, duration: Long = 400): ViewPropertyAnimator? {
+fun View?.fadeTo(alpha: Float, duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
-        return animate(true).alpha(alpha).setDuration(duration)
+        return animate(true)
+                .alpha(alpha)
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+                .setDuration(duration)
     }
 
     return null
@@ -56,14 +72,17 @@ fun View?.fadeTo(alpha: Float, duration: Long = 400): ViewPropertyAnimator? {
 /**
  * Animation: Enter from left
  */
-fun View?.enterFromLeft(duration: Long = 400): ViewPropertyAnimator? {
+fun View?.enterFromLeft(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         this.invisible()
         val x = this.x    // store initial x
         this.x = 0f - this.width    // move to left outside screen
         this.visible()
 
-        return animate(true).x(x).setDuration(duration)
+        return animate(true).x(x)
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+                .setDuration(duration)
     }
 
     return null
@@ -72,7 +91,7 @@ fun View?.enterFromLeft(duration: Long = 400): ViewPropertyAnimator? {
 /**
  * Animation: Enter from right
  */
-fun View?.enterFromRight(duration: Long = 400): ViewPropertyAnimator? {
+fun View?.enterFromRight(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         this.invisible()
         val widthPixels = Resources.getSystem().displayMetrics.widthPixels    // get device width
@@ -80,7 +99,10 @@ fun View?.enterFromRight(duration: Long = 400): ViewPropertyAnimator? {
         this.x = widthPixels.toFloat()    // move to right outside screen
         this.visible()
 
-        return animate(true).x(x).setDuration(duration)
+        return animate(true).x(x)
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+                .setDuration(duration)
     }
 
     return null
@@ -89,14 +111,17 @@ fun View?.enterFromRight(duration: Long = 400): ViewPropertyAnimator? {
 /**
  * Animation: Enter from top
  */
-fun View?.enterFromTop(duration: Long = 400): ViewPropertyAnimator? {
+fun View?.enterFromTop(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         this.invisible()
         val y = this.y    // store initial y
         this.y = 0f - this.height    // move to top
         this.visible()
 
-        return animate(true).y(y).setDuration(duration)
+        return animate(true).y(y)
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+                .setDuration(duration)
     }
     return null
 }
@@ -104,7 +129,7 @@ fun View?.enterFromTop(duration: Long = 400): ViewPropertyAnimator? {
 /**
  * Animation: Enter from bottom
  */
-fun View?.enterFromBottom(duration: Long = 400): ViewPropertyAnimator? {
+fun View?.enterFromBottom(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         this.invisible()
         val screenHeight = Resources.getSystem().displayMetrics.heightPixels.toFloat()    // get device height
@@ -112,7 +137,10 @@ fun View?.enterFromBottom(duration: Long = 400): ViewPropertyAnimator? {
         this.y = screenHeight   // move to bottom
         this.visible()
 
-        return animate().y(y).setDuration(duration)
+        return animate().y(y)
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+                .setDuration(duration)
     }
 
     return null
@@ -121,9 +149,12 @@ fun View?.enterFromBottom(duration: Long = 400): ViewPropertyAnimator? {
 /**
  * Animation: Exit to left
  */
-fun View?.exitToLeft(duration: Long = 400): ViewPropertyAnimator? {
+fun View?.exitToLeft(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
-        return animate(true).x(0f - this.width).setDuration(duration)
+        return animate(true).x(0f - this.width)
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+                .setDuration(duration)
     }
 
     return null
@@ -132,10 +163,13 @@ fun View?.exitToLeft(duration: Long = 400): ViewPropertyAnimator? {
 /**
  * Animation: Exit to right
  */
-fun View?.exitToRight(duration: Long = 400): ViewPropertyAnimator? {
+fun View?.exitToRight(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         val widthPixels = Resources.getSystem().displayMetrics.widthPixels    // get device width
-        return animate(true).x(widthPixels.toFloat()).setDuration(duration)
+        return animate(true).x(widthPixels.toFloat())
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+                .setDuration(duration)
     }
 
     return null
@@ -144,14 +178,17 @@ fun View?.exitToRight(duration: Long = 400): ViewPropertyAnimator? {
 /**
  * Animation: Exit to top
  */
-fun View?.exitToTop(duration: Long = 400): ViewPropertyAnimator? {
+fun View?.exitToTop(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         val y = this.y    // store initial y
-        return animate(true).y(0f - this.height).setDuration(duration).withEndAction {
-            // reset to original pos
-            this.y = y
-            this.invisible()
-        }
+        return animate(true).y(0f - this.height)
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+                .setDuration(duration).withEndAction {
+                    // reset to original pos
+                    this.y = y
+                    this.invisible()
+                }
     }
 
     return null
@@ -160,15 +197,18 @@ fun View?.exitToTop(duration: Long = 400): ViewPropertyAnimator? {
 /**
  * Animation: Exit to bottom
  */
-fun View?.exitToBottom(duration: Long = 400): ViewPropertyAnimator? {
+fun View?.exitToBottom(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         val heightPixels = Resources.getSystem().displayMetrics.heightPixels    // get device height
         val y = this.y  // store initial y
 
-        return animate(true).y(heightPixels.toFloat()).setDuration(duration).withEndAction {
-            this.y = y
-            this.gone()
-        }
+        return animate(true).y(heightPixels.toFloat())
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+                .setDuration(duration).withEndAction {
+                    this.y = y
+                    this.gone()
+                }
     }
 
     return null
@@ -177,17 +217,20 @@ fun View?.exitToBottom(duration: Long = 400): ViewPropertyAnimator? {
 /**
  * Animation: Slide up its own height to its original position
  */
-fun View?.slideUp(duration: Long = 400): ViewPropertyAnimator? {
+fun View?.slideUp(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         this.invisible()
         this.translationY = this.height.toFloat()
         this.visible()
 
-        return animate(true).translationY(0f).setDuration(duration)
+        return animate(true)
+                .translationY(0f)
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+                .setDuration(duration)
     }
     return null
 }
-
 
 
 fun View.getLocationOnScreen(): Point {
@@ -210,10 +253,13 @@ fun ViewPropertyAnimator.reset(): ViewPropertyAnimator {
 }
 
 
-
-fun View.rotate(rotation: Float, animated: Boolean = true, animationDuration: Long = 400) {
+fun View.rotate(rotation: Float, animated: Boolean = true, animationDuration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()) {
     when (animated) {
-        true -> this.animate().rotationBy(rotation).setDuration(animationDuration).start()
+        true -> this.animate().rotationBy(rotation)
+                .setStartDelay(startDelay)
+                .setInterpolator(interpolator)
+                .setDuration(animationDuration)
+                .start()
         false -> this.rotation = this.rotation + rotation
     }
 }
