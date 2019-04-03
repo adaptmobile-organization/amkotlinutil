@@ -11,7 +11,7 @@ import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
 import com.bluelinelabs.conductor.changehandler.SimpleSwapChangeHandler
 import com.bluelinelabs.conductor.changehandler.VerticalChangeHandler
 import dk.adaptmobile.amkotlinutil.conductor.ArcFadeMoveChangeHandler
-import dk.adaptmobile.amkotlinutil.conductor.DialogChangeHandler
+import dk.adaptmobile.amkotlinutil.conductor.DialogBlurChangeHandler
 import dk.adaptmobile.amkotlinutil.conductor.FlipChangeHandler
 import dk.adaptmobile.amkotlinutil.conductor.ScaleFadeChangeHandler
 
@@ -33,7 +33,9 @@ sealed class AnimationType {
     object FlipDown : AnimationType()
     object SharedTransition : AnimationType()
     object ScaleFade : AnimationType()
-    object Dialog : AnimationType()
+    @Deprecated("Dialog is deprecated. Use DialogBlur or DialogFade instead", replaceWith = ReplaceWith("DialogBlur")) object Dialog : AnimationType()
+    object DialogBlur : AnimationType()
+    object DialogFade : AnimationType()
     object None : AnimationType()
     data class Custom(val pushControllerChangeHandler: ControllerChangeHandler, val popControllerChangeHandler: ControllerChangeHandler? = null) : AnimationType()
 }
@@ -85,9 +87,14 @@ fun Router.pushView(controller: Controller?, type: AnimationType, removesFromVie
                 transaction.pushChangeHandler(ScaleFadeChangeHandler())
                 transaction.popChangeHandler(ScaleFadeChangeHandler())
             }
-            is AnimationType.Dialog -> {
-                transaction.pushChangeHandler(DialogChangeHandler(false))
-                transaction.popChangeHandler(DialogChangeHandler(false))
+            is AnimationType.Dialog -> throw UnsupportedOperationException("Dialog animationtype is deprecated")
+            is AnimationType.DialogFade -> {
+                transaction.pushChangeHandler(DialogBlurChangeHandler(false))
+                transaction.popChangeHandler(DialogBlurChangeHandler(false))
+            }
+            is AnimationType.DialogBlur -> {
+                transaction.pushChangeHandler(DialogBlurChangeHandler(false))
+                transaction.popChangeHandler(DialogBlurChangeHandler(false))
             }
             is AnimationType.None -> {
                 transaction.pushChangeHandler(SimpleSwapChangeHandler(removesFromViewOnPush))
