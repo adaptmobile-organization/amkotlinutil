@@ -10,10 +10,7 @@ import com.bluelinelabs.conductor.changehandler.FadeChangeHandler
 import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
 import com.bluelinelabs.conductor.changehandler.SimpleSwapChangeHandler
 import com.bluelinelabs.conductor.changehandler.VerticalChangeHandler
-import dk.adaptmobile.amkotlinutil.conductor.ArcFadeMoveChangeHandler
-import dk.adaptmobile.amkotlinutil.conductor.DialogBlurChangeHandler
-import dk.adaptmobile.amkotlinutil.conductor.FlipChangeHandler
-import dk.adaptmobile.amkotlinutil.conductor.ScaleFadeChangeHandler
+import dk.adaptmobile.amkotlinutil.conductor.*
 
 /**
  * Created by christiansteffensen on 05/06/2017.
@@ -87,10 +84,13 @@ fun Router.pushView(controller: Controller?, type: AnimationType, removesFromVie
                 transaction.pushChangeHandler(ScaleFadeChangeHandler())
                 transaction.popChangeHandler(ScaleFadeChangeHandler())
             }
-            is AnimationType.Dialog -> throw UnsupportedOperationException("Dialog animationtype is deprecated")
-            is AnimationType.DialogFade -> {
+            is AnimationType.Dialog -> {
                 transaction.pushChangeHandler(DialogBlurChangeHandler(false))
                 transaction.popChangeHandler(DialogBlurChangeHandler(false))
+            }
+            is AnimationType.DialogFade -> {
+                transaction.pushChangeHandler(DialogFadeChangeHandler(false))
+                transaction.popChangeHandler(DialogFadeChangeHandler(false))
             }
             is AnimationType.DialogBlur -> {
                 transaction.pushChangeHandler(DialogBlurChangeHandler(false))

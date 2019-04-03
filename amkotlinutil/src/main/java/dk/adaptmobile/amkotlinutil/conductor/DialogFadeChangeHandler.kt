@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import com.bluelinelabs.conductor.changehandler.TransitionChangeHandler
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-class DialogChangeHandler(val removesFromViewOnPush: Boolean = false) : TransitionChangeHandler() {
+class DialogFadeChangeHandler(val removesFromViewOnPush: Boolean = false) : TransitionChangeHandler() {
 
     override fun getTransition(container: ViewGroup, from: View?, to: View?, isPush: Boolean): Transition {
         val transition = TransitionSet()
