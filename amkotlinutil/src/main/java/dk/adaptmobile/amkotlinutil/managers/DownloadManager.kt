@@ -1,7 +1,7 @@
 package dk.adaptmobile.amkotlinutil.managers
 
 import android.Manifest
-import android.app.Activity
+import android.annotation.SuppressLint
 import android.app.DownloadManager
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -14,7 +14,19 @@ import androidx.annotation.RequiresPermission
 /**
  * @author Jason Kelly <jason@adaptagency.com>
  */
+@SuppressLint("StaticFieldLeak")
 object DownloadManager {
+    private lateinit var applicationContext: Context
+    private lateinit var downloadManager: DownloadManager
+
+    /**
+     * This will initialize the download manager with the specified
+     * application context
+     */
+    fun init(context: Context) {
+        downloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+        this.applicationContext = context
+    }
 
     /**
      * This downloads a file using the build in download manager
@@ -22,8 +34,7 @@ object DownloadManager {
      * With the appropriate file URI and mimeType
      */
     @RequiresPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-    fun downloadFile(activity: Activity, url: String, downloadRequest: (DownloadManager.Request.() -> Unit)? = null, onComplete: ((uri: Uri, mimeType: String) -> Unit)? = null) {
-        val downloadManager = activity.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+    fun downloadFile(url: String, downloadRequest: (DownloadManager.Request.() -> Unit)? = null, onComplete: ((uri: Uri, mimeType: String) -> Unit)? = null) {
         val request = DownloadManager.Request(Uri.parse(url))
 
         downloadRequest?.let { request.it() }
@@ -42,11 +53,11 @@ object DownloadManager {
                     onComplete?.invoke(downloadManager.getUriForDownloadedFile(downloadId), downloadManager.getMimeTypeForDownloadedFile(downloadId))
 
                     // Unregister when download finishes
-                    activity.unregisterReceiver(this)
+                    context?.unregisterReceiver(this)
                 }
             }
         }
 
-        activity.registerReceiver(broadcastReceiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
+        applicationContext.registerReceiver(broadcastReceiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
     }
 }
