@@ -6,6 +6,7 @@ import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
 import android.R.attr.right
 import android.R.attr.left
+import android.animation.AnimatorSet
 import android.graphics.Bitmap
 import android.graphics.PorterDuff
 import androidx.annotation.ColorRes
@@ -197,6 +198,13 @@ inline fun ViewPropertyAnimator.setAnimationListener(func: KotlinAnimationListen
     val listener = KotlinAnimationListener()
     listener.func()
     setListener(listener)
+    return this
+}
+
+inline fun AnimatorSet.setAnimationListener(func: KotlinAnimationListener.() -> Unit): AnimatorSet {
+    val listener = KotlinAnimationListener()
+    listener.func()
+    addListener(listener)
     return this
 }
 
