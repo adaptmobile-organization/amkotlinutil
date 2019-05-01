@@ -131,7 +131,7 @@ fun Controller.hideKeyboard() {
     view?.hideKeyboard()
 }
 
-fun Controller.getDimenstion(@DimenRes dimenRes: Int): Float {
+fun Controller.getDimension(@DimenRes dimenRes: Int): Float {
     return resources?.getDimension(dimenRes) ?: throw IllegalArgumentException("Resource not found")
 }
 
