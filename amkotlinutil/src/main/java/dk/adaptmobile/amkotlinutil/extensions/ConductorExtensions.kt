@@ -1,5 +1,6 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
+import android.view.WindowManager
 import androidx.annotation.DimenRes
 import androidx.annotation.StringRes
 import com.bluelinelabs.conductor.Controller
@@ -15,6 +16,15 @@ import dk.adaptmobile.amkotlinutil.conductor.*
 /**
  * Created by christiansteffensen on 05/06/2017.
  */
+
+sealed class SoftInputMode(val mode: Int) {
+    object Resize : SoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+    object Pan : SoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
+}
+
+fun Controller.setSoftInputMode(mode: SoftInputMode) {
+    activity?.window?.setSoftInputMode(mode.mode)
+}
 
 fun Router.setFadeChangeHandler(transaction: RouterTransaction) {
     transaction.pushChangeHandler(FadeChangeHandler()).popChangeHandler(FadeChangeHandler())

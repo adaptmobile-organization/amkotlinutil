@@ -9,6 +9,7 @@ import android.telephony.PhoneNumberUtils
 import android.text.Html
 import android.text.Spanned
 import android.text.TextUtils
+import java.net.URLEncoder
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -118,3 +119,6 @@ fun String.toColor(): Int? {
         return null
     }
 }
+
+fun String.urlEncoded(): String? = URLEncoder.encode(this, "utf-8")
+

@@ -1,27 +1,21 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
-import android.content.Context
-import android.view.View
-import android.view.ViewTreeObserver
-import android.view.inputmethod.InputMethodManager
-import android.R.attr.right
-import android.R.attr.left
 import android.animation.AnimatorSet
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.PorterDuff
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewPropertyAnimator
+import android.view.ViewTreeObserver
+import android.view.inputmethod.InputMethodManager
+import android.widget.FrameLayout
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
-import android.transition.Scene
-import android.transition.TransitionManager
-import android.transition.TransitionSet
-import android.view.ViewGroup
-import android.view.ViewPropertyAnimator
-import android.view.animation.AccelerateDecelerateInterpolator
-import android.widget.FrameLayout
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import dk.adaptmobile.amkotlinutil.util.KotlinAnimationListener
 
 
@@ -167,6 +161,7 @@ fun ViewGroup.getString(@StringRes stringRes: Int): String {
 fun View.setMargins(left: Int, top: Int, right: Int, bottom: Int) {
     val params = layoutParams
 
+
     when (params) {
         is ConstraintLayout.LayoutParams -> {
             params.setMargins(left, top, right, bottom)
@@ -185,6 +180,14 @@ fun View.setMargins(left: Int, top: Int, right: Int, bottom: Int) {
             this.layoutParams = params
         }
     }
+}
+
+fun View.modifyMargin(left: Int? = null, top: Int? = null, right: Int? = null, bottom: Int? = null) {
+    val l = left ?: this.marginLeft
+    val t = top ?: this.marginTop
+    val r = right ?: this.marginRight
+    val b = bottom ?: this.marginBottom
+    this.setMargins(l, t, r, b)
 }
 
 fun View.modifyPadding(left: Int? = null, top: Int? = null, right: Int? = null, bottom: Int? = null) {
@@ -278,4 +281,11 @@ fun View.getGoneHeight(): Int {
     val heightSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
     this.measure(widthSpec, heightSpec)
     return this.measuredHeight
+}
+
+fun View.setSemiTransparentIf(shouldBeTransparent: Boolean, disabledAlpha: Float = 0.3f) {
+    alpha = when (shouldBeTransparent) {
+        true -> disabledAlpha
+        false -> 1f
+    }
 }
