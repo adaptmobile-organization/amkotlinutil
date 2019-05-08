@@ -2,6 +2,7 @@ package dk.adaptmobile.amkotlinutil.extensions
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.telephony.PhoneNumberUtils
@@ -87,4 +88,33 @@ fun String?.orText(text: String) = this ?: text
 
 fun String.versionNumberToInt(): Int {
     return split(".").joinToString("").toInt()
+}
+
+fun String.capitalizeFirstLetterEachWord(): String {
+    return this.toLowerCase()
+            .split(" ")
+            .joinToString(" ") { it.capitalize() }
+}
+
+fun String?.convertToLongId(): Long { // should return different value for each not-same string
+    if (this == null) {
+        return 0
+    }
+    var `val`: Long = 37
+    var i = 0
+    val size = this.length
+    while (i < size) {
+        val c = this[i]
+        `val` += (37 * c.toInt() + (i + 1) * 41).toLong()
+        i++
+    }
+    return `val`
+}
+
+fun String.toColor(): Int? {
+    if (this.isNotEmpty()) {
+        return Color.parseColor(this)
+    } else {
+        return null
+    }
 }

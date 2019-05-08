@@ -6,6 +6,7 @@ import android.content.ContextWrapper
 import android.content.res.Resources
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import java.util.*
 
@@ -71,4 +72,8 @@ fun Activity.datePickerContext(): ContextWrapper {
             return wrappedResources as Resources
         }
     }
+}
+
+fun Activity.enableFullScreen() {
+    window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 }

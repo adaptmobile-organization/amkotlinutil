@@ -18,6 +18,7 @@ import android.transition.TransitionManager
 import android.transition.TransitionSet
 import android.view.ViewGroup
 import android.view.ViewPropertyAnimator
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
@@ -237,4 +238,44 @@ fun View.setBackgroundTintRes(@ColorRes colorRes: Int, tintMode: PorterDuff.Mode
 
 fun View.setBackgroundTint(color: Int, tintMode: PorterDuff.Mode = PorterDuff.Mode.SRC_OVER) {
     this.background.setColorFilter(color, tintMode)
+}
+
+fun View.scale(scale: Float) {
+    this.scaleX = scale
+    this.scaleY = scale
+}
+
+fun View.setWidthWrapContent() {
+    val params = this.layoutParams
+    params.width = ViewGroup.LayoutParams.WRAP_CONTENT
+    this.layoutParams = params
+}
+
+fun View.setHeightWrapContent() {
+    val params = this.layoutParams
+    params.height = ViewGroup.LayoutParams.WRAP_CONTENT
+    this.layoutParams = params
+}
+
+fun View.disableClipOnParents() {
+    val v = this
+
+    if (v.parent == null) {
+        return
+    }
+
+    if (v is ViewGroup) {
+        v.clipChildren = false
+    }
+
+    if (v.parent is View) {
+        (v.parent as View).disableClipOnParents()
+    }
+}
+
+fun View.getGoneHeight(): Int {
+    val widthSpec = View.MeasureSpec.makeMeasureSpec(this.width, View.MeasureSpec.EXACTLY)
+    val heightSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+    this.measure(widthSpec, heightSpec)
+    return this.measuredHeight
 }

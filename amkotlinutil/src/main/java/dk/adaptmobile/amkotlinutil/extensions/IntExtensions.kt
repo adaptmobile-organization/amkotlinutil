@@ -10,3 +10,9 @@ import android.util.TypedValue
 fun Int.getString(context: Context?): String? {
     return context?.getString(this)
 }
+
+fun Int.forEach(callback: (i: Int) -> Unit) {
+    for (i in 0 until this) {
+        callback(i)
+    }
+}

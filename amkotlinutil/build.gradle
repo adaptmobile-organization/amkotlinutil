@@ -69,6 +69,8 @@ dependencies {
     compileOnly 'com.xwray:groupie:2.3.0'
     compileOnly 'com.xwray:groupie-kotlin-android-extensions:2.3.0'
     compileOnly 'jp.wasabeef:recyclerview-animators:3.0.0'
+    compileOnly 'com.squareup.retrofit2:retrofit:2.5.0'
+
 }
 
 //add javadocs

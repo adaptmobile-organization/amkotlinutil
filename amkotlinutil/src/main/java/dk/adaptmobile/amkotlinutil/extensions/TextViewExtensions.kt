@@ -8,6 +8,7 @@ import com.google.android.material.textfield.TextInputLayout
 import androidx.core.content.res.ResourcesCompat
 import android.text.SpannableStringBuilder
 import android.text.Spanned
+import android.text.TextUtils
 import android.text.style.AbsoluteSizeSpan
 import android.widget.TextView
 import uk.co.chrisjenx.calligraphy.CalligraphyTypefaceSpan
@@ -60,4 +61,22 @@ fun TextView.setFont(@FontRes font: Int) {
 
 fun TextView.setFont(typeface: Typeface?) {
     this.typeface = typeface
+}
+
+fun TextView.ellipsizeDynamic(text: String) {
+    this.text = text
+    this.afterLatestMeasured {
+        val noOfLinesVisible = this.height / (this.lineHeight)
+        this.maxLines = noOfLinesVisible
+        this.ellipsize = TextUtils.TruncateAt.END
+    }
+}
+
+fun TextView.ellipsizeViewPager(text: String) {
+    this.text = text
+    this.afterLatestMeasured {
+        val noOfLinesVisible = this.height / (this.lineHeight.toDouble() * 0.84).toInt()
+        this.maxLines = noOfLinesVisible
+        this.ellipsize = TextUtils.TruncateAt.END
+    }
 }

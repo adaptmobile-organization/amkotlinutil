@@ -1,7 +1,10 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
+import android.animation.ArgbEvaluator
+import android.animation.ValueAnimator
 import android.content.res.Resources
 import android.graphics.Point
+import android.graphics.drawable.ColorDrawable
 import android.view.View
 import android.view.ViewPropertyAnimator
 import android.view.animation.AccelerateDecelerateInterpolator
@@ -261,5 +264,30 @@ fun View.rotate(rotation: Float, animated: Boolean = true, animationDuration: Lo
                 .setDuration(animationDuration)
                 .start()
         false -> this.rotation = this.rotation + rotation
+    }
+}
+
+fun ViewPropertyAnimator.scale(scale: Float): ViewPropertyAnimator {
+    this.scaleX(scale)
+    this.scaleY(scale)
+    return this
+}
+
+fun View.setbackgroundColorResourceAnimated(resId: Int, duration: Long = 400) {
+    val colorFrom = (this.background as ColorDrawable).color
+    val colorTo = this.context.getColorCompat(resId)
+    val colorAnimation = ValueAnimator.ofObject(ArgbEvaluator(), colorFrom, colorTo)
+    colorAnimation.duration = duration
+    colorAnimation.addUpdateListener { animator -> this.setBackgroundColor(animator.animatedValue as Int) }
+    colorAnimation.start()
+}
+
+fun View.fadeInUp(duration: Long = 250, offset: Float? = null) {
+    this.invisible()
+    afterLatestMeasured {
+        this.translationY = offset ?: this.height.toFloat() - (this.height / 2)
+        this.alpha = 0f
+        this.visible()
+        this.animate(true).translationY(0f).alpha(1f).setDuration(duration).setInterpolator(AccelerateDecelerateInterpolator())
     }
 }
