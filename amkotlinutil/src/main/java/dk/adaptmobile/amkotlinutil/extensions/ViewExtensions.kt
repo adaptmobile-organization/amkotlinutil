@@ -15,7 +15,7 @@ import android.widget.RelativeLayout
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.ViewCompat
+import androidx.core.view.*
 import dk.adaptmobile.amkotlinutil.util.KotlinAnimationListener
 
 
