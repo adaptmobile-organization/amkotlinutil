@@ -111,9 +111,11 @@ inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
     }
 }
 
-fun View.afterLatestMeasured(callback: () -> Unit) {
-    this.post {
-        callback()
+fun View?.afterLatestMeasured(callback: (v: View) -> Unit) {
+    this?.post {
+        if (this.isAttachedToWindow) {
+            callback(this)
+        }
     }
 }
 
@@ -287,5 +289,31 @@ fun View.setSemiTransparentIf(shouldBeTransparent: Boolean, disabledAlpha: Float
     alpha = when (shouldBeTransparent) {
         true -> disabledAlpha
         false -> 1f
+    }
+}
+
+fun View.getGoneHeight(callback: (futureHeight: Int) -> Unit) {
+    this.afterLatestMeasured {
+        val originalHeight = this.height // save the original height (is most likely wrap content)
+
+        this.setHeight(0) // "hide" the view
+        this.invisible() // make the view invisible so it gets a width
+
+        this.afterLatestMeasured {
+
+            val originalWidth = this.width // the view now has a width
+
+            // measure how high the view will be
+            val widthSpec = View.MeasureSpec.makeMeasureSpec(originalWidth, View.MeasureSpec.EXACTLY)
+            val heightSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+            this.measure(widthSpec, heightSpec)
+
+            val futureHeight = this.measuredHeight
+
+            // hide the view and set back to the original height
+            this.gone()
+            this.setHeight(originalHeight)
+            callback(futureHeight)
+        }
     }
 }
