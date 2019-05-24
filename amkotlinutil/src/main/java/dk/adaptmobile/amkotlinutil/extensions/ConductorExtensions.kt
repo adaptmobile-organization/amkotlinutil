@@ -40,8 +40,10 @@ sealed class AnimationType {
     object FlipDown : AnimationType()
     object SharedTransition : AnimationType()
     object ScaleFade : AnimationType()
-    @Deprecated("Dialog is deprecated. Use DialogBlur or DialogFade instead", replaceWith = ReplaceWith("DialogBlur")) object Dialog : AnimationType()
-    object DialogBlur : AnimationType()
+    @Deprecated("Dialog is deprecated. Use DialogBlur or DialogFade instead", replaceWith = ReplaceWith("DialogBlur"))
+    object Dialog : AnimationType()
+
+    class DialogBlur(val radius: Int = 25, val sampling: Int = 2) : AnimationType()
     object DialogFade : AnimationType()
     object None : AnimationType()
     data class Custom(val pushControllerChangeHandler: ControllerChangeHandler, val popControllerChangeHandler: ControllerChangeHandler? = null) : AnimationType()
@@ -103,8 +105,8 @@ fun Router.pushView(controller: Controller?, type: AnimationType, removesFromVie
                 transaction.popChangeHandler(DialogFadeChangeHandler(false))
             }
             is AnimationType.DialogBlur -> {
-                transaction.pushChangeHandler(DialogBlurChangeHandler(false))
-                transaction.popChangeHandler(DialogBlurChangeHandler(false))
+                transaction.pushChangeHandler(DialogBlurChangeHandler(false, type.radius, type.sampling))
+                transaction.popChangeHandler(DialogBlurChangeHandler(false, type.radius, type.sampling))
             }
             is AnimationType.None -> {
                 transaction.pushChangeHandler(SimpleSwapChangeHandler(removesFromViewOnPush))
