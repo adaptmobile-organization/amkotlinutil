@@ -42,7 +42,7 @@ fun View?.fadeIn(duration: Long = 400, startDelay: Long = 0, interpolator: Inter
 /**
  * Fades out the View
  */
-fun View?.fadeOut(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
+fun View?.fadeOut(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator(), invisible: Boolean = false): ViewPropertyAnimator? {
     this?.let {
         return animate(true)
                 .alpha(0.0f)
@@ -50,7 +50,7 @@ fun View?.fadeOut(duration: Long = 400, startDelay: Long = 0, interpolator: Inte
                 .setStartDelay(startDelay)
                 .setInterpolator(interpolator)
                 .withEndAction {
-                    gone()
+                    if (!invisible) this.gone() else this.invisible()
                 }
     }
 
