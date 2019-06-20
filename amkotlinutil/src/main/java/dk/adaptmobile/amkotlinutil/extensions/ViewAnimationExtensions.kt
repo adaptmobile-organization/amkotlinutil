@@ -290,7 +290,7 @@ fun View.fadeInUp(duration: Long = 250, offset: Float? = null) {
         this.translationY = offset ?: this.height.toFloat() - (this.height / 2)
         this.alpha = 0f
         this.visible()
-        this.animate(true).translationY(0f).alpha(1f).setDuration(duration).interpolator = AccelerateDecelerateInterpolator()
+        this.animate(true).translationY(0f).alpha(1f).setDuration(duration).setInterpolator(AccelerateDecelerateInterpolator())
     }
 }
 
