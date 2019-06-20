@@ -1,6 +1,8 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.animation.ArgbEvaluator
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.animation.ValueAnimator
 import android.content.res.Resources
 import android.graphics.Point
@@ -290,4 +292,20 @@ fun View.fadeInUp(duration: Long = 250, offset: Float? = null) {
         this.visible()
         this.animate(true).translationY(0f).alpha(1f).setDuration(duration).setInterpolator(AccelerateDecelerateInterpolator())
     }
+}
+
+/**
+ * Animation: Pulsating effect on a View. You can edit the speed, scale and start delay on the animation
+ */
+fun View.pulsate(speed: Long = 1_500L, scale: Float = 1.15f, startingDelay: Long = 1_500L) {
+    ObjectAnimator.ofPropertyValuesHolder(
+            this,
+            PropertyValuesHolder.ofFloat("scaleX", scale),
+            PropertyValuesHolder.ofFloat("scaleY", scale)
+    ).apply {
+        duration = speed
+        repeatCount = ObjectAnimator.INFINITE
+        repeatMode = ObjectAnimator.REVERSE
+        startDelay = startingDelay
+    }.start()
 }
