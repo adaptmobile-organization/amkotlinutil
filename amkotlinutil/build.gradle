@@ -51,7 +51,7 @@ dependencies {
     compileOnly 'androidx.constraintlayout:constraintlayout:2.0.0-alpha5'
 
     compileOnly 'org.greenrobot:eventbus:3.1.1'
-    compileOnly 'com.github.bumptech.glide:glide:4.8.0'
+    compileOnly 'com.github.bumptech.glide:glide:4.9.0'
     compileOnly 'jp.wasabeef:glide-transformations:3.1.1'
     compileOnly 'uk.co.chrisjenx:calligraphy:2.3.0'
     compileOnly "com.bluelinelabs:conductor:$conductorVersion"

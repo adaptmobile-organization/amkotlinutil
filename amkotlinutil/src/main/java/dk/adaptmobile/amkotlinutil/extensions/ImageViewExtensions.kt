@@ -7,6 +7,7 @@ import android.util.Base64
 import android.widget.ImageView
 import androidx.annotation.ColorRes
 import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestBuilder
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
@@ -46,19 +47,14 @@ fun ImageView.loadImageResource(imageResource: Drawable?, skipMemoryCache: Boole
 }
 
 private fun ImageView.loadImage(imageResource: Any, skipMemoryCache: Boolean, transformation: Transformation?, imageLoadedCallback: (() -> Unit)?) {
-    var requestOptions = RequestOptions()
-            .skipMemoryCache(skipMemoryCache)
-
-    requestOptions = when (transformation) {
-        is Transformation.CenterCrop -> requestOptions.centerCrop()
-        is Transformation.Circle -> requestOptions.circleCrop()
-        else -> requestOptions // Do nothing
-    }
-
-
     val glide = Glide.with(context)
             .load(imageResource)
-            .apply(requestOptions)
+            .skipMemoryCache(skipMemoryCache)
+
+    when (transformation) {
+        is Transformation.CenterCrop -> glide.centerCrop()
+        is Transformation.Circle -> glide.circleCrop()
+    }
 
     imageLoadedCallback?.let {
         glide.addListener(object : RequestListener<Drawable> {
