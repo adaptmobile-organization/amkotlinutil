@@ -1,0 +1,5 @@
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [SharedElementDelayingChangeHandler](index.md) / [executePropertyChanges](execute-property-changes.md)
+
+# executePropertyChanges
+
+`open fun executePropertyChanges(@NonNull container: `[`ViewGroup`](https://developer.android.com/reference/android/view/ViewGroup.html)`, @Nullable from: `[`View`](https://developer.android.com/reference/android/view/View.html)`?, @Nullable to: `[`View`](https://developer.android.com/reference/android/view/View.html)`?, @Nullable transition: `[`Transition`](https://developer.android.com/reference/android/transition/Transition.html)`?, isPush: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)

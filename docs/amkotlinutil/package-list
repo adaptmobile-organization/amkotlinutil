@@ -1,0 +1,218 @@
+$dokka.format:markdown
+$dokka.linkExtension:md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$TAG#kotlin.Anydk.adaptmobile.amkotlinutil.extensions/kotlin.-any/-t-a-g.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$add(io.reactivex.subjects.BehaviorSubject((kotlin.collections.MutableList((dk.adaptmobile.amkotlinutil.extensions.add.T)))), dk.adaptmobile.amkotlinutil.extensions.add.T)dk.adaptmobile.amkotlinutil.extensions/io.reactivex.subjects.-behavior-subject/add.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$addAll(io.reactivex.subjects.BehaviorSubject((kotlin.collections.MutableList((dk.adaptmobile.amkotlinutil.extensions.addAll.T)))), kotlin.collections.List((dk.adaptmobile.amkotlinutil.extensions.addAll.T)))dk.adaptmobile.amkotlinutil.extensions/io.reactivex.subjects.-behavior-subject/add-all.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$addWithAnimation(com.xwray.groupie.GroupAdapter((com.xwray.groupie.kotlinandroidextensions.ViewHolder)), androidx.recyclerview.widget.RecyclerView, com.xwray.groupie.Group, jp.wasabeef.recyclerview.animators.BaseItemAnimator, kotlin.Function0((kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/com.xwray.groupie.-group-adapter/add-with-animation.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$afterLatestMeasured(android.view.View, kotlin.Function1((android.view.View, kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/android.view.-view/after-latest-measured.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$afterTextChanged(android.widget.EditText, kotlin.Function1((kotlin.String, kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/android.widget.-edit-text/after-text-changed.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$and(android.view.View, android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/and.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$and(kotlin.collections.List((android.view.View)), android.view.View)dk.adaptmobile.amkotlinutil.extensions/kotlin.collections.-list/and.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$animate(android.view.View, kotlin.Boolean)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/animate.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$applyFont(android.widget.TextView, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.widget.-text-view/apply-font.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$areNotificationsEnabled(android.content.Context)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/are-notifications-enabled.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$brightness#android.app.Activitydk.adaptmobile.amkotlinutil.extensions/android.app.-activity/brightness.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$brightness#com.bluelinelabs.conductor.Controllerdk.adaptmobile.amkotlinutil.extensions/com.bluelinelabs.conductor.-controller/brightness.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$cacheImage(android.content.Context, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/cache-image.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$capitalizeFirstLetter(kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/capitalize-first-letter.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$capitalizeFirstLetterEachWord(kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/capitalize-first-letter-each-word.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$cleanedDanishPhoneNumber(kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/cleaned-danish-phone-number.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$clearError(com.google.android.material.textfield.TextInputLayout)dk.adaptmobile.amkotlinutil.extensions/com.google.android.material.textfield.-text-input-layout/clear-error.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$cloneResponseBody(okhttp3.Response)dk.adaptmobile.amkotlinutil.extensions/okhttp3.-response/clone-response-body.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$composeEmail(android.content.Context, kotlin.Array((kotlin.String)), kotlin.String, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/compose-email.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$context#androidx.recyclerview.widget.RecyclerView.ViewHolderdk.adaptmobile.amkotlinutil.extensions/androidx.recyclerview.widget.-recycler-view.-view-holder/context.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$convertToLongId(kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/convert-to-long-id.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$datePickerContext(android.app.Activity)dk.adaptmobile.amkotlinutil.extensions/android.app.-activity/date-picker-context.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$dial(android.content.Context, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/dial.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$disableAnimations(androidx.recyclerview.widget.RecyclerView)dk.adaptmobile.amkotlinutil.extensions/androidx.recyclerview.widget.-recycler-view/disable-animations.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$disableClipOnParents(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/disable-clip-on-parents.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$disposeSafe(io.reactivex.disposables.CompositeDisposable)dk.adaptmobile.amkotlinutil.extensions/io.reactivex.disposables.-composite-disposable/dispose-safe.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$doOnAndroidMain(io.reactivex.Observable((dk.adaptmobile.amkotlinutil.extensions.doOnAndroidMain.T)))dk.adaptmobile.amkotlinutil.extensions/io.reactivex.-observable/do-on-android-main.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$doOnComputation(io.reactivex.Observable((dk.adaptmobile.amkotlinutil.extensions.doOnComputation.T)))dk.adaptmobile.amkotlinutil.extensions/io.reactivex.-observable/do-on-computation.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$doOnIO(io.reactivex.Observable((dk.adaptmobile.amkotlinutil.extensions.doOnIO.T)))dk.adaptmobile.amkotlinutil.extensions/io.reactivex.-observable/do-on-i-o.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$doOnNewThread(io.reactivex.Observable((dk.adaptmobile.amkotlinutil.extensions.doOnNewThread.T)))dk.adaptmobile.amkotlinutil.extensions/io.reactivex.-observable/do-on-new-thread.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$dp(kotlin.Float, android.content.Context)dk.adaptmobile.amkotlinutil.extensions/kotlin.-float/dp.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$dp(kotlin.Int, android.content.Context)dk.adaptmobile.amkotlinutil.extensions/kotlin.-int/dp.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$dpToPixels(kotlin.Float, android.content.Context)dk.adaptmobile.amkotlinutil.extensions/kotlin.-float/dp-to-pixels.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$dpToPixels(kotlin.Int, android.content.Context)dk.adaptmobile.amkotlinutil.extensions/kotlin.-int/dp-to-pixels.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$ellipsizeDynamic(android.widget.TextView, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.widget.-text-view/ellipsize-dynamic.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$ellipsizeViewPager(android.widget.TextView, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.widget.-text-view/ellipsize-view-pager.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$enableAnimations(androidx.recyclerview.widget.RecyclerView)dk.adaptmobile.amkotlinutil.extensions/androidx.recyclerview.widget.-recycler-view/enable-animations.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$enableFullScreen(android.app.Activity)dk.adaptmobile.amkotlinutil.extensions/android.app.-activity/enable-full-screen.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$enterFromBottom(android.view.View, kotlin.Long, kotlin.Long, android.view.animation.Interpolator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/enter-from-bottom.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$enterFromLeft(android.view.View, kotlin.Long, kotlin.Long, android.view.animation.Interpolator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/enter-from-left.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$enterFromRight(android.view.View, kotlin.Long, kotlin.Long, android.view.animation.Interpolator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/enter-from-right.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$enterFromTop(android.view.View, kotlin.Long, kotlin.Long, android.view.animation.Interpolator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/enter-from-top.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$exitToBottom(android.view.View, kotlin.Long, kotlin.Long, android.view.animation.Interpolator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/exit-to-bottom.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$exitToLeft(android.view.View, kotlin.Long, kotlin.Long, android.view.animation.Interpolator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/exit-to-left.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$exitToRight(android.view.View, kotlin.Long, kotlin.Long, android.view.animation.Interpolator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/exit-to-right.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$exitToTop(android.view.View, kotlin.Long, kotlin.Long, android.view.animation.Interpolator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/exit-to-top.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$fadeIn(android.view.View, kotlin.Long, kotlin.Long, android.view.animation.Interpolator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/fade-in.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$fadeInUp(android.view.View, kotlin.Long, kotlin.Float)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/fade-in-up.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$fadeOut(android.view.View, kotlin.Long, kotlin.Long, android.view.animation.Interpolator, kotlin.Boolean)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/fade-out.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$fadeTo(android.view.View, kotlin.Float, kotlin.Long, kotlin.Long, android.view.animation.Interpolator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/fade-to.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$forEach(kotlin.Int, kotlin.Function1((kotlin.Int, kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/kotlin.-int/for-each.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$format(java.util.Date, kotlin.String, java.util.Locale)dk.adaptmobile.amkotlinutil.extensions/java.util.-date/format.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$format(kotlin.Double, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-double/format.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$format(kotlin.Double, kotlin.String, java.math.RoundingMode)dk.adaptmobile.amkotlinutil.extensions/kotlin.-double/format.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$format(kotlin.Double, kotlin.String, kotlin.Char)dk.adaptmobile.amkotlinutil.extensions/kotlin.-double/format.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$format(kotlin.Double, kotlin.String, kotlin.Char, kotlin.Char)dk.adaptmobile.amkotlinutil.extensions/kotlin.-double/format.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$format(kotlin.Double, kotlin.String, kotlin.Function1((java.text.DecimalFormat, kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/kotlin.-double/format.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$fromHtml(kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/from-html.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getColorCompat(android.content.Context, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/get-color-compat.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getDate(kotlin.Long, kotlin.String, java.util.Locale)dk.adaptmobile.amkotlinutil.extensions/kotlin.-long/get-date.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getDimension(android.content.Context, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/get-dimension.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getDimension(com.bluelinelabs.conductor.Controller, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/com.bluelinelabs.conductor.-controller/get-dimension.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getDrawableCompat(android.content.Context, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/get-drawable-compat.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getFontCompat(android.content.Context, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/get-font-compat.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getGoneHeight(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/get-gone-height.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getGoneHeight(android.view.View, kotlin.Function1((kotlin.Int, kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/android.view.-view/get-gone-height.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getLocationOnScreen(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/get-location-on-screen.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getProductionApplicationId(android.content.Context)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/get-production-application-id.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getStatusBarHeight(android.content.Context)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/get-status-bar-height.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getString(android.view.ViewGroup, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.view.-view-group/get-string.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getString(com.bluelinelabs.conductor.Controller, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/com.bluelinelabs.conductor.-controller/get-string.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getString(com.bluelinelabs.conductor.Controller, kotlin.Int, kotlin.Array((kotlin.Any)))dk.adaptmobile.amkotlinutil.extensions/com.bluelinelabs.conductor.-controller/get-string.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getString(kotlin.Int, android.content.Context)dk.adaptmobile.amkotlinutil.extensions/kotlin.-int/get-string.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$getTime(kotlin.Long, kotlin.String, java.util.Locale)dk.adaptmobile.amkotlinutil.extensions/kotlin.-long/get-time.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$goToPlayStoreDetails(android.content.Context)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/go-to-play-store-details.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$gone(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/gone.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$gone(kotlin.collections.List((android.view.View)))dk.adaptmobile.amkotlinutil.extensions/kotlin.collections.-list/gone.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$hideKeyboard(android.app.Activity, android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.app.-activity/hide-keyboard.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$hideKeyboard(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/hide-keyboard.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$hideKeyboard(com.bluelinelabs.conductor.Controller)dk.adaptmobile.amkotlinutil.extensions/com.bluelinelabs.conductor.-controller/hide-keyboard.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$hideViews(android.content.Context, kotlin.Array((android.view.View)))dk.adaptmobile.amkotlinutil.extensions/android.content.-context/hide-views.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$hoursInMillis#kotlin.Intdk.adaptmobile.amkotlinutil.extensions/kotlin.-int/hours-in-millis.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$inflate(android.content.Context, kotlin.Int, android.view.ViewGroup)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/inflate.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$inflate(android.view.ViewGroup, kotlin.Int, kotlin.Boolean)dk.adaptmobile.amkotlinutil.extensions/android.view.-view-group/inflate.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$invisible(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/invisible.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$invisible(kotlin.collections.List((android.view.View)))dk.adaptmobile.amkotlinutil.extensions/kotlin.collections.-list/invisible.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isDanishPhoneNumber(kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/is-danish-phone-number.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isDateSameDay(java.util.Date, java.util.Date)dk.adaptmobile.amkotlinutil.extensions/java.util.-date/is-date-same-day.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isDateThisYear(java.util.Date)dk.adaptmobile.amkotlinutil.extensions/java.util.-date/is-date-this-year.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isDateToday(java.util.Date)dk.adaptmobile.amkotlinutil.extensions/java.util.-date/is-date-today.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isEmail(kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/is-email.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isEmptyNullOrStringNull(kotlin.CharSequence)dk.adaptmobile.amkotlinutil.extensions/kotlin.-char-sequence/is-empty-null-or-string-null.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isGone(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/is-gone.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isInvisible(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/is-invisible.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isLaidOutCompat(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/is-laid-out-compat.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isLast(kotlin.collections.List((dk.adaptmobile.amkotlinutil.extensions.isLast.T)), kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/kotlin.collections.-list/is-last.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isLastView#androidx.viewpager.widget.ViewPagerdk.adaptmobile.amkotlinutil.extensions/androidx.viewpager.widget.-view-pager/is-last-view.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isOnline(android.content.Context)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/is-online.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isPhoneNumber(kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/is-phone-number.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$isVisible(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/is-visible.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$lastController#com.bluelinelabs.conductor.Routerdk.adaptmobile.amkotlinutil.extensions/com.bluelinelabs.conductor.-router/last-controller.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$lastDayOfMonth(java.util.Date)dk.adaptmobile.amkotlinutil.extensions/java.util.-date/last-day-of-month.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$lastDayOfWeek(java.util.Date)dk.adaptmobile.amkotlinutil.extensions/java.util.-date/last-day-of-week.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$lastIndex#androidx.viewpager.widget.ViewPagerdk.adaptmobile.amkotlinutil.extensions/androidx.viewpager.widget.-view-pager/last-index.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$length#androidx.viewpager.widget.ViewPagerdk.adaptmobile.amkotlinutil.extensions/androidx.viewpager.widget.-view-pager/length.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$loadBase64Image(android.widget.ImageView, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.widget.-image-view/load-base64-image.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$loadHTMLWithStylesheet(android.webkit.WebView, kotlin.String, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.webkit.-web-view/load-h-t-m-l-with-stylesheet.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$loadImageResource(android.widget.ImageView, android.graphics.Bitmap, kotlin.Boolean, dk.adaptmobile.amkotlinutil.extensions.Transformation, kotlin.Function0((kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/android.widget.-image-view/load-image-resource.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$loadImageResource(android.widget.ImageView, android.graphics.drawable.Drawable, kotlin.Boolean, dk.adaptmobile.amkotlinutil.extensions.Transformation, kotlin.Function0((kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/android.widget.-image-view/load-image-resource.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$loadImageResource(android.widget.ImageView, kotlin.Int, kotlin.Boolean, dk.adaptmobile.amkotlinutil.extensions.Transformation, kotlin.Function0((kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/android.widget.-image-view/load-image-resource.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$loadImageResource(android.widget.ImageView, kotlin.String, kotlin.Boolean, dk.adaptmobile.amkotlinutil.extensions.Transformation, kotlin.Function0((kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/android.widget.-image-view/load-image-resource.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$loadImageResourceAsCircle(android.widget.ImageView, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.widget.-image-view/load-image-resource-as-circle.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$loadImageResourceAsCircle(android.widget.ImageView, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.widget.-image-view/load-image-resource-as-circle.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$loadImageResourceCenterCrop(android.widget.ImageView, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.widget.-image-view/load-image-resource-center-crop.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$loadImageResourceCenterCrop(android.widget.ImageView, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.widget.-image-view/load-image-resource-center-crop.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$loadStyledHTML(android.webkit.WebView, kotlin.String, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.webkit.-web-view/load-styled-h-t-m-l.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$minutesInMillis#kotlin.Intdk.adaptmobile.amkotlinutil.extensions/kotlin.-int/minutes-in-millis.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$modifyMargin(android.view.View, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/modify-margin.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$modifyPadding(android.view.View, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/modify-padding.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$next(androidx.viewpager.widget.ViewPager)dk.adaptmobile.amkotlinutil.extensions/androidx.viewpager.widget.-view-pager/next.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$next(androidx.viewpager.widget.ViewPager, kotlin.Function0((kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/androidx.viewpager.widget.-view-pager/next.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$nextCircular(androidx.viewpager.widget.ViewPager)dk.adaptmobile.amkotlinutil.extensions/androidx.viewpager.widget.-view-pager/next-circular.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$openGoogleMaps(android.content.Context, kotlin.String, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/open-google-maps.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$openInBrowser(android.content.Context, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/open-in-browser.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$openInBrowser(kotlin.String, android.content.Context)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/open-in-browser.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$orEmptyString(kotlin.collections.List((dk.adaptmobile.amkotlinutil.extensions.orEmptyString.T)), kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.collections.-list/or-empty-string.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$orFalse(kotlin.Boolean)dk.adaptmobile.amkotlinutil.extensions/kotlin.-boolean/or-false.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$orText(kotlin.String, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/or-text.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$orZero(kotlin.Double)dk.adaptmobile.amkotlinutil.extensions/kotlin.-double/or-zero.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$orZero(kotlin.Float)dk.adaptmobile.amkotlinutil.extensions/kotlin.-float/or-zero.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$orZero(kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/kotlin.-int/or-zero.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$orZero(kotlin.Number)dk.adaptmobile.amkotlinutil.extensions/kotlin.-number/or-zero.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$parseDate(kotlin.String, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/parse-date.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$postDelayed(android.os.Handler, kotlin.Long, kotlin.Function0((kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/android.os.-handler/post-delayed.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$pulsate(android.view.View, kotlin.Long, kotlin.Float, kotlin.Long)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/pulsate.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$pushView(com.bluelinelabs.conductor.Router, com.bluelinelabs.conductor.Controller, dk.adaptmobile.amkotlinutil.extensions.AnimationType, kotlin.Boolean, kotlin.Boolean, kotlin.Boolean, kotlin.Boolean, kotlin.String, kotlin.Boolean)dk.adaptmobile.amkotlinutil.extensions/com.bluelinelabs.conductor.-router/push-view.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$registerMe(org.greenrobot.eventbus.EventBus, kotlin.Any)dk.adaptmobile.amkotlinutil.extensions/org.greenrobot.eventbus.-event-bus/register-me.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$registerReceiverSafe(android.content.Context, android.content.BroadcastReceiver, android.content.IntentFilter)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/register-receiver-safe.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$removeElement(kotlin.collections.MutableList((dk.adaptmobile.amkotlinutil.extensions.removeElement.E)), dk.adaptmobile.amkotlinutil.extensions.removeElement.E)dk.adaptmobile.amkotlinutil.extensions/kotlin.collections.-mutable-list/remove-element.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$removeSpaces(kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/remove-spaces.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$requireValue#io.reactivex.subjects.BehaviorSubject((dk.adaptmobile.amkotlinutil.extensions.requireValue.T))dk.adaptmobile.amkotlinutil.extensions/io.reactivex.subjects.-behavior-subject/require-value.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$reset(android.view.ViewPropertyAnimator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view-property-animator/reset.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$resetHourMinSecForDate(java.util.Date)dk.adaptmobile.amkotlinutil.extensions/java.util.-date/reset-hour-min-sec-for-date.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$rotate(android.view.View, kotlin.Float, kotlin.Boolean, kotlin.Long, kotlin.Long, android.view.animation.Interpolator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/rotate.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$roundDown(kotlin.Double, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-double/round-down.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$roundHalfUp(kotlin.Double)dk.adaptmobile.amkotlinutil.extensions/kotlin.-double/round-half-up.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$roundToZero(kotlin.Double)dk.adaptmobile.amkotlinutil.extensions/kotlin.-double/round-to-zero.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$sameWeekLastYear(java.util.Date)dk.adaptmobile.amkotlinutil.extensions/java.util.-date/same-week-last-year.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$scale(android.view.View, kotlin.Float)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/scale.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$scale(android.view.ViewPropertyAnimator, kotlin.Float)dk.adaptmobile.amkotlinutil.extensions/android.view.-view-property-animator/scale.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$secondLastController#com.bluelinelabs.conductor.Routerdk.adaptmobile.amkotlinutil.extensions/com.bluelinelabs.conductor.-router/second-last-controller.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$secondsInMillis#kotlin.Intdk.adaptmobile.amkotlinutil.extensions/kotlin.-int/seconds-in-millis.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setAnimationListener(android.animation.AnimatorSet, kotlin.Function1((dk.adaptmobile.amkotlinutil.util.KotlinAnimationListener, kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/android.animation.-animator-set/set-animation-listener.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setAnimationListener(android.view.ViewPropertyAnimator, kotlin.Function1((dk.adaptmobile.amkotlinutil.util.KotlinAnimationListener, kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/android.view.-view-property-animator/set-animation-listener.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setBackgroundTint(android.view.View, kotlin.Int, android.graphics.PorterDuff.Mode)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/set-background-tint.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setBackgroundTintRes(android.view.View, kotlin.Int, android.graphics.PorterDuff.Mode)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/set-background-tint-res.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setCancelButtonOnClick(android.app.Dialog, kotlin.Int, android.view.View.OnClickListener)dk.adaptmobile.amkotlinutil.extensions/android.app.-dialog/set-cancel-button-on-click.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setCancelButtonText(android.app.Dialog, kotlin.Int, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.app.-dialog/set-cancel-button-text.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setConfirmButtonOnClick(android.app.Dialog, kotlin.Int, android.view.View.OnClickListener)dk.adaptmobile.amkotlinutil.extensions/android.app.-dialog/set-confirm-button-on-click.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setConfirmButtonText(android.app.Dialog, kotlin.Int, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.app.-dialog/set-confirm-button-text.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setCustomText(android.app.Dialog, kotlin.Int, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.app.-dialog/set-custom-text.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setCustomTitle(android.app.Dialog, kotlin.Int, kotlin.String)dk.adaptmobile.amkotlinutil.extensions/android.app.-dialog/set-custom-title.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setFadeChangeHandler(com.bluelinelabs.conductor.Router, com.bluelinelabs.conductor.RouterTransaction)dk.adaptmobile.amkotlinutil.extensions/com.bluelinelabs.conductor.-router/set-fade-change-handler.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setFont(android.widget.TextView, android.graphics.Typeface)dk.adaptmobile.amkotlinutil.extensions/android.widget.-text-view/set-font.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setFont(android.widget.TextView, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.widget.-text-view/set-font.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setHeight(android.view.View, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/set-height.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setHeightWrapContent(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/set-height-wrap-content.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setMargins(android.view.View, kotlin.Int, kotlin.Int, kotlin.Int, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/set-margins.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setMaxLength(android.widget.EditText, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.widget.-edit-text/set-max-length.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setOnTransitionEndListener(android.transition.TransitionSet, kotlin.Function0((kotlin.Unit)))dk.adaptmobile.amkotlinutil.extensions/android.transition.-transition-set/set-on-transition-end-listener.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setRightDrawable(android.widget.TextView, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.widget.-text-view/set-right-drawable.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setSemiTransparentIf(android.view.View, kotlin.Boolean, kotlin.Float)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/set-semi-transparent-if.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setSize(android.view.View, kotlin.Int, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/set-size.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setSoftInputMode(com.bluelinelabs.conductor.Controller, dk.adaptmobile.amkotlinutil.extensions.SoftInputMode)dk.adaptmobile.amkotlinutil.extensions/com.bluelinelabs.conductor.-controller/set-soft-input-mode.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setTextColorId(android.widget.TextView, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.widget.-text-view/set-text-color-id.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setTextWithDifferentFonts(android.widget.TextView, kotlin.String, kotlin.String, uk.co.chrisjenx.calligraphy.CalligraphyTypefaceSpan, uk.co.chrisjenx.calligraphy.CalligraphyTypefaceSpan, kotlin.Int, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.widget.-text-view/set-text-with-different-fonts.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setTint(android.widget.ImageView, kotlin.Int, android.graphics.PorterDuff.Mode)dk.adaptmobile.amkotlinutil.extensions/android.widget.-image-view/set-tint.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setVisibility(android.view.View, kotlin.Boolean, kotlin.Boolean)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/set-visibility.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setWidth(android.view.View, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/set-width.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setWidthWrapContent(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/set-width-wrap-content.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setbackgroundColorResource(android.view.View, kotlin.Int)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/setbackground-color-resource.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$setbackgroundColorResourceAnimated(android.view.View, kotlin.Int, kotlin.Long)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/setbackground-color-resource-animated.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$showKeyboard(android.app.Activity, android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.app.-activity/show-keyboard.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$showKeyboard(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/show-keyboard.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$showViews(android.content.Context, kotlin.Array((android.view.View)))dk.adaptmobile.amkotlinutil.extensions/android.content.-context/show-views.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$sizeOrZero(kotlin.collections.List((dk.adaptmobile.amkotlinutil.extensions.sizeOrZero.T)))dk.adaptmobile.amkotlinutil.extensions/kotlin.collections.-list/size-or-zero.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$slideUp(android.view.View, kotlin.Long, kotlin.Long, android.view.animation.Interpolator)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/slide-up.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$startTransition(android.view.ViewGroup, android.transition.TransitionSet)dk.adaptmobile.amkotlinutil.extensions/android.view.-view-group/start-transition.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$subscribeOnAndroidMain(io.reactivex.Observable((dk.adaptmobile.amkotlinutil.extensions.subscribeOnAndroidMain.T)))dk.adaptmobile.amkotlinutil.extensions/io.reactivex.-observable/subscribe-on-android-main.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$subscribeOnComputation(io.reactivex.Observable((dk.adaptmobile.amkotlinutil.extensions.subscribeOnComputation.T)))dk.adaptmobile.amkotlinutil.extensions/io.reactivex.-observable/subscribe-on-computation.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$subscribeOnIo(io.reactivex.Observable((dk.adaptmobile.amkotlinutil.extensions.subscribeOnIo.T)))dk.adaptmobile.amkotlinutil.extensions/io.reactivex.-observable/subscribe-on-io.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$subscribeOnNewThread(io.reactivex.Observable((dk.adaptmobile.amkotlinutil.extensions.subscribeOnNewThread.T)))dk.adaptmobile.amkotlinutil.extensions/io.reactivex.-observable/subscribe-on-new-thread.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$textString#android.widget.TextViewdk.adaptmobile.amkotlinutil.extensions/android.widget.-text-view/text-string.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$toBase64(android.graphics.Bitmap)dk.adaptmobile.amkotlinutil.extensions/android.graphics.-bitmap/to-base64.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$toBase64(kotlin.ByteArray)dk.adaptmobile.amkotlinutil.extensions/kotlin.-byte-array/to-base64.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$toBitmap(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/to-bitmap.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$toByteArray(android.graphics.Bitmap)dk.adaptmobile.amkotlinutil.extensions/android.graphics.-bitmap/to-byte-array.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$toColor(kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/to-color.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$toDate(kotlin.Long)dk.adaptmobile.amkotlinutil.extensions/kotlin.-long/to-date.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$toDate(kotlin.String, kotlin.String, java.util.Locale)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/to-date.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$toggleKeyboard(android.app.Activity)dk.adaptmobile.amkotlinutil.extensions/android.app.-activity/toggle-keyboard.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$toggleVisibility(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/toggle-visibility.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$unRegisterMe(org.greenrobot.eventbus.EventBus, kotlin.Any)dk.adaptmobile.amkotlinutil.extensions/org.greenrobot.eventbus.-event-bus/un-register-me.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$unRegisterReceiverSafe(android.content.Context, android.content.BroadcastReceiver)dk.adaptmobile.amkotlinutil.extensions/android.content.-context/un-register-receiver-safe.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$urlEncoded(kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/url-encoded.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$versionNumberToInt(kotlin.String)dk.adaptmobile.amkotlinutil.extensions/kotlin.-string/version-number-to-int.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$visible(android.view.View)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/visible.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$visible(kotlin.collections.List((android.view.View)))dk.adaptmobile.amkotlinutil.extensions/kotlin.collections.-list/visible.md
+$dokka.location:dk.adaptmobile.amkotlinutil.extensions$visibleIf(android.view.View, kotlin.Boolean, kotlin.Boolean)dk.adaptmobile.amkotlinutil.extensions/android.view.-view/visible-if.md
+dk.adaptmobile.amkotlinutil.conductor
+dk.adaptmobile.amkotlinutil.customviews
+dk.adaptmobile.amkotlinutil.extensions
+dk.adaptmobile.amkotlinutil.managers
+dk.adaptmobile.amkotlinutil.model
+dk.adaptmobile.amkotlinutil.util

@@ -1,0 +1,5 @@
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [android.view.View](index.md) / [rotate](rotate.md)
+
+# rotate
+
+`fun `[`View`](https://developer.android.com/reference/android/view/View.html)`.rotate(rotation: `[`Float`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)`, animated: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)` = true, animationDuration: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)` = 400, startDelay: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)` = 0, interpolator: `[`Interpolator`](https://developer.android.com/reference/android/view/animation/Interpolator.html)` = AccelerateDecelerateInterpolator()): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)

@@ -1,0 +1,5 @@
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [DialogFadeChangeHandler](index.md) / [getTransition](get-transition.md)
+
+# getTransition
+
+`protected fun getTransition(container: `[`ViewGroup`](https://developer.android.com/reference/android/view/ViewGroup.html)`, from: `[`View`](https://developer.android.com/reference/android/view/View.html)`?, to: `[`View`](https://developer.android.com/reference/android/view/View.html)`?, isPush: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): `[`Transition`](https://developer.android.com/reference/android/transition/Transition.html)
