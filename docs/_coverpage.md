@@ -1,7 +1,6 @@
-# {{PACKAGE_NAME}}
+# amkotlinutil
 
 - Full text searchable documentation
-- Written professionally in markdown
-- Easy to understand
+- Powered by docsify and dokka
 
 [Find on GitHub](https://github.com/adaptmobile-organization/amkotlinutil/)
