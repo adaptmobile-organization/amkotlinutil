@@ -1,5 +1,0 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [android.view.View](index.md) / [setbackgroundColorResourceAnimated](setbackground-color-resource-animated.md)
-
-# setbackgroundColorResourceAnimated
-
-`fun `[`View`](https://developer.android.com/reference/android/view/View.html)`.setbackgroundColorResourceAnimated(resId: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, duration: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)` = 400): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
