@@ -2,7 +2,6 @@
 * [managers/-download-manager/init.md](../../../amkotlinutil/dk.adaptmobile.amkotlinutil.managers/-download-manager/init.md)
 * [managers/-download-manager/index.md](../../../amkotlinutil/dk.adaptmobile.amkotlinutil.managers/-download-manager/index.md)
 * [managers/index.md](../../../amkotlinutil/dk.adaptmobile.amkotlinutil.managers/index.md)
-* [alltypes/index.md](../../../amkotlinutil/alltypes/index.md)
 * [model/-post-delay/runnable.md](../../../amkotlinutil/dk.adaptmobile.amkotlinutil.model/-post-delay/runnable.md)
 * [model/-post-delay/handler.md](../../../amkotlinutil/dk.adaptmobile.amkotlinutil.model/-post-delay/handler.md)
 * [model/-post-delay/cancel.md](../../../amkotlinutil/dk.adaptmobile.amkotlinutil.model/-post-delay/cancel.md)
