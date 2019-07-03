@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [kotlin.CharSequence](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [kotlin.CharSequence](./index.md)
 
 ### Extensions for kotlin.CharSequence
 

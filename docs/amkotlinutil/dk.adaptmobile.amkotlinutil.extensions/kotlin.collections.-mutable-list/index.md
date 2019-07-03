@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [kotlin.collections.MutableList](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [kotlin.collections.MutableList](./index.md)
 
 ### Extensions for kotlin.collections.MutableList
 

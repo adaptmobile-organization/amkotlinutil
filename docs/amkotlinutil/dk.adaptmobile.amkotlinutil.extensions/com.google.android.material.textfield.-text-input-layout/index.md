@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [com.google.android.material.textfield.TextInputLayout](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [com.google.android.material.textfield.TextInputLayout](./index.md)
 
 ### Extensions for com.google.android.material.textfield.TextInputLayout
 

@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [kotlin.Int](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [kotlin.Int](./index.md)
 
 ### Extensions for kotlin.Int
 

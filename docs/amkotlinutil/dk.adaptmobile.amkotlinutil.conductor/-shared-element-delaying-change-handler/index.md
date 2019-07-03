@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [SharedElementDelayingChangeHandler](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [SharedElementDelayingChangeHandler](./index.md)
 
 # SharedElementDelayingChangeHandler
 
-`open class SharedElementDelayingChangeHandler : `[`ArcFadeMoveChangeHandler`](../-arc-fade-move-change-handler/index.md)
+`open class SharedElementDelayingChangeHandler : `[`ArcFadeMoveChangeHandler`](../-arc-fade-move-change-handler/index.md) [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/conductor/SharedElementDelayingChangeHandler.java#L29)
 
 A TransitionChangeHandler that will wait for views with the passed transition names to be fully laid out before executing. An OnPreDrawListener will be added to the "to" view, then to all of its subviews that match the transaction names we're interested in. Once all of the views are fully ready, the "to" view is set to invisible so that it'll fade in nicely, and the views that we want to use as shared elements are removed from their containers, then immediately re-added within the beginDelayedTransition call so the system picks them up as shared elements.
 

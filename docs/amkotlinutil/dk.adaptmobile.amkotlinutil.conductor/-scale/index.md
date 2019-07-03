@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [Scale](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [Scale](./index.md)
 
 # Scale
 
-`open class Scale : `[`Visibility`](https://developer.android.com/reference/android/transition/Visibility.html)
+`open class Scale : `[`Visibility`](https://developer.android.com/reference/android/transition/Visibility.html) [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/conductor/Scale.java#L16)
 
 ### Constructors
 

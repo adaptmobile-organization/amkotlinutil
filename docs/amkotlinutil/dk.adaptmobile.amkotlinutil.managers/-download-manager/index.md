@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.managers](../index.md) / [DownloadManager](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.managers](../index.md) / [DownloadManager](./index.md)
 
 # DownloadManager
 
-`object DownloadManager`
+`object DownloadManager` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/managers/DownloadManager.kt#L18)
 
 **Author**
 Jason Kelly &lt;&gt;

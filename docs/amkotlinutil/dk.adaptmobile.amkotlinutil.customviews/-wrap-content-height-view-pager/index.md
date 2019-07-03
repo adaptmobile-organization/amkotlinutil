@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.customviews](../index.md) / [WrapContentHeightViewPager](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.customviews](../index.md) / [WrapContentHeightViewPager](./index.md)
 
 # WrapContentHeightViewPager
 
-`open class WrapContentHeightViewPager : ViewPager`
+`open class WrapContentHeightViewPager : ViewPager` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/customviews/WrapContentHeightViewPager.java#L8)
 
 ### Constructors
 

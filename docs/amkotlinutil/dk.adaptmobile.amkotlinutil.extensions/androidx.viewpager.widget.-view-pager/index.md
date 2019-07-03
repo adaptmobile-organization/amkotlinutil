@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [androidx.viewpager.widget.ViewPager](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [androidx.viewpager.widget.ViewPager](./index.md)
 
 ### Extensions for androidx.viewpager.widget.ViewPager
 

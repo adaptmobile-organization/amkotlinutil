@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [io.reactivex.disposables.CompositeDisposable](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [io.reactivex.disposables.CompositeDisposable](./index.md)
 
 ### Extensions for io.reactivex.disposables.CompositeDisposable
 

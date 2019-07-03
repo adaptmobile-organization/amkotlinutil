@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [androidx.recyclerview.widget.RecyclerView](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [androidx.recyclerview.widget.RecyclerView](./index.md)
 
 ### Extensions for androidx.recyclerview.widget.RecyclerView
 

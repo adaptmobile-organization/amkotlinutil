@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [ScaleFadeChangeHandler](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [ScaleFadeChangeHandler](./index.md)
 
 # ScaleFadeChangeHandler
 
-`open class ScaleFadeChangeHandler : AnimatorChangeHandler`
+`open class ScaleFadeChangeHandler : AnimatorChangeHandler` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/conductor/ScaleFadeChangeHandler.java#L12)
 
 ### Constructors
 

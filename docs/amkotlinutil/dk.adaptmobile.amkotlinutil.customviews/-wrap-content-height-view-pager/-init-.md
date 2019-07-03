@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.customviews](../index.md) / [WrapContentHeightViewPager](index.md) / [&lt;init&gt;](-init-.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.customviews](../index.md) / [WrapContentHeightViewPager](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 

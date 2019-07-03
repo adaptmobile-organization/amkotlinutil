@@ -1,15 +1,15 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [SoftInputMode](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [SoftInputMode](./index.md)
 
 # SoftInputMode
 
-`sealed class SoftInputMode`
+`sealed class SoftInputMode` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/extensions/ConductorExtensions.kt#L20)
 
 Created by christiansteffensen on 05/06/2017.
 
 ### Types
 
-| [Pan](-pan.md) | `object Pan : `[`SoftInputMode`](index.md) |
-| [Resize](-resize.md) | `object Resize : `[`SoftInputMode`](index.md) |
+| [Pan](-pan.md) | `object Pan : `[`SoftInputMode`](./index.md) |
+| [Resize](-resize.md) | `object Resize : `[`SoftInputMode`](./index.md) |
 
 ### Properties
 
@@ -26,6 +26,6 @@ Created by christiansteffensen on 05/06/2017.
 
 ### Inheritors
 
-| [Pan](-pan.md) | `object Pan : `[`SoftInputMode`](index.md) |
-| [Resize](-resize.md) | `object Resize : `[`SoftInputMode`](index.md) |
+| [Pan](-pan.md) | `object Pan : `[`SoftInputMode`](./index.md) |
+| [Resize](-resize.md) | `object Resize : `[`SoftInputMode`](./index.md) |
 

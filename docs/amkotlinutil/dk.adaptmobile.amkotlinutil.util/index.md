@@ -1,4 +1,4 @@
-[amkotlinutil](../index.md) / [dk.adaptmobile.amkotlinutil.util](index.md)
+[amkotlinutil](../index.md) / [dk.adaptmobile.amkotlinutil.util](./index.md)
 
 ## Package dk.adaptmobile.amkotlinutil.util
 

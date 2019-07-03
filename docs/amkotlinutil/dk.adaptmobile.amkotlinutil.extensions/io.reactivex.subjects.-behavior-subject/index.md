@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [io.reactivex.subjects.BehaviorSubject](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [io.reactivex.subjects.BehaviorSubject](./index.md)
 
 ### Extensions for io.reactivex.subjects.BehaviorSubject
 

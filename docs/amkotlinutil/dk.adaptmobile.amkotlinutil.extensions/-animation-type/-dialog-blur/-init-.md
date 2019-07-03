@@ -1,4 +1,4 @@
-[amkotlinutil](../../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../../index.md) / [AnimationType](../index.md) / [DialogBlur](index.md) / [&lt;init&gt;](-init-.md)
+[amkotlinutil](../../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../../index.md) / [AnimationType](../index.md) / [DialogBlur](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 

@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [ArgumentDelegateNullable](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [ArgumentDelegateNullable](./index.md)
 
 # ArgumentDelegateNullable
 
-`class ArgumentDelegateNullable<T> : `[`ReadWriteProperty`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-read-write-property/index.html)`<Controller, `[`T`](index.md#T)`?>`
+`class ArgumentDelegateNullable<T> : `[`ReadWriteProperty`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-read-write-property/index.html)`<Controller, `[`T`](index.md#T)`?>` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/conductor/ArgumentDelegateNullable.kt#L12)
 
 An abstract argument delegate that uses the property to infer the key name for the bundle.
 

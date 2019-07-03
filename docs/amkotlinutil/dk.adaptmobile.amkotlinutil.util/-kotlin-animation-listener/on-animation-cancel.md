@@ -1,6 +1,6 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.util](../index.md) / [KotlinAnimationListener](index.md) / [onAnimationCancel](on-animation-cancel.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.util](../index.md) / [KotlinAnimationListener](index.md) / [onAnimationCancel](./on-animation-cancel.md)
 
 # onAnimationCancel
 
-`fun onAnimationCancel(animation: `[`Animator`](https://developer.android.com/reference/android/animation/Animator.html)`?): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
-`fun onAnimationCancel(func: (animation: `[`Animator`](https://developer.android.com/reference/android/animation/Animator.html)`?) -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+`fun onAnimationCancel(animation: `[`Animator`](https://developer.android.com/reference/android/animation/Animator.html)`?): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/util/KotlinAnimationListener.kt#L36)
+`fun onAnimationCancel(func: (animation: `[`Animator`](https://developer.android.com/reference/android/animation/Animator.html)`?) -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/util/KotlinAnimationListener.kt#L40)

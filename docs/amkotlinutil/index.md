@@ -1,4 +1,4 @@
-[amkotlinutil](index.md)
+[amkotlinutil](./index.md)
 
 ### Packages
 

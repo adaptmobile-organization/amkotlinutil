@@ -1,25 +1,25 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [AnimationType](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [AnimationType](./index.md)
 
 # AnimationType
 
-`sealed class AnimationType`
+`sealed class AnimationType` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/extensions/ConductorExtensions.kt#L33)
 
 ### Types
 
-| [Bottom](-bottom.md) | `object Bottom : `[`AnimationType`](index.md) |
-| [Custom](-custom/index.md) | `data class Custom : `[`AnimationType`](index.md) |
-| [Dialog](-dialog.md) | `object ~~Dialog~~ : `[`AnimationType`](index.md) |
-| [DialogBlur](-dialog-blur/index.md) | `class DialogBlur : `[`AnimationType`](index.md) |
-| [DialogFade](-dialog-fade.md) | `object DialogFade : `[`AnimationType`](index.md) |
-| [Fade](-fade.md) | `object Fade : `[`AnimationType`](index.md) |
-| [FlipDown](-flip-down.md) | `object FlipDown : `[`AnimationType`](index.md) |
-| [FlipLeft](-flip-left.md) | `object FlipLeft : `[`AnimationType`](index.md) |
-| [FlipRight](-flip-right.md) | `object FlipRight : `[`AnimationType`](index.md) |
-| [FlipUp](-flip-up.md) | `object FlipUp : `[`AnimationType`](index.md) |
-| [None](-none.md) | `object None : `[`AnimationType`](index.md) |
-| [ScaleFade](-scale-fade.md) | `object ScaleFade : `[`AnimationType`](index.md) |
-| [SharedTransition](-shared-transition.md) | `object SharedTransition : `[`AnimationType`](index.md) |
-| [Slide](-slide.md) | `object Slide : `[`AnimationType`](index.md) |
+| [Bottom](-bottom.md) | `object Bottom : `[`AnimationType`](./index.md) |
+| [Custom](-custom/index.md) | `data class Custom : `[`AnimationType`](./index.md) |
+| [Dialog](-dialog.md) | `object ~~Dialog~~ : `[`AnimationType`](./index.md) |
+| [DialogBlur](-dialog-blur/index.md) | `class DialogBlur : `[`AnimationType`](./index.md) |
+| [DialogFade](-dialog-fade.md) | `object DialogFade : `[`AnimationType`](./index.md) |
+| [Fade](-fade.md) | `object Fade : `[`AnimationType`](./index.md) |
+| [FlipDown](-flip-down.md) | `object FlipDown : `[`AnimationType`](./index.md) |
+| [FlipLeft](-flip-left.md) | `object FlipLeft : `[`AnimationType`](./index.md) |
+| [FlipRight](-flip-right.md) | `object FlipRight : `[`AnimationType`](./index.md) |
+| [FlipUp](-flip-up.md) | `object FlipUp : `[`AnimationType`](./index.md) |
+| [None](-none.md) | `object None : `[`AnimationType`](./index.md) |
+| [ScaleFade](-scale-fade.md) | `object ScaleFade : `[`AnimationType`](./index.md) |
+| [SharedTransition](-shared-transition.md) | `object SharedTransition : `[`AnimationType`](./index.md) |
+| [Slide](-slide.md) | `object Slide : `[`AnimationType`](./index.md) |
 
 ### Extension Properties
 
@@ -32,18 +32,18 @@
 
 ### Inheritors
 
-| [Bottom](-bottom.md) | `object Bottom : `[`AnimationType`](index.md) |
-| [Custom](-custom/index.md) | `data class Custom : `[`AnimationType`](index.md) |
-| [Dialog](-dialog.md) | `object ~~Dialog~~ : `[`AnimationType`](index.md) |
-| [DialogBlur](-dialog-blur/index.md) | `class DialogBlur : `[`AnimationType`](index.md) |
-| [DialogFade](-dialog-fade.md) | `object DialogFade : `[`AnimationType`](index.md) |
-| [Fade](-fade.md) | `object Fade : `[`AnimationType`](index.md) |
-| [FlipDown](-flip-down.md) | `object FlipDown : `[`AnimationType`](index.md) |
-| [FlipLeft](-flip-left.md) | `object FlipLeft : `[`AnimationType`](index.md) |
-| [FlipRight](-flip-right.md) | `object FlipRight : `[`AnimationType`](index.md) |
-| [FlipUp](-flip-up.md) | `object FlipUp : `[`AnimationType`](index.md) |
-| [None](-none.md) | `object None : `[`AnimationType`](index.md) |
-| [ScaleFade](-scale-fade.md) | `object ScaleFade : `[`AnimationType`](index.md) |
-| [SharedTransition](-shared-transition.md) | `object SharedTransition : `[`AnimationType`](index.md) |
-| [Slide](-slide.md) | `object Slide : `[`AnimationType`](index.md) |
+| [Bottom](-bottom.md) | `object Bottom : `[`AnimationType`](./index.md) |
+| [Custom](-custom/index.md) | `data class Custom : `[`AnimationType`](./index.md) |
+| [Dialog](-dialog.md) | `object ~~Dialog~~ : `[`AnimationType`](./index.md) |
+| [DialogBlur](-dialog-blur/index.md) | `class DialogBlur : `[`AnimationType`](./index.md) |
+| [DialogFade](-dialog-fade.md) | `object DialogFade : `[`AnimationType`](./index.md) |
+| [Fade](-fade.md) | `object Fade : `[`AnimationType`](./index.md) |
+| [FlipDown](-flip-down.md) | `object FlipDown : `[`AnimationType`](./index.md) |
+| [FlipLeft](-flip-left.md) | `object FlipLeft : `[`AnimationType`](./index.md) |
+| [FlipRight](-flip-right.md) | `object FlipRight : `[`AnimationType`](./index.md) |
+| [FlipUp](-flip-up.md) | `object FlipUp : `[`AnimationType`](./index.md) |
+| [None](-none.md) | `object None : `[`AnimationType`](./index.md) |
+| [ScaleFade](-scale-fade.md) | `object ScaleFade : `[`AnimationType`](./index.md) |
+| [SharedTransition](-shared-transition.md) | `object SharedTransition : `[`AnimationType`](./index.md) |
+| [Slide](-slide.md) | `object Slide : `[`AnimationType`](./index.md) |
 

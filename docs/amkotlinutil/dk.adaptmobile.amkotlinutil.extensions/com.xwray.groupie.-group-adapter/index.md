@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [com.xwray.groupie.GroupAdapter](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [com.xwray.groupie.GroupAdapter](./index.md)
 
 ### Extensions for com.xwray.groupie.GroupAdapter
 

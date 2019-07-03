@@ -1,8 +1,7 @@
-# Design Patterns @ KEA
-### by Jason Kelly
+# {{PACKAGE_NAME}}
 
-- Full text searchable notes
+- Full text searchable documentation
 - Written professionally in markdown
 - Easy to understand
 
-[Edit on GitHub](https://github.com/jasonkellydk/design-patterns/)
+[Find on GitHub](https://github.com/adaptmobile-organization/amkotlinutil/)

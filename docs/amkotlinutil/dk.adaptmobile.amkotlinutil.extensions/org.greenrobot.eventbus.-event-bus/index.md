@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [org.greenrobot.eventbus.EventBus](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [org.greenrobot.eventbus.EventBus](./index.md)
 
 ### Extensions for org.greenrobot.eventbus.EventBus
 

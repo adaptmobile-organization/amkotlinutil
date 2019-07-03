@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.util](../index.md) / [KotlinAnimationListener](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.util](../index.md) / [KotlinAnimationListener](./index.md)
 
 # KotlinAnimationListener
 
-`class KotlinAnimationListener : `[`AnimatorListener`](https://developer.android.com/reference/android/animation/Animator/AnimatorListener.html)
+`class KotlinAnimationListener : `[`AnimatorListener`](https://developer.android.com/reference/android/animation/Animator/AnimatorListener.html) [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/util/KotlinAnimationListener.kt#L5)
 
 ### Constructors
 

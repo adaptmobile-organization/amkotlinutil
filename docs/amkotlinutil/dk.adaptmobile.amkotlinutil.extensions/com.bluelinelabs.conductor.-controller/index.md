@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [com.bluelinelabs.conductor.Controller](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [com.bluelinelabs.conductor.Controller](./index.md)
 
 ### Extensions for com.bluelinelabs.conductor.Controller
 

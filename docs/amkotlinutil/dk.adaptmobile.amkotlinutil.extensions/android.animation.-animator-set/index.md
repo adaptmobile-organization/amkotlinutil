@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [android.animation.AnimatorSet](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [android.animation.AnimatorSet](./index.md)
 
 ### Extensions for android.animation.AnimatorSet
 

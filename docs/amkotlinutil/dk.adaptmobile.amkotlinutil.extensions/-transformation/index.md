@@ -1,15 +1,15 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [Transformation](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [Transformation](./index.md)
 
 # Transformation
 
-`sealed class Transformation`
+`sealed class Transformation` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/extensions/ImageViewExtensions.kt#L20)
 
 Created by christiansteffensen on 05/06/2017.
 
 ### Types
 
-| [CenterCrop](-center-crop.md) | `object CenterCrop : `[`Transformation`](index.md) |
-| [Circle](-circle.md) | `object Circle : `[`Transformation`](index.md) |
+| [CenterCrop](-center-crop.md) | `object CenterCrop : `[`Transformation`](./index.md) |
+| [Circle](-circle.md) | `object Circle : `[`Transformation`](./index.md) |
 
 ### Extension Properties
 
@@ -22,6 +22,6 @@ Created by christiansteffensen on 05/06/2017.
 
 ### Inheritors
 
-| [CenterCrop](-center-crop.md) | `object CenterCrop : `[`Transformation`](index.md) |
-| [Circle](-circle.md) | `object Circle : `[`Transformation`](index.md) |
+| [CenterCrop](-center-crop.md) | `object CenterCrop : `[`Transformation`](./index.md) |
+| [Circle](-circle.md) | `object Circle : `[`Transformation`](./index.md) |
 

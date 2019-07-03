@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [DialogFadeChangeHandler](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [DialogFadeChangeHandler](./index.md)
 
 # DialogFadeChangeHandler
 
-`class DialogFadeChangeHandler : TransitionChangeHandler`
+`class DialogFadeChangeHandler : TransitionChangeHandler` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/conductor/DialogFadeChangeHandler.kt#L13)
 
 ### Constructors
 

@@ -1,5 +1,5 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [ArcFadeMoveChangeHandler](index.md) / [getTransition](get-transition.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [ArcFadeMoveChangeHandler](index.md) / [getTransition](./get-transition.md)
 
 # getTransition
 
-`@NonNull protected open fun getTransition(@NonNull container: `[`ViewGroup`](https://developer.android.com/reference/android/view/ViewGroup.html)`, from: `[`View`](https://developer.android.com/reference/android/view/View.html)`?, to: `[`View`](https://developer.android.com/reference/android/view/View.html)`?, isPush: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): `[`Transition`](https://developer.android.com/reference/android/transition/Transition.html)
+`@NonNull protected open fun getTransition(@NonNull container: `[`ViewGroup`](https://developer.android.com/reference/android/view/ViewGroup.html)`, from: `[`View`](https://developer.android.com/reference/android/view/View.html)`?, to: `[`View`](https://developer.android.com/reference/android/view/View.html)`?, isPush: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): `[`Transition`](https://developer.android.com/reference/android/transition/Transition.html) [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/conductor/ArcFadeMoveChangeHandler.java#L25)

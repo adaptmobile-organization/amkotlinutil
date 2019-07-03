@@ -1,4 +1,4 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [android.view.ViewPropertyAnimator](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [android.view.ViewPropertyAnimator](./index.md)
 
 ### Extensions for android.view.ViewPropertyAnimator
 

@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.util](../index.md) / [PreferenceHelper](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.util](../index.md) / [PreferenceHelper](./index.md)
 
 # PreferenceHelper
 
-`object PreferenceHelper`
+`object PreferenceHelper` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/util/PreferenceHelper.kt#L12)
 
 Created by bjarkeseverinsen on 20/08/2017.
 

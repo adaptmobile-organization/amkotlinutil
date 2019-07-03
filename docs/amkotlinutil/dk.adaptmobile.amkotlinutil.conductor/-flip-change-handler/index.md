@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [FlipChangeHandler](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [FlipChangeHandler](./index.md)
 
 # FlipChangeHandler
 
-`open class FlipChangeHandler : AnimatorChangeHandler`
+`open class FlipChangeHandler : AnimatorChangeHandler` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/conductor/FlipChangeHandler.java#L14)
 
 ### Types
 

@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [CircularRevealChangeHandlerCompat](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [CircularRevealChangeHandlerCompat](./index.md)
 
 # CircularRevealChangeHandlerCompat
 
-`open class CircularRevealChangeHandlerCompat : `[`CircularRevealChangeHandler`](../-circular-reveal-change-handler/index.md)
+`open class CircularRevealChangeHandlerCompat : `[`CircularRevealChangeHandler`](../-circular-reveal-change-handler/index.md) [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/conductor/CircularRevealChangeHandlerCompat.java#L11)
 
 ### Constructors
 

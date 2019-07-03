@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [DialogBlurChangeHandler](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [DialogBlurChangeHandler](./index.md)
 
 # DialogBlurChangeHandler
 
-`class DialogBlurChangeHandler : TransitionChangeHandler`
+`class DialogBlurChangeHandler : TransitionChangeHandler` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/conductor/DialogBlurChangeHandler.kt#L14)
 
 ### Constructors
 

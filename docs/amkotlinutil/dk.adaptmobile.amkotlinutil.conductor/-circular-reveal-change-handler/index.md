@@ -1,8 +1,8 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [CircularRevealChangeHandler](index.md)
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [CircularRevealChangeHandler](./index.md)
 
 # CircularRevealChangeHandler
 
-`open class CircularRevealChangeHandler : AnimatorChangeHandler`
+`open class CircularRevealChangeHandler : AnimatorChangeHandler` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/conductor/CircularRevealChangeHandler.java#L18)
 
 An ``[`AnimatorChangeHandler`](#) that will perform a circular reveal
 
@@ -19,5 +19,5 @@ An ``[`AnimatorChangeHandler`](#) that will perform a circular reveal
 
 ### Inheritors
 
-| [CircularRevealChangeHandlerCompat](../-circular-reveal-change-handler-compat/index.md) | `open class CircularRevealChangeHandlerCompat : `[`CircularRevealChangeHandler`](index.md) |
+| [CircularRevealChangeHandlerCompat](../-circular-reveal-change-handler-compat/index.md) | `open class CircularRevealChangeHandlerCompat : `[`CircularRevealChangeHandler`](./index.md) |
 
