@@ -27,8 +27,11 @@ jobs:
           # Must be absolute path or relative path from working_directory
           at: /opt
       - run:
-          name: Upload docs to Firebase
-          command: echo "test"
+          name: Install npm
+          command: |
+            curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+            sudo apt install nodejs
+            sudo apt install npm
 
 workflows:
   version: 2
