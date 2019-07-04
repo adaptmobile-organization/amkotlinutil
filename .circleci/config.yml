@@ -27,14 +27,6 @@ jobs:
           # Must be absolute path or relative path from working_directory
           at: /opt
       - run:
-          name: Install npm
-          command: |
-            node -v
-            npm -v
-            #curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-            #apt install nodejs
-            #apt install npm
-      - run:
           name: Install Firebase CLI tool
           command: |
             npm install -g firebase-tools
