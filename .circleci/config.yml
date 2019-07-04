@@ -29,9 +29,11 @@ jobs:
       - run:
           name: Install npm
           command: |
+            node -v
+            npm -v
             #curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-            apt install nodejs
-            apt install npm
+            #apt install nodejs
+            #apt install npm
       - run:
           name: Install Firebase CLI tool
           command: |
