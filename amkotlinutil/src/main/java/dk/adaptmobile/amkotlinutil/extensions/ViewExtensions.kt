@@ -325,8 +325,7 @@ fun View.getGoneHeight(callback: (futureHeight: Int) -> Unit) {
  * @param anchor Optional anchor view. Defaults to the clicked view.
  * @param itemSelected Callback lambda with the selected value
  */
-
-private fun View.showPopupMenu(items: List<String>, anchor: View = this, itemSelected: (item: String) -> Unit) {
+fun View.showPopupMenu(items: List<String>, anchor: View = this, itemSelected: (item: String) -> Unit) {
     val popupMenu = PopupMenu(context, anchor)
 
     items.forEach {
