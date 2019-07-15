@@ -11,6 +11,7 @@ import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
 import android.widget.FrameLayout
 import android.widget.LinearLayout
+import android.widget.PopupMenu
 import android.widget.RelativeLayout
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
@@ -315,5 +316,29 @@ fun View.getGoneHeight(callback: (futureHeight: Int) -> Unit) {
             this.setHeight(originalHeight)
             callback(futureHeight)
         }
+    }
+}
+
+/**
+ * Extension function to show a PopupMenu on a view. Optionally, pass in a separate anchor view, if you want the popup to be centered on a different view than the clicked one
+ * @param items List of strings to be shown in the PopupMenu
+ * @param anchor Optional anchor view. Defaults to the clicked view.
+ * @param itemSelected Callback lambda with the selected value
+ */
+
+private fun View.showPopupMenu(items: List<String>, anchor: View = this, itemSelected: (item: String) -> Unit) {
+    val popupMenu = PopupMenu(context, anchor)
+
+    items.forEach {
+        popupMenu.menu.add(it)
+    }
+
+    popupMenu.setOnMenuItemClickListener {
+        itemSelected(it.title.toString())
+        return@setOnMenuItemClickListener true
+    }
+
+    this.setOnClickListener {
+        popupMenu.show()
     }
 }
