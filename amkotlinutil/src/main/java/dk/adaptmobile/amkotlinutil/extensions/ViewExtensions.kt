@@ -317,24 +317,27 @@ fun View.getGoneHeight(callback: (futureHeight: Int) -> Unit) {
     }
 }
 
+data class PopupMenuItem(val description: String, val value: String)
+
 /**
  * Extension function to show a PopupMenu on a view. Optionally, pass in a separate anchor view, if you want the popup to be centered on a different view than the clicked one
- * @param items List of strings to be shown in the PopupMenu
- * @param anchor Optional anchor view. Defaults to the clicked view.
- * @param style Optional Style resource to style the popupmenu
- * @param itemSelected Callback lambda with the selected value
+ * @param   items         List of items to be shown in the PopupMenu. Description is the text to be shown in the popup, value is the text(value) that will be returned when the item is selected
+ * @param   anchor        Optional anchor view. Defaults to the clicked view.
+ * @param   style         Optional Style resource to style the popupmenu
+ * @param   gravity       Gravity flag to control gravity, defaults to NO_GRAVITY
+ * @param   itemSelected  Callback lambda with the selected value
  */
-
-fun View.showPopupMenu(items: List<String>, anchor: View = this, @StyleRes style: Int = 0, itemSelected: (item: String) -> Unit) {
+fun View.showPopupMenu(items: List<PopupMenuItem>, anchor: View = this, gravity: Int = Gravity.NO_GRAVITY, @StyleRes style: Int = 0, itemSelected: (item: String) -> Unit) {
     val contextWrapper = ContextThemeWrapper(context, style)
-    val popupMenu = PopupMenu(contextWrapper, anchor)
+    val popupMenu = PopupMenu(contextWrapper, anchor, gravity)
 
     items.forEach {
-        popupMenu.menu.add(it)
+        popupMenu.menu.add(it.description)
     }
 
-    popupMenu.setOnMenuItemClickListener {
-        itemSelected(it.title.toString())
+    popupMenu.setOnMenuItemClickListener { selectedItem ->
+        val item = items.first { it.description == selectedItem.title.toString() }
+        itemSelected(item.value)
         return@setOnMenuItemClickListener true
     }
 
