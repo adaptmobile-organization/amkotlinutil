@@ -4,10 +4,7 @@ import android.animation.AnimatorSet
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.PorterDuff
-import android.view.View
-import android.view.ViewGroup
-import android.view.ViewPropertyAnimator
-import android.view.ViewTreeObserver
+import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.FrameLayout
 import android.widget.LinearLayout
@@ -15,6 +12,7 @@ import android.widget.PopupMenu
 import android.widget.RelativeLayout
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
+import androidx.annotation.StyleRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.*
 import dk.adaptmobile.amkotlinutil.util.KotlinAnimationListener
@@ -323,10 +321,13 @@ fun View.getGoneHeight(callback: (futureHeight: Int) -> Unit) {
  * Extension function to show a PopupMenu on a view. Optionally, pass in a separate anchor view, if you want the popup to be centered on a different view than the clicked one
  * @param items List of strings to be shown in the PopupMenu
  * @param anchor Optional anchor view. Defaults to the clicked view.
+ * @param style Optional Style resource to style the popupmenu
  * @param itemSelected Callback lambda with the selected value
  */
-fun View.showPopupMenu(items: List<String>, anchor: View = this, itemSelected: (item: String) -> Unit) {
-    val popupMenu = PopupMenu(context, anchor)
+
+fun View.showPopupMenu(items: List<String>, anchor: View = this, @StyleRes style: Int = 0, itemSelected: (item: String) -> Unit) {
+    val contextWrapper = ContextThemeWrapper(context, style)
+    val popupMenu = PopupMenu(contextWrapper, anchor)
 
     items.forEach {
         popupMenu.menu.add(it)
