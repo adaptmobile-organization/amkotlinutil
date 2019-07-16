@@ -337,7 +337,5 @@ fun View.showPopupMenu(items: List<String>, anchor: View = this, itemSelected: (
         return@setOnMenuItemClickListener true
     }
 
-    this.setOnClickListener {
-        popupMenu.show()
-    }
+    popupMenu.show()
 }
