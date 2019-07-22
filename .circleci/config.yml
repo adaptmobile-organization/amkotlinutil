@@ -1,0 +1,50 @@
+version: 2
+jobs:
+  build:
+    working_directory: /opt/workspace
+    docker:
+      - image: adaptmobile/android-docker:27
+    environment:
+      JVM_OPTS: -Xmx3200m
+    steps:
+      - checkout
+      - run:
+          name: Download Dependencies
+          # Build docs using Dokka 
+          command: cd $(/opt/tools/findGradleW.sh) && ./gradlew dokka
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory
+          root: /opt
+          # Must be relative path from root
+          paths:
+            - workspace
+  deploy:
+    working_directory: /opt/workspace
+    docker:
+      - image: adaptmobile/android-docker:27
+    steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: /opt
+      - run:
+          name: Install Firebase CLI tool
+          command: |
+            npm install -g firebase-tools
+      - run:
+          name: Deploy to Firebase
+          command: firebase deploy --only hosting --token=$FIREBASE_DEPLOY_TOKEN
+
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - feature/dokka-docs-hosting
+                - master

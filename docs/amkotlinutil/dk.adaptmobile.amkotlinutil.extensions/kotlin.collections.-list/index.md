@@ -1,0 +1,12 @@
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.extensions](../index.md) / [kotlin.collections.List](./index.md)
+
+### Extensions for kotlin.collections.List
+
+| [and](and.md) | `infix fun `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`View`](https://developer.android.com/reference/android/view/View.html)`>.and(v: `[`View`](https://developer.android.com/reference/android/view/View.html)`): `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`View`](https://developer.android.com/reference/android/view/View.html)`>` |
+| [gone](gone.md) | `fun `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`View`](https://developer.android.com/reference/android/view/View.html)`>.gone(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+| [invisible](invisible.md) | `fun `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`View`](https://developer.android.com/reference/android/view/View.html)`>.invisible(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+| [isLast](is-last.md) | `fun <T> `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`T`](is-last.md#T)`>?.isLast(index: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Created by bjarkeseverinsen on 20/09/2017. |
+| [orEmptyString](or-empty-string.md) | `fun <T> `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`T`](or-empty-string.md#T)`>?.orEmptyString(string: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [sizeOrZero](size-or-zero.md) | `fun <T> `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`T`](size-or-zero.md#T)`>?.sizeOrZero(): `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [visible](visible.md) | `fun `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`View`](https://developer.android.com/reference/android/view/View.html)`>.visible(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+

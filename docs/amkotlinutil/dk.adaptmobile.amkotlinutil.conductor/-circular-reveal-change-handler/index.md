@@ -1,0 +1,23 @@
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [CircularRevealChangeHandler](./index.md)
+
+# CircularRevealChangeHandler
+
+`open class CircularRevealChangeHandler : AnimatorChangeHandler` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/conductor/CircularRevealChangeHandler.java#L18)
+
+An ``[`AnimatorChangeHandler`](#) that will perform a circular reveal
+
+### Constructors
+
+| [&lt;init&gt;](-init-.md) | `CircularRevealChangeHandler()``CircularRevealChangeHandler(fromView: `[`View`](https://developer.android.com/reference/android/view/View.html)`, containerView: `[`View`](https://developer.android.com/reference/android/view/View.html)`)`<br>`CircularRevealChangeHandler(fromView: `[`View`](https://developer.android.com/reference/android/view/View.html)`, containerView: `[`View`](https://developer.android.com/reference/android/view/View.html)`, duration: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)`)`<br>`CircularRevealChangeHandler(fromView: `[`View`](https://developer.android.com/reference/android/view/View.html)`, containerView: `[`View`](https://developer.android.com/reference/android/view/View.html)`, removesFromViewOnPush: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`)`<br>`CircularRevealChangeHandler(fromView: `[`View`](https://developer.android.com/reference/android/view/View.html)`, containerView: `[`View`](https://developer.android.com/reference/android/view/View.html)`, duration: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)`, removesFromViewOnPush: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`)`<br>Constructor that will create a circular reveal from the center of the fromView parameter.`CircularRevealChangeHandler(cx: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, cy: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`)`<br>`CircularRevealChangeHandler(cx: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, cy: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, duration: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)`)`<br>`CircularRevealChangeHandler(cx: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, cy: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, removesFromViewOnPush: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`)`<br>`CircularRevealChangeHandler(cx: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, cy: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, duration: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)`, removesFromViewOnPush: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`)`<br>Constructor that will create a circular reveal from the center point passed in. |
+
+### Functions
+
+| [getAnimator](get-animator.md) | `open fun getAnimator(container: `[`ViewGroup`](https://developer.android.com/reference/android/view/ViewGroup.html)`, from: `[`View`](https://developer.android.com/reference/android/view/View.html)`?, to: `[`View`](https://developer.android.com/reference/android/view/View.html)`?, isPush: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`, toAddedToContainer: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): `[`Animator`](https://developer.android.com/reference/android/animation/Animator.html) |
+| [resetFromView](reset-from-view.md) | `open fun resetFromView(from: `[`View`](https://developer.android.com/reference/android/view/View.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+| [restoreFromBundle](restore-from-bundle.md) | `open fun restoreFromBundle(bundle: `[`Bundle`](https://developer.android.com/reference/android/os/Bundle.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+| [saveToBundle](save-to-bundle.md) | `open fun saveToBundle(bundle: `[`Bundle`](https://developer.android.com/reference/android/os/Bundle.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+
+### Inheritors
+
+| [CircularRevealChangeHandlerCompat](../-circular-reveal-change-handler-compat/index.md) | `open class CircularRevealChangeHandlerCompat : `[`CircularRevealChangeHandler`](./index.md) |
+

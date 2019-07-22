@@ -1,0 +1,6 @@
+[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.util](../index.md) / [KotlinAnimationListener](index.md) / [onAnimationStart](./on-animation-start.md)
+
+# onAnimationStart
+
+`fun onAnimationStart(animation: `[`Animator`](https://developer.android.com/reference/android/animation/Animator.html)`?): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/util/KotlinAnimationListener.kt#L28)
+`fun onAnimationStart(func: (animation: `[`Animator`](https://developer.android.com/reference/android/animation/Animator.html)`?) -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/util/KotlinAnimationListener.kt#L32)
