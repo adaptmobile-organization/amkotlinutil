@@ -9,6 +9,8 @@ data class PostDelay(val handler: Handler, val runnable: Runnable) {
 
 
 
-
+    fun tester() {
+        print("Hola")
+    }
 
 }
