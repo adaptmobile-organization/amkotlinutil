@@ -19,7 +19,7 @@ dokka {
         dir = appPath // or simply "./"
 
         // URL showing where the source code can be accessed through the web browser
-        url = "https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/$relativeAppPath"
+        url = "https://github.com/adaptmobile-organization/amkotlinutil/tree/master/$relativeAppPath"
         //remove src/main/kotlin if you use "./" above
 
         // Suffix which is used to append the line number to the URL. Use #L for GitHub
@@ -39,7 +39,7 @@ dokka {
             def relativePath = rootDir.toPath().relativize(path.toPath()).toString()
             linkMapping {
                 dir = path
-                url = "https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/$relativePath"
+                url = "https://github.com/adaptmobile-organization/amkotlinutil/tree/master/$relativePath"
                 suffix = "#L"
             }
             return path

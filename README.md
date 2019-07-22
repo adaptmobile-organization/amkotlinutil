@@ -1,6 +1,8 @@
 # amkotlinutil
 Kotlin extensions and utility
 
+# [LINK to DOCUMENTATION](https://amkotlinutil-docs.firebaseapp.com/)
+
 ## Installing
 
 #### Add jitpack repository to top (project) build.gradle file:
