@@ -41,5 +41,6 @@ captures/
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
 
-
-
+# Avoid getting these to github
+docs/_sidebar.md
+docs/amkotlinutil/

@@ -1,0 +1,48 @@
+apply plugin: 'org.jetbrains.dokka-android'
+
+dokka {
+    outputFormat = 'markdown'
+    outputDirectory = "docs"
+
+    includeNonPublic = false
+    skipDeprecated = false
+    reportUndocumented = false
+    skipEmptyPackages = true
+
+    // Specifies the location of the project source code on the Web.
+    // If provided, Dokka generates "source" links for each declaration.
+    // Repeat for multiple mappings
+    def appPath = new File(project.projectDir, "/src/main/java")
+    def relativeAppPath = rootDir.toPath().relativize(appPath.toPath()).toString()
+    linkMapping {
+        // Unix based directory relative path to the root of the project (where you execute gradle respectively).
+        dir = appPath // or simply "./"
+
+        // URL showing where the source code can be accessed through the web browser
+        url = "https://github.com/adaptmobile-organization/amkotlinutil/tree/master/$relativeAppPath"
+        //remove src/main/kotlin if you use "./" above
+
+        // Suffix which is used to append the line number to the URL. Use #L for GitHub
+        suffix = "#L"
+    }
+
+    Set<ProjectDependency> deps =
+            project.configurations.collectMany {
+                it.allDependencies
+            }.findAll {
+                it instanceof ProjectDependency
+            }
+
+    sourceDirs = files(deps.collect {
+        p ->
+            def path = new File(p.getDependencyProject().projectDir, "/src/main/java")
+            def relativePath = rootDir.toPath().relativize(path.toPath()).toString()
+            linkMapping {
+                dir = path
+                url = "https://github.com/adaptmobile-organization/amkotlinutil/tree/master/$relativePath"
+                suffix = "#L"
+            }
+            return path
+    })
+
+}
