@@ -1,5 +1,0 @@
-[amkotlinutil](../../index.md) / [dk.adaptmobile.amkotlinutil.conductor](../index.md) / [Scale](index.md) / [onAppear](./on-appear.md)
-
-# onAppear
-
-`open fun onAppear(sceneRoot: `[`ViewGroup`](https://developer.android.com/reference/android/view/ViewGroup.html)`!, view: `[`View`](https://developer.android.com/reference/android/view/View.html)`!, startValues: `[`TransitionValues`](https://developer.android.com/reference/android/transition/TransitionValues.html)`!, endValues: `[`TransitionValues`](https://developer.android.com/reference/android/transition/TransitionValues.html)`!): `[`Animator`](https://developer.android.com/reference/android/animation/Animator.html)`!` [(source)](https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/amkotlinutil/src/main/java/dk/adaptmobile/amkotlinutil/conductor/Scale.java#L25)

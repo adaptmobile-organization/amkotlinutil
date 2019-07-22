@@ -39,7 +39,7 @@ dokka {
             def relativePath = rootDir.toPath().relativize(path.toPath()).toString()
             linkMapping {
                 dir = path
-                url = "https://github.com/adaptmobile-organization/amkotlinutil/tree/master/amkotlinutil/$relativePath"
+                url = "https://github.com/adaptmobile-organization/amkotlinutil/tree/master/$relativePath"
                 suffix = "#L"
             }
             return path
