@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Download Dependencies
           # Build docs using Dokka 
-          command: cd $(/opt/tools/findGradleW.sh) && ./gradlew dokka && ./docs/run.sh
+          command: cd $(/opt/tools/findGradleW.sh) && ./gradlew dokka && cd docs/ && ./run.sh
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
           root: /opt
