@@ -42,5 +42,5 @@ captures/
 .externalNativeBuild
 
 # Avoid getting these to github
-docs/_sidebar.md
-docs/amkotlinutil/
+# docs/_sidebar.md
+# docs/amkotlinutil/
