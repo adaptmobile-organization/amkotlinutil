@@ -11,21 +11,37 @@ jobs:
       - run:
           name: Download Dependencies
           # Build docs using Dokka 
-          command: cd $(/opt/tools/findGradleW.sh) && ./gradlew dokka && cd docs/ && ./run.sh
+          command: cd $(/opt/tools/findGradleW.sh) && ./gradlew dokka
+      - run:
+          name: Run script
+          # Build docs using Dokka
+          command: |
+            cd docs/
+            ./run.sh
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
           root: /opt
           # Must be relative path from root
           paths:
             - workspace
+
   deploy:
     working_directory: /opt/workspace
     docker:
       - image: adaptmobile/android-docker:27
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "cf:26:50:96:ff:22:00:f4:1a:98:bc:9c:cd:8c:a9:52"
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: /opt
+      - run:
+          name: Remove old folder
+          command: |
+            git add docs
+            git commit -m "Update docs"
+            git push
       - run:
           name: Install Firebase CLI tool
           command: |
@@ -46,4 +62,5 @@ workflows:
           filters:
             branches:
               only:
+                - feature/dokka-doc-gitbook
                 - master
