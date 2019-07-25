@@ -43,7 +43,7 @@ jobs:
             git config --global user.name "Circle CI"
             git add docs
             git commit -m "Update docs"
-            git push
+            git push --set-upstream origin feature/dokka-doc-gitbook
       - run:
           name: Install Firebase CLI tool
           command: |
