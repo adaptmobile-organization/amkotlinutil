@@ -32,7 +32,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "ff:c3:ad:18:e2:69:3e:7e:86:59:18:4b:e2:74:f1:d8"
+            - "cf:26:50:96:ff:22:00:f4:1a:98:bc:9c:cd:8c:a9:52"
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: /opt
