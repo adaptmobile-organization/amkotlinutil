@@ -39,13 +39,11 @@ jobs:
       - run:
           name: Remove old folder
           command: |
-            sys set -o pipefail
-            echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
             git config --global user.email "adaptcircleci@example.com"
             git config --global user.name "Circle CI"
             git add docs
             git commit -m "Update docs"
-            git push --set-upstream origin feature/dokka-doc-gitbook
+            GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push --set-upstream origin feature/dokka-doc-gitbook
       - run:
           name: Install Firebase CLI tool
           command: |
