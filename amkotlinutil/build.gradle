@@ -75,7 +75,6 @@ dependencies {
     // --- WASABEEF --- //
     compileOnly 'jp.wasabeef:blurry:3.0.0'
     compileOnly 'jp.wasabeef:recyclerview-animators:3.0.0'
-
 }
 
 //add javadocs
