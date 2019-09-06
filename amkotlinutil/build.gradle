@@ -6,19 +6,14 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'org.jetbrains.dokka-android'
 apply from: '../DokkaConfig.gradle'
 
-ext {
-    supportLibVersion = '27.1.1'
-    playLibVersion = '10.0.1'
-    conductorVersion = '2.1.5'
-    firebaseVersion = '11.0.0'
-}
+ext.conductorVersion = '2.1.5'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 2
         versionName "6.0.9"
     }
@@ -66,8 +61,8 @@ dependencies {
     compileOnly "com.bluelinelabs:conductor-rxlifecycle2:$conductorVersion"
 
     // --- GROUPIE --- //
-    compileOnly 'com.xwray:groupie:2.3.0'
-    compileOnly 'com.xwray:groupie-kotlin-android-extensions:2.3.0'
+    compileOnly 'com.xwray:groupie:2.5.1'
+    compileOnly 'com.xwray:groupie-kotlin-android-extensions:2.5.1'
 
     // --- RXJAVA2 --- //
     compileOnly 'io.reactivex.rxjava2:rxjava:2.2.8'

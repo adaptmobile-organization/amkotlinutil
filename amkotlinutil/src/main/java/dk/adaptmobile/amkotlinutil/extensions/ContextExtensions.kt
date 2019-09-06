@@ -6,20 +6,17 @@ import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.Uri
-import androidx.annotation.DimenRes
+import android.util.Log
+import android.util.TypedValue
+import android.view.View
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import android.util.Log
-import android.util.Log.d
-import android.util.TypedValue
-import android.view.View
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import dk.adaptmobile.amkotlinutil.BuildConfig
 import io.reactivex.Observable
 import java.io.File
 
@@ -91,8 +88,9 @@ fun Context?.openInBrowser(url: String?) {
     if (url != null && url.isNotEmpty()) {
         val page = Uri.parse(url)
         val intent = Intent(Intent.ACTION_VIEW, page)
-        if (intent.resolveActivity(this?.packageManager) != null) {
-            this?.startActivity(intent)
+        val packageManager = this?.packageManager ?: return
+        if (intent.resolveActivity(packageManager) != null) {
+            this.startActivity(intent)
         }
     }
 }
@@ -143,11 +141,12 @@ fun Context?.dial(number: String) {
 
 fun Context?.openGoogleMaps(query: String, placeId: String) {
     val queryEncoded = Uri.encode(query)
-    val gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query=$queryEncoded&query_place_id=$placeId");
+    val gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query=$queryEncoded&query_place_id=$placeId")
     val mapIntent =  Intent(Intent.ACTION_VIEW, gmmIntentUri)
-    mapIntent.setPackage("com.google.android.apps.maps");
-    if (mapIntent.resolveActivity(this?.packageManager) != null) {
-        this?.startActivity(mapIntent)
+    mapIntent.setPackage("com.google.android.apps.maps")
+    val packageManager = this?.packageManager ?: return
+    if (mapIntent.resolveActivity(packageManager) != null) {
+        this.startActivity(mapIntent)
     }
 }
 

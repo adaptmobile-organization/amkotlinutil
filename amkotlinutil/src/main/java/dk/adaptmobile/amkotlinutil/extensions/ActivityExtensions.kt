@@ -55,7 +55,7 @@ fun Activity.datePickerContext(): ContextWrapper {
             val r = super.getResources()
             if (wrappedResources == null) {
                 wrappedResources = object : Resources(r.assets, r.displayMetrics, r.configuration) {
-                    @Throws(Resources.NotFoundException::class)
+                    @Throws(NotFoundException::class)
                     override fun getString(id: Int, vararg formatArgs: Any): String {
                         try {
                             return super.getString(id, *formatArgs)

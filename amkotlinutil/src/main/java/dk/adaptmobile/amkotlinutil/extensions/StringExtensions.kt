@@ -33,9 +33,9 @@ fun String?.openInBrowser(context: Context?) {
     if (this != null && this.isNotEmpty()) {
         val page = Uri.parse(this)
         val intent = Intent(Intent.ACTION_VIEW, page)
-
-        if (intent.resolveActivity(context?.packageManager) != null) {
-            context?.startActivity(intent)
+        val packageManager = context?.packageManager ?: return
+        if (intent.resolveActivity(packageManager) != null) {
+            context.startActivity(intent)
         }
     }
 }
