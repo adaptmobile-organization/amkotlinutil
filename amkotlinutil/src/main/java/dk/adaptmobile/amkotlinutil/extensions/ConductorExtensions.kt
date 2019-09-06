@@ -20,6 +20,7 @@ import dk.adaptmobile.amkotlinutil.conductor.*
 sealed class SoftInputMode(val mode: Int) {
     object Resize : SoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
     object Pan : SoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
+    object Nothing : SoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING)
 }
 
 fun Controller.setSoftInputMode(mode: SoftInputMode) {
