@@ -18,6 +18,10 @@ buildscript {
     }
 }
 
+plugins {
+    id("de.fayard.buildSrcVersions") version "0.4.2"
+}
+
 allprojects {
     repositories {
         google()
@@ -30,4 +34,12 @@ allprojects {
 
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
+}
+
+buildSrcVersions {
+    useFdqnFor = mutableListOf()
+    renameLibs = "Libs"
+    renameVersions = "Versions"
+    indent = "  "
+    rejectedVersionKeywords("alpha", "beta", "rc", "cr", "m", "preview", "eap")
 }

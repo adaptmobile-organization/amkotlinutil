@@ -47,6 +47,7 @@ android {
 }
 
 dependencies {
+
     compileOnly(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
 
     compileOnly("androidx.appcompat:appcompat:1.0.2")
