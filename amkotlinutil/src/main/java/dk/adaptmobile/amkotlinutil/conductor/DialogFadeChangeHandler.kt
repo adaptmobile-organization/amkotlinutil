@@ -24,5 +24,4 @@ class DialogFadeChangeHandler(val removesFromViewOnPush: Boolean = false) : Tran
     override fun removesFromViewOnPush(): Boolean {
         return removesFromViewOnPush
     }
-
 }

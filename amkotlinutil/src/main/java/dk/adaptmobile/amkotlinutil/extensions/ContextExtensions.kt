@@ -34,7 +34,6 @@ fun Context.hideViews(vararg views: View) = views.forEach { it.visibility = View
  */
 fun Context.showViews(vararg views: View) = views.forEach { it.visibility = View.VISIBLE }
 
-
 fun Context.getColorCompat(resId: Int): Int = ContextCompat.getColor(this, resId)
 
 fun Context.getDrawableCompat(resId: Int): Drawable? = ContextCompat.getDrawable(this, resId)
@@ -95,7 +94,6 @@ fun Context?.openInBrowser(url: String?) {
     }
 }
 
-
 fun Context.getFontCompat(fontRes: Int): Typeface? {
     return ResourcesCompat.getFont(this, fontRes)
 }
@@ -142,7 +140,7 @@ fun Context?.dial(number: String) {
 fun Context?.openGoogleMaps(query: String, placeId: String) {
     val queryEncoded = Uri.encode(query)
     val gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query=$queryEncoded&query_place_id=$placeId")
-    val mapIntent =  Intent(Intent.ACTION_VIEW, gmmIntentUri)
+    val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
     mapIntent.setPackage("com.google.android.apps.maps")
     val packageManager = this?.packageManager ?: return
     if (mapIntent.resolveActivity(packageManager) != null) {
@@ -179,11 +177,9 @@ fun Context.cacheImage(url: String): Observable<Boolean> {
                             it.onNext(true)
                             return false
                         }
-
                     })
                     .submit()
         }
-
     }
 }
 

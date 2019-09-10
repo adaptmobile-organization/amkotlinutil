@@ -121,4 +121,3 @@ fun String.toColor(): Int? {
 }
 
 fun String.urlEncoded(): String? = URLEncoder.encode(this, "utf-8")
-

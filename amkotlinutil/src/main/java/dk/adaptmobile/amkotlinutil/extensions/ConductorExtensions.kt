@@ -153,10 +153,9 @@ var Controller.brightness: Float?
     set(value) {
         val window = this.activity?.window
         val layoutParams = window?.attributes
-        layoutParams?.screenBrightness = value //0 is turned off, 1 is full brightness
+        layoutParams?.screenBrightness = value // 0 is turned off, 1 is full brightness
         window?.attributes = layoutParams
     }
 
 val Router.secondLastController: Controller?
     get() = if (this.backstack.size > 1) this.backstack[this.backstack.lastIndex - 1].controller() else null
-

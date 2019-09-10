@@ -11,11 +11,11 @@ import android.preference.PreferenceManager
 // https://medium.com/@krupalshah55/manipulating-shared-prefs-with-kotlin-just-two-lines-of-code-29af62440285
 object PreferenceHelper {
 
-    fun defaultPrefs(context: Context): SharedPreferences
-            = PreferenceManager.getDefaultSharedPreferences(context)
+    fun defaultPrefs(context: Context): SharedPreferences =
+            PreferenceManager.getDefaultSharedPreferences(context)
 
-    fun customPrefs(context: Context, name: String): SharedPreferences
-            = context.getSharedPreferences(name, Context.MODE_PRIVATE)
+    fun customPrefs(context: Context, name: String): SharedPreferences =
+            context.getSharedPreferences(name, Context.MODE_PRIVATE)
 
     inline fun SharedPreferences.edit(operation: (SharedPreferences.Editor) -> Unit) {
         val editor = this.edit()

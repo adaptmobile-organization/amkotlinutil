@@ -41,11 +41,11 @@ var Activity.brightness: Float?
     set(value) {
         val window = this.window
         val layoutParams = window.attributes
-        layoutParams?.screenBrightness = value //0 is turned off, 1 is full brightness
+        layoutParams?.screenBrightness = value // 0 is turned off, 1 is full brightness
         window?.attributes = layoutParams
     }
 
-//fixes a datepicker bug on Lollipop Galaxy S4, S5 and Note 3, maybe more. (https://stackoverflow.com/questions/28618405/datepicker-crashes-on-my-device-when-clicked-with-personal-app)
+// fixes a datepicker bug on Lollipop Galaxy S4, S5 and Note 3, maybe more. (https://stackoverflow.com/questions/28618405/datepicker-crashes-on-my-device-when-clicked-with-personal-app)
 fun Activity.datePickerContext(): ContextWrapper {
     return object : ContextWrapper(this) {
 
@@ -65,7 +65,6 @@ fun Activity.datePickerContext(): ContextWrapper {
                             template = template.replace(("%" + ifce.conversion).toRegex(), "%s")
                             return String.format(configuration.locale, template, *formatArgs)
                         }
-
                     }
                 }
             }
