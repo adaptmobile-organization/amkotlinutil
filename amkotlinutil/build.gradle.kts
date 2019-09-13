@@ -24,17 +24,6 @@ android {
         versionName = "6.6.10"
     }
 
-    // buildTypes {
-    //     named("release") {
-    //         isMinifyEnabled = false
-    //         proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-    //     }
-    //     named("stage") {
-    //         isMinifyEnabled = false
-    //         proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-    //     }
-    // }
-
     sourceSets {
         getByName("test").resources.srcDirs("test")
         getByName("main").assets.srcDirs("src/main/assets", "src/test/assets/")
