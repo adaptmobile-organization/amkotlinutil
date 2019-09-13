@@ -50,37 +50,37 @@ dependencies {
 
     compileOnly(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
 
-    compileOnly("androidx.appcompat:appcompat:1.0.2")
-    compileOnly("androidx.core:core-ktx:1.1.0")
-    compileOnly("androidx.constraintlayout:constraintlayout:2.0.0-beta2")
+    compileOnly(Libs.appcompat)
+    compileOnly(Libs.core_ktx)
+    compileOnly(Libs.constraintlayout)
 
-    compileOnly("com.google.android.material:material:1.1.0-alpha10")
-    compileOnly("org.greenrobot:eventbus:3.1.1")
-    compileOnly("uk.co.chrisjenx:calligraphy:2.3.0")
+    compileOnly(Libs.material)
+    compileOnly(Libs.eventbus)
+    compileOnly(Libs.calligraphy)
 
     // --- GLIDE --- //
-    compileOnly("com.github.bumptech.glide:glide:4.9.0")
+    compileOnly(Libs.glide)
 
     // --- CONDUCTOR --- //
-    compileOnly("com.bluelinelabs", "conductor", version = conductorVersion)
-    compileOnly("com.bluelinelabs", "conductor-support", version = conductorVersion)
-    compileOnly("com.bluelinelabs", "conductor-rxlifecycle2", version = conductorVersion)
+    compileOnly(Libs.conductor)
+    compileOnly(Libs.conductor_support)
+    compileOnly(Libs.conductor_rxlifecycle2)
 
     // --- GROUPIE --- //
-    compileOnly("com.xwray:groupie:2.5.1")
-    compileOnly("com.xwray:groupie-kotlin-android-extensions:2.5.1")
+    compileOnly(Libs.groupie)
+    compileOnly(Libs.groupie_kotlin_android_extensions)
 
     // --- RXJAVA2 --- //
-    compileOnly("io.reactivex.rxjava2:rxjava:2.2.8")
-    compileOnly("io.reactivex.rxjava2:rxandroid:2.1.1")
-    compileOnly("io.reactivex.rxjava2:rxkotlin:2.3.0")
+    compileOnly(Libs.rxjava)
+    compileOnly(Libs.rxandroid)
+    compileOnly(Libs.rxkotlin)
 
     // --- RETROFIT --- //
-    compileOnly("com.squareup.retrofit2:retrofit:2.6.1")
+    compileOnly(Libs.retrofit)
 
     // --- WASABEEF --- //
-    compileOnly("jp.wasabeef:blurry:3.0.0")
-    compileOnly("jp.wasabeef:recyclerview-animators:3.0.0")
+    compileOnly(Libs.blurry)
+    compileOnly(Libs.recyclerview_animators)
 }
 
 //add javadocs
