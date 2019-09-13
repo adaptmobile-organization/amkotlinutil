@@ -24,7 +24,7 @@ Kotlin extensions and utility
   Example:
     
     dependencies {
-        compile 'com.github.adaptmobile-organization:amkotlinutil:1.0.1'
+        compile 'com.github.adaptmobile-organization:amkotlinutil:6.6.10'
     }
 
 ## Development
