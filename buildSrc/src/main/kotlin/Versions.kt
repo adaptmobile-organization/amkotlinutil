@@ -1,4 +1,3 @@
-import kotlin.String
 import org.gradle.plugin.use.PluginDependenciesSpec
 import org.gradle.plugin.use.PluginDependencySpec
 
@@ -12,7 +11,7 @@ import org.gradle.plugin.use.PluginDependencySpec
  * YOU are responsible for updating manually the dependency version.
  */
 object Versions {
-  const val appcompat: String = "1.0.2" // available: "1.1.0"
+  const val appcompat: String = "1.1.0"
 
   const val constraintlayout: String = "2.0.0-beta2"
 
@@ -28,7 +27,7 @@ object Versions {
 
   const val glide: String = "4.9.0"
 
-  const val android_maven_gradle_plugin: String = "2.0" // available: "2.1"
+  const val android_maven_gradle_plugin: String = "2.1"
 
   const val material: String = "1.1.0-alpha10"
 
@@ -36,13 +35,13 @@ object Versions {
 
   const val com_xwray: String = "2.5.1"
 
-  const val de_fayard_buildsrcversions_gradle_plugin: String = "0.4.2"
+  const val de_fayard_buildsrcversions_gradle_plugin: String = "0.6.0"
 
   const val rxandroid: String = "2.1.1"
 
-  const val rxjava: String = "2.2.8" // available: "2.2.12"
+  const val rxjava: String = "2.2.12"
 
-  const val rxkotlin: String = "2.3.0" // available: "2.4.0"
+  const val rxkotlin: String = "2.4.0"
 
   const val jp_wasabeef: String = "3.0.0"
 
