@@ -15,7 +15,7 @@ import androidx.annotation.RequiresPermission
  * @author Jason Kelly <jason@adaptagency.com>
  */
 @SuppressLint("StaticFieldLeak")
-object DownloadManager{
+object DownloadManager {
     private lateinit var applicationContext: Context
     private lateinit var downloadManager: DownloadManager
 

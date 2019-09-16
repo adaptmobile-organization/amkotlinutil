@@ -48,6 +48,9 @@ android {
 
 ktlint {
     android = true
+    verbose = true
+    ignoreFailures = true
+    enableExperimentalRules = true
 }
 
 dependencies {
