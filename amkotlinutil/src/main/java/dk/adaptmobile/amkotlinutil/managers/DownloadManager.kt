@@ -54,7 +54,10 @@ object DownloadManager {
                 val id = intent?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
 
                 if (downloadId == id) {
-                    onComplete?.invoke(downloadManager.getUriForDownloadedFile(downloadId), downloadManager.getMimeTypeForDownloadedFile(downloadId))
+                    onComplete?.invoke(
+                        downloadManager.getUriForDownloadedFile(downloadId),
+                        downloadManager.getMimeTypeForDownloadedFile(downloadId)
+                    )
 
                     // Unregister when download finishes
                     context?.unregisterReceiver(this)
@@ -62,6 +65,9 @@ object DownloadManager {
             }
         }
 
-        applicationContext.registerReceiver(broadcastReceiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
+        applicationContext.registerReceiver(
+            broadcastReceiver,
+            IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE)
+        )
     }
 }
