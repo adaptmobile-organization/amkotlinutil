@@ -1,7 +1,11 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.annotation.SuppressLint
-import android.content.*
+import android.content.ActivityNotFoundException
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
@@ -163,22 +167,33 @@ fun Context.cacheImage(url: String): Observable<Boolean> {
             it.onNext(false)
         } else {
             Glide.with(applicationContext)
-                    .downloadOnly()
-                    .load(url)
-                    .listener(object : RequestListener<File> {
-                        override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<File>?, isFirstResource: Boolean): Boolean {
-                            if (e != null) {
-                                it.onNext(false)
-                            }
-                            return false
+                .downloadOnly()
+                .load(url)
+                .listener(object : RequestListener<File> {
+                    override fun onLoadFailed(
+                        e: GlideException?,
+                        model: Any?,
+                        target: Target<File>?,
+                        isFirstResource: Boolean
+                    ): Boolean {
+                        if (e != null) {
+                            it.onNext(false)
                         }
+                        return false
+                    }
 
-                        override fun onResourceReady(resource: File?, model: Any?, target: Target<File>?, dataSource: DataSource?, isFirstResource: Boolean): Boolean {
-                            it.onNext(true)
-                            return false
-                        }
-                    })
-                    .submit()
+                    override fun onResourceReady(
+                        resource: File?,
+                        model: Any?,
+                        target: Target<File>?,
+                        dataSource: DataSource?,
+                        isFirstResource: Boolean
+                    ): Boolean {
+                        it.onNext(true)
+                        return false
+                    }
+                })
+                .submit()
         }
     }
 }

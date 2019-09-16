@@ -1,3 +1,4 @@
+import kotlin.String
 import org.gradle.plugin.use.PluginDependenciesSpec
 import org.gradle.plugin.use.PluginDependencySpec
 
@@ -11,56 +12,62 @@ import org.gradle.plugin.use.PluginDependencySpec
  * YOU are responsible for updating manually the dependency version.
  */
 object Versions {
-  const val appcompat: String = "1.1.0"
+    const val appcompat: String = "1.1.0"
 
-  const val constraintlayout: String = "2.0.0-beta2"
+    const val constraintlayout: String = "2.0.0-beta2"
 
-  const val core_ktx: String = "1.1.0"
+    const val core_ktx: String = "1.1.0"
 
-  const val aapt2: String = "3.5.0-5435860"
+    const val aapt2: String = "3.5.0-5435860"
 
-  const val com_android_tools_build_gradle: String = "3.5.0"
+    const val com_android_tools_build_gradle: String = "3.5.0"
 
-  const val lint_gradle: String = "26.5.0"
+    const val lint_gradle: String = "26.5.0"
 
-  const val com_bluelinelabs: String = "2.1.5"
+    const val com_bluelinelabs: String = "2.1.5"
 
-  const val glide: String = "4.9.0"
+    const val glide: String = "4.9.0"
 
-  const val android_maven_gradle_plugin: String = "2.1"
+    const val android_maven_gradle_plugin: String = "2.0" // available: "2.1"
 
-  const val material: String = "1.1.0-alpha10"
+    const val material: String = "1.1.0-alpha10"
 
-  const val retrofit: String = "2.6.1"
+    const val ktlint: String = "0.33.0" // available: "0.34.2"
 
-  const val com_xwray: String = "2.5.1"
+    const val retrofit: String = "2.6.1"
 
-  const val de_fayard_buildsrcversions_gradle_plugin: String = "0.6.0"
+    const val com_xwray: String = "2.5.1"
 
-  const val rxandroid: String = "2.1.1"
+    const val de_fayard_buildsrcversions_gradle_plugin: String = "0.4.2" // available: "0.6.0"
 
-  const val rxjava: String = "2.2.12"
+    const val rxandroid: String = "2.1.1"
 
-  const val rxkotlin: String = "2.4.0"
+    const val rxjava: String = "2.2.12"
 
-  const val jp_wasabeef: String = "3.0.0"
+    const val rxkotlin: String = "2.4.0"
 
-  const val eventbus: String = "3.1.1"
+    const val jp_wasabeef: String = "3.0.0"
 
-  const val dokka_android_gradle_plugin: String = "0.9.18"
+    const val eventbus: String = "3.1.1"
 
-  const val org_jetbrains_kotlin: String = "1.3.50"
+    const val dokka_android_gradle_plugin: String = "0.9.18"
 
-  const val calligraphy: String = "2.3.0"
+    const val org_jetbrains_kotlin: String = "1.3.50"
 
-  /**
-   *
-   * See issue 19: How to update Gradle itself?
-   * https://github.com/jmfayard/buildSrcVersions/issues/19
-   */
-  const val gradleLatestVersion: String = "5.6.2"
+    const val org_jlleitschuh_gradle_ktlint_gradle_plugin: String = "8.2.0"
 
-  const val gradleCurrentVersion: String = "5.4.1"
+    const val ktlint_gradle: String = "8.2.0"
+
+    const val calligraphy: String = "2.3.0"
+
+    /**
+     *
+     * See issue 19: How to update Gradle itself?
+     * https://github.com/jmfayard/buildSrcVersions/issues/19
+     */
+    const val gradleLatestVersion: String = "5.6.2"
+
+    const val gradleCurrentVersion: String = "5.4.1"
 }
 
 /**
@@ -68,5 +75,5 @@ object Versions {
  * https://github.com/jmfayard/buildSrcVersions/issues/47
  */
 val PluginDependenciesSpec.buildSrcVersions: PluginDependencySpec
-  inline get() =
-      id("de.fayard.buildSrcVersions").version(Versions.de_fayard_buildsrcversions_gradle_plugin)
+    inline get() =
+            id("de.fayard.buildSrcVersions").version(Versions.de_fayard_buildsrcversions_gradle_plugin)

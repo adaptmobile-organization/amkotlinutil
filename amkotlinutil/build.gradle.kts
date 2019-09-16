@@ -3,13 +3,14 @@ import org.jetbrains.dokka.gradle.LinkMapping
 import org.jetbrains.kotlin.config.KotlinCompilerVersion
 
 plugins {
-    id("maven-publish")
     id("com.android.library")
+    id("maven-publish")
     id("com.github.dcendents.android-maven")
     kotlin("android")
     kotlin("android.extensions")
     id("org.jetbrains.dokka-android")
     id("maven")
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 val conductorVersion = "2.1.5"
@@ -33,6 +34,17 @@ android {
         isExperimental = true
     }
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+ktlint {
+    android.set(true)
+    ignoreFailures.set(true)
+    verbose.set(true)
+    enableExperimentalRules.set(true)
 }
 
 dependencies {
@@ -72,7 +84,7 @@ dependencies {
     compileOnly(Libs.recyclerview_animators)
 }
 
-//add javadocs
+// add javadocs
 tasks {
     val sourcesJar by creating(Jar::class) {
         archiveClassifier.set("sources")
@@ -90,13 +102,14 @@ tasks {
         val appPath = File(project.projectDir, "/src/main/java")
         val relativeAppPath = rootDir.toPath().relativize(appPath.toPath()).toString()
 
-        linkMapping(delegateClosureOf<LinkMapping> {
-            dir = appPath.toPath().toString()
-            url =
-                "https://github.com/adaptmobile-organization/amkotlinutil/tree/master/$relativeAppPath"
-            suffix = "#L"
-        })
-
+        linkMapping(
+            delegateClosureOf<LinkMapping> {
+                dir = appPath.toPath().toString()
+                url =
+                    "https://github.com/adaptmobile-organization/amkotlinutil/tree/master/$relativeAppPath"
+                suffix = "#L"
+            }
+        )
     }
 
     val javadocJar by creating(Jar::class) {

@@ -11,7 +11,11 @@ import com.bluelinelabs.conductor.changehandler.FadeChangeHandler
 import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
 import com.bluelinelabs.conductor.changehandler.SimpleSwapChangeHandler
 import com.bluelinelabs.conductor.changehandler.VerticalChangeHandler
-import dk.adaptmobile.amkotlinutil.conductor.*
+import dk.adaptmobile.amkotlinutil.conductor.ArcFadeMoveChangeHandler
+import dk.adaptmobile.amkotlinutil.conductor.DialogBlurChangeHandler
+import dk.adaptmobile.amkotlinutil.conductor.DialogFadeChangeHandler
+import dk.adaptmobile.amkotlinutil.conductor.FlipChangeHandler
+import dk.adaptmobile.amkotlinutil.conductor.ScaleFadeChangeHandler
 
 /**
  * Created by christiansteffensen on 05/06/2017.
@@ -47,10 +51,22 @@ sealed class AnimationType {
     class DialogBlur(val radius: Int = 25, val sampling: Int = 2) : AnimationType()
     object DialogFade : AnimationType()
     object None : AnimationType()
-    data class Custom(val pushControllerChangeHandler: ControllerChangeHandler, val popControllerChangeHandler: ControllerChangeHandler? = null) : AnimationType()
+    data class Custom(
+        val pushControllerChangeHandler: ControllerChangeHandler,
+        val popControllerChangeHandler: ControllerChangeHandler? = null
+    ) : AnimationType()
 }
 
-fun Router.pushView(controller: Controller?, type: AnimationType, removesFromViewOnPush: Boolean = true, retain: Boolean = false, asRoot: Boolean = false, replace: Boolean = false, tag: String? = null, hidekeyboard: Boolean = true) {
+fun Router.pushView(
+    controller: Controller?,
+    type: AnimationType,
+    removesFromViewOnPush: Boolean = true,
+    retain: Boolean = false,
+    asRoot: Boolean = false,
+    replace: Boolean = false,
+    tag: String? = null,
+    hidekeyboard: Boolean = true
+) {
     controller?.let {
 
         val transaction = RouterTransaction.with(controller)

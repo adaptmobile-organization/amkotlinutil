@@ -8,7 +8,7 @@ import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
-import java.util.*
+import java.util.IllegalFormatConversionException
 
 /**
  * Created by Alex on 12/09/2017.

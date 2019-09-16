@@ -11,7 +11,11 @@ import com.bluelinelabs.conductor.changehandler.TransitionChangeHandler
 import jp.wasabeef.blurry.Blurry
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-class DialogBlurChangeHandler(val removesFromViewOnPush: Boolean = false, val radius: Int = 25, val sampling: Int = 2) : TransitionChangeHandler() {
+class DialogBlurChangeHandler(
+    val removesFromViewOnPush: Boolean = false,
+    val radius: Int = 25,
+    val sampling: Int = 2
+) : TransitionChangeHandler() {
 
     override fun getTransition(container: ViewGroup, from: View?, to: View?, isPush: Boolean): Transition {
 
@@ -22,9 +26,9 @@ class DialogBlurChangeHandler(val removesFromViewOnPush: Boolean = false, val ra
         }
 
         val transition = TransitionSet()
-                .setOrdering(TransitionSet.ORDERING_SEQUENTIAL)
-                .addTransition(Fade(Fade.OUT).addTarget(from))
-                .addTransition(Fade(Fade.IN).addTarget(to))
+            .setOrdering(TransitionSet.ORDERING_SEQUENTIAL)
+            .addTransition(Fade(Fade.OUT).addTarget(from))
+            .addTransition(Fade(Fade.IN).addTarget(to))
 
         return transition
     }

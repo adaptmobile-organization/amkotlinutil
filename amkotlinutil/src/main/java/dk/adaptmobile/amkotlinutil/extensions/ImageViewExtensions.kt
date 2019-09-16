@@ -20,34 +20,59 @@ sealed class Transformation {
     object Circle : Transformation()
 }
 
-fun ImageView.loadImageResource(imageResource: String?, skipMemoryCache: Boolean = false, transformation: Transformation? = null, imageLoadedCallback: (() -> Unit)? = null) {
+fun ImageView.loadImageResource(
+    imageResource: String?,
+    skipMemoryCache: Boolean = false,
+    transformation: Transformation? = null,
+    imageLoadedCallback: (() -> Unit)? = null
+) {
     imageResource?.let {
         loadImage(it, skipMemoryCache, transformation, imageLoadedCallback)
     }
 }
 
-fun ImageView.loadImageResource(imageResource: Int?, skipMemoryCache: Boolean = false, transformation: Transformation? = null, imageLoadedCallback: (() -> Unit)? = null) {
+fun ImageView.loadImageResource(
+    imageResource: Int?,
+    skipMemoryCache: Boolean = false,
+    transformation: Transformation? = null,
+    imageLoadedCallback: (() -> Unit)? = null
+) {
     imageResource?.let {
         loadImage(it, skipMemoryCache, transformation, imageLoadedCallback)
     }
 }
 
-fun ImageView.loadImageResource(imageResource: Bitmap?, skipMemoryCache: Boolean = false, transformation: Transformation? = null, imageLoadedCallback: (() -> Unit)? = null) {
+fun ImageView.loadImageResource(
+    imageResource: Bitmap?,
+    skipMemoryCache: Boolean = false,
+    transformation: Transformation? = null,
+    imageLoadedCallback: (() -> Unit)? = null
+) {
     imageResource?.let {
         loadImage(it, skipMemoryCache, transformation, imageLoadedCallback)
     }
 }
 
-fun ImageView.loadImageResource(imageResource: Drawable?, skipMemoryCache: Boolean = false, transformation: Transformation? = null, imageLoadedCallback: (() -> Unit)? = null) {
+fun ImageView.loadImageResource(
+    imageResource: Drawable?,
+    skipMemoryCache: Boolean = false,
+    transformation: Transformation? = null,
+    imageLoadedCallback: (() -> Unit)? = null
+) {
     imageResource?.let {
         loadImage(it, skipMemoryCache, transformation, imageLoadedCallback)
     }
 }
 
-private fun ImageView.loadImage(imageResource: Any, skipMemoryCache: Boolean, transformation: Transformation?, imageLoadedCallback: (() -> Unit)?) {
+private fun ImageView.loadImage(
+    imageResource: Any,
+    skipMemoryCache: Boolean,
+    transformation: Transformation?,
+    imageLoadedCallback: (() -> Unit)?
+) {
     val glide = Glide.with(context)
-            .load(imageResource)
-            .skipMemoryCache(skipMemoryCache)
+        .load(imageResource)
+        .skipMemoryCache(skipMemoryCache)
 
     when (transformation) {
         is Transformation.CenterCrop -> glide.centerCrop()
@@ -56,9 +81,20 @@ private fun ImageView.loadImage(imageResource: Any, skipMemoryCache: Boolean, tr
 
     imageLoadedCallback?.let {
         glide.addListener(object : RequestListener<Drawable> {
-            override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?, isFirstResource: Boolean): Boolean = false
+            override fun onLoadFailed(
+                e: GlideException?,
+                model: Any?,
+                target: Target<Drawable>?,
+                isFirstResource: Boolean
+            ): Boolean = false
 
-            override fun onResourceReady(resource: Drawable?, model: Any?, target: Target<Drawable>?, dataSource: DataSource?, isFirstResource: Boolean): Boolean {
+            override fun onResourceReady(
+                resource: Drawable?,
+                model: Any?,
+                target: Target<Drawable>?,
+                dataSource: DataSource?,
+                isFirstResource: Boolean
+            ): Boolean {
                 imageLoadedCallback()
                 return false
             }
@@ -68,26 +104,34 @@ private fun ImageView.loadImage(imageResource: Any, skipMemoryCache: Boolean, tr
     glide.into(this)
 }
 
-@Deprecated("Deprecated, use loadImageResource with parameters instead",
-        replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.CenterCrop)"))
+@Deprecated(
+    "Deprecated, use loadImageResource with parameters instead",
+    replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.CenterCrop)")
+)
 fun ImageView.loadImageResourceCenterCrop(imageResource: String?) {
     loadImageResource(imageResource, transformation = Transformation.CenterCrop)
 }
 
-@Deprecated("Deprecated, use loadImageResource with parameters instead",
-        replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.CenterCrop)"))
+@Deprecated(
+    "Deprecated, use loadImageResource with parameters instead",
+    replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.CenterCrop)")
+)
 fun ImageView.loadImageResourceCenterCrop(imageResource: Int?) {
     loadImageResource(imageResource, transformation = Transformation.CenterCrop)
 }
 
-@Deprecated("Deprecated, use loadImageResource with parameters instead",
-        replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.Circle)"))
+@Deprecated(
+    "Deprecated, use loadImageResource with parameters instead",
+    replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.Circle)")
+)
 fun ImageView.loadImageResourceAsCircle(imageResource: String?) {
     loadImageResource(imageResource, transformation = Transformation.Circle)
 }
 
-@Deprecated("Deprecated, use loadImageResource with parameters instead",
-        replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.Circle)"))
+@Deprecated(
+    "Deprecated, use loadImageResource with parameters instead",
+    replaceWith = ReplaceWith("loadImageResource(imageResource, transformation = Transformation.Circle)")
+)
 fun ImageView.loadImageResourceAsCircle(imageResource: Int?) {
     loadImageResource(imageResource, transformation = Transformation.Circle)
 }
@@ -100,8 +144,8 @@ fun ImageView.loadBase64Image(base64Image: String?) {
     base64Image?.let {
         //        val data = base64Image.split(',')[1] //Get the second part
         Glide.with(context)
-                .asBitmap()
-                .load(Base64.decode(base64Image, Base64.DEFAULT))
-                .into(this)
+            .asBitmap()
+            .load(Base64.decode(base64Image, Base64.DEFAULT))
+            .into(this)
     }
 }

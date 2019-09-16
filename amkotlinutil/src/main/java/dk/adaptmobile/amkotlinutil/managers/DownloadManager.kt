@@ -34,7 +34,11 @@ object DownloadManager {
      * With the appropriate file URI and mimeType
      */
     @RequiresPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-    fun downloadFile(url: String, downloadRequest: (DownloadManager.Request.() -> Unit)? = null, onComplete: ((uri: Uri, mimeType: String) -> Unit)? = null) {
+    fun downloadFile(
+        url: String,
+        downloadRequest: (DownloadManager.Request.() -> Unit)? = null,
+        onComplete: ((uri: Uri, mimeType: String) -> Unit)? = null
+    ) {
         val request = DownloadManager.Request(Uri.parse(url))
 
         downloadRequest?.let { request.it() }

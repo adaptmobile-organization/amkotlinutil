@@ -6,7 +6,7 @@ import android.os.Looper
 import dk.adaptmobile.amkotlinutil.model.PostDelay
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
-import java.util.*
+import java.util.Locale
 import java.util.concurrent.TimeUnit
 
 /**
@@ -33,8 +33,8 @@ inline fun wait(delayMillis: Long, mainThread: Boolean = false, crossinline func
 @SuppressLint("CheckResult")
 inline fun waitRx(delayMillis: Long, crossinline function: () -> Unit) {
     Observable.timer(delayMillis, TimeUnit.MILLISECONDS)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe {
-                function()
-            }
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe {
+            function()
+        }
 }

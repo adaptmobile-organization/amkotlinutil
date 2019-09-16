@@ -4,7 +4,12 @@ import android.animation.AnimatorSet
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.PorterDuff
-import android.view.*
+import android.view.ContextThemeWrapper
+import android.view.Gravity
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewPropertyAnimator
+import android.view.ViewTreeObserver
 import android.view.inputmethod.InputMethodManager
 import android.widget.FrameLayout
 import android.widget.LinearLayout
@@ -14,7 +19,11 @@ import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.annotation.StyleRes
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.*
+import androidx.core.view.ViewCompat
+import androidx.core.view.marginBottom
+import androidx.core.view.marginLeft
+import androidx.core.view.marginRight
+import androidx.core.view.marginTop
 import dk.adaptmobile.amkotlinutil.util.KotlinAnimationListener
 
 /**
@@ -233,7 +242,10 @@ fun List<View>.visible() {
     this.forEach { it.visible() }
 }
 
-fun View.setBackgroundTintRes(@ColorRes colorRes: Int, tintMode: PorterDuff.Mode = PorterDuff.Mode.SRC_OVER) {
+fun View.setBackgroundTintRes(
+    @ColorRes colorRes: Int,
+    tintMode: PorterDuff.Mode = PorterDuff.Mode.SRC_OVER
+) {
     this.background.setColorFilter(context.getColorCompat(colorRes), tintMode)
 }
 
@@ -324,7 +336,13 @@ data class PopupMenuItem(val description: String, val value: String)
  * @param gravity Gravity flag to control gravity, defaults to NO_GRAVITY
  * @param itemSelected Callback lambda with the selected value
  */
-fun View.showPopupMenu(items: List<PopupMenuItem>, anchor: View = this, gravity: Int = Gravity.NO_GRAVITY, @StyleRes style: Int = 0, itemSelected: (item: String) -> Unit) {
+fun View.showPopupMenu(
+    items: List<PopupMenuItem>,
+    anchor: View = this,
+    gravity: Int = Gravity.NO_GRAVITY,
+    @StyleRes style: Int = 0,
+    itemSelected: (item: String) -> Unit
+) {
     val contextWrapper = ContextThemeWrapper(context, style)
     val popupMenu = PopupMenu(contextWrapper, anchor, gravity)
 

@@ -7,7 +7,12 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import jp.wasabeef.recyclerview.animators.BaseItemAnimator
 
-fun GroupAdapter<ViewHolder>.addWithAnimation(recyclerView: RecyclerView, group: Group, animator: BaseItemAnimator, viewAttached: () -> Unit) {
+fun GroupAdapter<ViewHolder>.addWithAnimation(
+    recyclerView: RecyclerView,
+    group: Group,
+    animator: BaseItemAnimator,
+    viewAttached: () -> Unit
+) {
     val currentAnimator = recyclerView.itemAnimator
     recyclerView.itemAnimator = animator
     recyclerView.addOnChildAttachStateChangeListener(object : RecyclerView.OnChildAttachStateChangeListener {

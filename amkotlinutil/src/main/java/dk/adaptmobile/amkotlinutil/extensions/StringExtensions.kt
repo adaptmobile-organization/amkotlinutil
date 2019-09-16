@@ -11,7 +11,8 @@ import android.text.Spanned
 import android.text.TextUtils
 import java.net.URLEncoder
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 
 /**
  * Created by bjarkeseverinsen on 20/09/2017.
@@ -93,8 +94,8 @@ fun String.versionNumberToInt(): Int {
 
 fun String.capitalizeFirstLetterEachWord(): String {
     return this.toLowerCase()
-            .split(" ")
-            .joinToString(" ") { it.capitalize() }
+        .split(" ")
+        .joinToString(" ") { it.capitalize() }
 }
 
 fun String?.convertToLongId(): Long { // should return different value for each not-same string
@@ -113,10 +114,10 @@ fun String?.convertToLongId(): Long { // should return different value for each 
 }
 
 fun String.toColor(): Int? {
-    if (this.isNotEmpty()) {
-        return Color.parseColor(this)
+    return if (this.isNotEmpty()) {
+        Color.parseColor(this)
     } else {
-        return null
+        null
     }
 }
 

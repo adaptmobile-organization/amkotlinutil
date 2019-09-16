@@ -14,9 +14,9 @@ class DialogFadeChangeHandler(val removesFromViewOnPush: Boolean = false) : Tran
 
     override fun getTransition(container: ViewGroup, from: View?, to: View?, isPush: Boolean): Transition {
         val transition = TransitionSet()
-                .setOrdering(TransitionSet.ORDERING_SEQUENTIAL)
-                .addTransition(Fade(Fade.OUT).addTarget(from))
-                .addTransition(Fade(Fade.IN).addTarget(to))
+            .setOrdering(TransitionSet.ORDERING_SEQUENTIAL)
+            .addTransition(Fade(Fade.OUT).addTarget(from))
+            .addTransition(Fade(Fade.IN).addTarget(to))
 
         return transition
     }

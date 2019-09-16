@@ -29,13 +29,20 @@ fun TextInputLayout.clearError() {
 val TextView.textString: String
     get() = text.toString()
 
-fun TextView.setTextWithDifferentFonts(firstText: String, secondText: String, typeFaceFirst: CalligraphyTypefaceSpan, typeFaceSecond: CalligraphyTypefaceSpan, sizeFirst: Int, siceSecond: Int) {
+fun TextView.setTextWithDifferentFonts(
+    firstText: String,
+    secondText: String,
+    typeFaceFirst: CalligraphyTypefaceSpan,
+    typeFaceSecond: CalligraphyTypefaceSpan,
+    sizeFirst: Int,
+    siceSecond: Int
+) {
 
     val sBuilder = SpannableStringBuilder()
 
     sBuilder.append(firstText)
-            .append(" ") // Insert a space
-            .append(secondText)
+        .append(" ") // Insert a space
+        .append(secondText)
 
     sBuilder.setSpan(typeFaceFirst, 0, firstText.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
     sBuilder.setSpan(AbsoluteSizeSpan(sizeFirst), 0, firstText.length, Spanned.SPAN_INCLUSIVE_INCLUSIVE)

@@ -1,7 +1,8 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 
 /**
  * Created by bjarkeseverinsen on 20/09/2017.
