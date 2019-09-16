@@ -16,9 +16,7 @@ import androidx.annotation.RequiresPermission
  */
 @SuppressLint("StaticFieldLeak")
 object DownloadManager { private lateinit var applicationContext: Context
-        private lateinit var downloadManager: DownloadManager
-
-        /**
+        private lateinit var downloadManager: DownloadManager/**
          * This will initialize the download manager with the specified
          * application context
          */

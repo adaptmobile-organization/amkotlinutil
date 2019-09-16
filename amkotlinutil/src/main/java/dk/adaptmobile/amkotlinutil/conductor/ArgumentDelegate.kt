@@ -46,5 +46,4 @@ class ArgumentDelegate<T> : ReadWriteProperty<Controller, T> {
             else -> throw UnsupportedOperationException("Not yet implemented")
         }
     }
-
 }
