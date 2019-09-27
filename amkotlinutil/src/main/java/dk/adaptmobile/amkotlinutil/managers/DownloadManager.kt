@@ -61,8 +61,3 @@ object DownloadManager {
         applicationContext.registerReceiver(broadcastReceiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
     }
 }
-
-
-
-
-

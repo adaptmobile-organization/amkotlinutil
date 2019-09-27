@@ -7,7 +7,6 @@ import java.util.*
  * Created by bjarkeseverinsen on 20/09/2017.
  */
 
-
 fun Date.resetHourMinSecForDate(): Date {
     val calendar = Calendar.getInstance(danishLocale())
     calendar.time = this

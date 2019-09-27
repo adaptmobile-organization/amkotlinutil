@@ -17,7 +17,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.*
 import dk.adaptmobile.amkotlinutil.util.KotlinAnimationListener
 
-
 /**
  * Created by christiansteffensen on 05/06/2017.
  */
@@ -126,7 +125,7 @@ fun View.setbackgroundColorResource(@ColorRes resId: Int) {
     setBackgroundColor(context.getColorCompat(resId))
 }
 
-fun View.toBitmap(): Bitmap? { //Take "screenshot" of a view from: http://stackoverflow.com/questions/2801116/converting-a-view-to-bitmap-without-displaying-it-in-android
+fun View.toBitmap(): Bitmap? { // Take "screenshot" of a view from: http://stackoverflow.com/questions/2801116/converting-a-view-to-bitmap-without-displaying-it-in-android
     this.clearFocus()
     this.isPressed = false
 
@@ -158,10 +157,8 @@ fun ViewGroup.getString(@StringRes stringRes: Int): String {
     return this.context.getString(stringRes)
 }
 
-
 fun View.setMargins(left: Int, top: Int, right: Int, bottom: Int) {
     val params = layoutParams
-
 
     when (params) {
         is ConstraintLayout.LayoutParams -> {
@@ -321,11 +318,11 @@ data class PopupMenuItem(val description: String, val value: String)
 
 /**
  * Extension function to show a PopupMenu on a view. Optionally, pass in a separate anchor view, if you want the popup to be centered on a different view than the clicked one
- * @param   items         List of items to be shown in the PopupMenu. Description is the text to be shown in the popup, value is the text(value) that will be returned when the item is selected
- * @param   anchor        Optional anchor view. Defaults to the clicked view.
- * @param   style         Optional Style resource to style the popupmenu
- * @param   gravity       Gravity flag to control gravity, defaults to NO_GRAVITY
- * @param   itemSelected  Callback lambda with the selected value
+ * @param items List of items to be shown in the PopupMenu. Description is the text to be shown in the popup, value is the text(value) that will be returned when the item is selected
+ * @param anchor Optional anchor view. Defaults to the clicked view.
+ * @param style Optional Style resource to style the popupmenu
+ * @param gravity Gravity flag to control gravity, defaults to NO_GRAVITY
+ * @param itemSelected Callback lambda with the selected value
  */
 fun View.showPopupMenu(items: List<PopupMenuItem>, anchor: View = this, gravity: Int = Gravity.NO_GRAVITY, @StyleRes style: Int = 0, itemSelected: (item: String) -> Unit) {
     val contextWrapper = ContextThemeWrapper(context, style)

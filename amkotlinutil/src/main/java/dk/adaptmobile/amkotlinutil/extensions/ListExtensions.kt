@@ -13,7 +13,7 @@ fun <T> List<T>?.sizeOrZero(): Int {
 }
 
 fun <T> List<T>?.orEmptyString(string: String): String {
-    return if(this?.isEmpty() == true) "" else string
+    return if (this?.isEmpty() == true) "" else string
 }
 
 fun <E> MutableList<E>.removeElement(element: E): E? {

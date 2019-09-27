@@ -29,5 +29,3 @@ fun TransitionSet.setOnTransitionEndListener(callback: () -> Unit) {
         }
     })
 }
-
-

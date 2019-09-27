@@ -26,12 +26,10 @@ class DialogBlurChangeHandler(val removesFromViewOnPush: Boolean = false, val ra
                 .addTransition(Fade(Fade.OUT).addTarget(from))
                 .addTransition(Fade(Fade.IN).addTarget(to))
 
-
         return transition
     }
 
     override fun removesFromViewOnPush(): Boolean {
         return removesFromViewOnPush
     }
-
 }

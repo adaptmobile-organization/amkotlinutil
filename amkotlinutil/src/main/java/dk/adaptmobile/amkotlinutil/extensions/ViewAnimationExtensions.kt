@@ -35,7 +35,6 @@ fun View?.fadeIn(duration: Long = 400, startDelay: Long = 0, interpolator: Inter
                 .setDuration(duration)
                 .setStartDelay(startDelay)
                 .setInterpolator(interpolator)
-
     }
 
     return null
@@ -80,8 +79,8 @@ fun View?.fadeTo(alpha: Float, duration: Long = 400, startDelay: Long = 0, inter
 fun View?.enterFromLeft(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         this.invisible()
-        val x = this.x    // store initial x
-        this.x = 0f - this.width    // move to left outside screen
+        val x = this.x // store initial x
+        this.x = 0f - this.width // move to left outside screen
         this.visible()
 
         return animate(true).x(x)
@@ -99,9 +98,9 @@ fun View?.enterFromLeft(duration: Long = 400, startDelay: Long = 0, interpolator
 fun View?.enterFromRight(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         this.invisible()
-        val widthPixels = Resources.getSystem().displayMetrics.widthPixels    // get device width
-        val x = this.x    // store initial x
-        this.x = widthPixels.toFloat()    // move to right outside screen
+        val widthPixels = Resources.getSystem().displayMetrics.widthPixels // get device width
+        val x = this.x // store initial x
+        this.x = widthPixels.toFloat() // move to right outside screen
         this.visible()
 
         return animate(true).x(x)
@@ -119,8 +118,8 @@ fun View?.enterFromRight(duration: Long = 400, startDelay: Long = 0, interpolato
 fun View?.enterFromTop(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         this.invisible()
-        val y = this.y    // store initial y
-        this.y = 0f - this.height    // move to top
+        val y = this.y // store initial y
+        this.y = 0f - this.height // move to top
         this.visible()
 
         return animate(true).y(y)
@@ -137,9 +136,9 @@ fun View?.enterFromTop(duration: Long = 400, startDelay: Long = 0, interpolator:
 fun View?.enterFromBottom(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
         this.invisible()
-        val screenHeight = Resources.getSystem().displayMetrics.heightPixels.toFloat()    // get device height
-        val y = this.y          // store initial y
-        this.y = screenHeight   // move to bottom
+        val screenHeight = Resources.getSystem().displayMetrics.heightPixels.toFloat() // get device height
+        val y = this.y // store initial y
+        this.y = screenHeight // move to bottom
         this.visible()
 
         return animate().y(y)
@@ -170,7 +169,7 @@ fun View?.exitToLeft(duration: Long = 400, startDelay: Long = 0, interpolator: I
  */
 fun View?.exitToRight(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
-        val widthPixels = Resources.getSystem().displayMetrics.widthPixels    // get device width
+        val widthPixels = Resources.getSystem().displayMetrics.widthPixels // get device width
         return animate(true).x(widthPixels.toFloat())
                 .setStartDelay(startDelay)
                 .setInterpolator(interpolator)
@@ -185,7 +184,7 @@ fun View?.exitToRight(duration: Long = 400, startDelay: Long = 0, interpolator: 
  */
 fun View?.exitToTop(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
-        val y = this.y    // store initial y
+        val y = this.y // store initial y
         return animate(true).y(0f - this.height)
                 .setStartDelay(startDelay)
                 .setInterpolator(interpolator)
@@ -204,8 +203,8 @@ fun View?.exitToTop(duration: Long = 400, startDelay: Long = 0, interpolator: In
  */
 fun View?.exitToBottom(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
     this?.let {
-        val heightPixels = Resources.getSystem().displayMetrics.heightPixels    // get device height
-        val y = this.y  // store initial y
+        val heightPixels = Resources.getSystem().displayMetrics.heightPixels // get device height
+        val y = this.y // store initial y
 
         return animate(true).y(heightPixels.toFloat())
                 .setStartDelay(startDelay)
@@ -237,7 +236,6 @@ fun View?.slideUp(duration: Long = 400, startDelay: Long = 0, interpolator: Inte
     return null
 }
 
-
 fun View.getLocationOnScreen(): Point {
     val location = IntArray(2)
     getLocationOnScreen(location)
@@ -256,7 +254,6 @@ fun ViewPropertyAnimator.reset(): ViewPropertyAnimator {
             .setStartDelay(0)
             .setInterpolator(LinearInterpolator())
 }
-
 
 fun View.rotate(rotation: Float, animated: Boolean = true, animationDuration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()) {
     when (animated) {

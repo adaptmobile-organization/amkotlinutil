@@ -113,12 +113,11 @@ fun String?.convertToLongId(): Long { // should return different value for each 
 }
 
 fun String.toColor(): Int? {
-    if (this.isNotEmpty()) {
-        return Color.parseColor(this)
+    return if (this.isNotEmpty()) {
+        Color.parseColor(this)
     } else {
-        return null
+        null
     }
 }
 
 fun String.urlEncoded(): String? = URLEncoder.encode(this, "utf-8")
-
