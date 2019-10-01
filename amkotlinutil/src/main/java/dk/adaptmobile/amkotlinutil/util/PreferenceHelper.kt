@@ -35,7 +35,6 @@ object PreferenceHelper {
         }
     }
 
-
     /**
      * finds value on given key.
      * [T] is the type of value
