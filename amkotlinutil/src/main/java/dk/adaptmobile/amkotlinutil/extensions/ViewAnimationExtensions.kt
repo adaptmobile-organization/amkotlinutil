@@ -257,14 +257,31 @@ fun ViewPropertyAnimator.reset(): ViewPropertyAnimator {
             .setInterpolator(LinearInterpolator())
 }
 
-
-fun View.rotate(rotation: Float, animated: Boolean = true, animationDuration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()) {
+/**
+ * Animation: Rotates and can execute a function when animation is finished.
+ * @param onFinish executes function after animation is finished
+ */
+fun View.rotate(
+    rotation: Float,
+    animated: Boolean = true,
+    animationDuration: Long = 400,
+    startDelay: Long = 0,
+    interpolator: Interpolator = AccelerateDecelerateInterpolator(),
+    onFinish: () -> Unit = {}
+) {
     when (animated) {
-        true -> this.animate().rotationBy(rotation)
-                .setStartDelay(startDelay)
-                .setInterpolator(interpolator)
-                .setDuration(animationDuration)
-                .start()
+        true -> this.animate().apply {
+            rotationBy(rotation)
+            setStartDelay(startDelay)
+            setInterpolator(interpolator)
+            duration = animationDuration
+            setAnimationListener {
+                onAnimationEnd {
+                    onFinish()
+                }
+            }
+            start()
+        }
         false -> this.rotation = this.rotation + rotation
     }
 }
