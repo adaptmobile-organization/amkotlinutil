@@ -120,5 +120,9 @@ fun String.toColor(): Int? {
     }
 }
 
-fun String.urlEncoded(): String? = URLEncoder.encode(this, "utf-8")
+/**
+ * Encode the url string with chosen encoder. Default encoder is utf-8.
+ * @param encoding The name of a supported character encoding.
+ */
+fun String.urlEncoded(encoding: String = "utf-8"): String? = URLEncoder.encode(this, encoding)
 
