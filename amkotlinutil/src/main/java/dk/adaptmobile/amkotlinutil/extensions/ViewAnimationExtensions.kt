@@ -258,6 +258,27 @@ fun ViewPropertyAnimator.reset(): ViewPropertyAnimator {
 }
 
 /**
+ * Rotates view as a bounce effect. It does infinite.
+ * The returned ObjectAnimator can the be called to cancel the animation if needed.
+ *
+ * @param rotation for how many degrees view should rotate back and fourth.
+ * @param rotateDuration for how long it takes to reach the rotate degree.
+ *
+ * @return ObjectAnimator
+ *
+ */
+fun View.rotateBounceInfinite(rotation: Float = 45f, rotateDuration: Long = 1400) =
+    ObjectAnimator.ofPropertyValuesHolder(
+        this,
+        PropertyValuesHolder.ofFloat("rotation", rotation)
+    ).apply {
+        duration = rotateDuration
+        repeatMode = ObjectAnimator.REVERSE
+        repeatCount = ObjectAnimator.INFINITE
+        start()
+    }
+
+/**
  * Animation: Rotates and can execute a function when animation is finished.
  * @param onFinish executes function after animation is finished
  */
