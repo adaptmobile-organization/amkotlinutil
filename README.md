@@ -1,6 +1,8 @@
 # amkotlinutil
 Kotlin extensions and utility
 
+[![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
+
 # [LINK to DOCUMENTATION](https://amkotlinutil-docs.firebaseapp.com/)
 
 ## Installing
@@ -27,7 +29,6 @@ dependencies {
 }
 ```
     
-
 ## Development
 
 Push a new/the next tag for a new version of amkotlinutil on jitpack
