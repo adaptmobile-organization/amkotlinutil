@@ -6,20 +6,17 @@ import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.Uri
-import androidx.annotation.DimenRes
+import android.util.Log
+import android.util.TypedValue
+import android.view.View
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import android.util.Log
-import android.util.Log.d
-import android.util.TypedValue
-import android.view.View
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import dk.adaptmobile.amkotlinutil.BuildConfig
 import io.reactivex.Observable
 import java.io.File
 
@@ -36,7 +33,6 @@ fun Context.hideViews(vararg views: View) = views.forEach { it.visibility = View
  * Shows all the views passed in the arguments
  */
 fun Context.showViews(vararg views: View) = views.forEach { it.visibility = View.VISIBLE }
-
 
 fun Context.getColorCompat(resId: Int): Int = ContextCompat.getColor(this, resId)
 
@@ -97,7 +93,6 @@ fun Context?.openInBrowser(url: String?) {
     }
 }
 
-
 fun Context.getFontCompat(fontRes: Int): Typeface? {
     return ResourcesCompat.getFont(this, fontRes)
 }
@@ -143,9 +138,9 @@ fun Context?.dial(number: String) {
 
 fun Context?.openGoogleMaps(query: String, placeId: String) {
     val queryEncoded = Uri.encode(query)
-    val gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query=$queryEncoded&query_place_id=$placeId");
-    val mapIntent =  Intent(Intent.ACTION_VIEW, gmmIntentUri)
-    mapIntent.setPackage("com.google.android.apps.maps");
+    val gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query=$queryEncoded&query_place_id=$placeId")
+    val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+    mapIntent.setPackage("com.google.android.apps.maps")
     if (mapIntent.resolveActivity(this?.packageManager) != null) {
         this?.startActivity(mapIntent)
     }
@@ -180,11 +175,9 @@ fun Context.cacheImage(url: String): Observable<Boolean> {
                             it.onNext(true)
                             return false
                         }
-
                     })
                     .submit()
         }
-
     }
 }
 

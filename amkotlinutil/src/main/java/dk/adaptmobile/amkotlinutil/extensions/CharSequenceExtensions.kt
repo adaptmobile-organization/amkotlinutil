@@ -7,4 +7,3 @@ package dk.adaptmobile.amkotlinutil.extensions
 fun CharSequence.isEmptyNullOrStringNull(): Boolean {
     return isNullOrEmpty() || this == "null"
 }
-

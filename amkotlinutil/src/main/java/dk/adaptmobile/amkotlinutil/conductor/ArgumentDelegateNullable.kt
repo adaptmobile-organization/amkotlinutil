@@ -48,5 +48,4 @@ class ArgumentDelegateNullable<T> : ReadWriteProperty<Controller, T?> {
             }
         }
     }
-
 }

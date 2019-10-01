@@ -1,16 +1,15 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.graphics.Typeface
-import androidx.annotation.DrawableRes
-import androidx.annotation.FontRes
-import androidx.annotation.StringRes
-import com.google.android.material.textfield.TextInputLayout
-import androidx.core.content.res.ResourcesCompat
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.TextUtils
 import android.text.style.AbsoluteSizeSpan
 import android.widget.TextView
+import androidx.annotation.DrawableRes
+import androidx.annotation.FontRes
+import androidx.annotation.StringRes
+import com.google.android.material.textfield.TextInputLayout
 import uk.co.chrisjenx.calligraphy.CalligraphyTypefaceSpan
 import uk.co.chrisjenx.calligraphy.CalligraphyUtils
 
@@ -30,12 +29,12 @@ fun TextInputLayout.clearError() {
 val TextView.textString: String
     get() = text.toString()
 
-fun TextView.setTextWithDifferentFonts(firstText : String, secondText : String, typeFaceFirst : CalligraphyTypefaceSpan, typeFaceSecond : CalligraphyTypefaceSpan, sizeFirst : Int, siceSecond : Int) {
+fun TextView.setTextWithDifferentFonts(firstText: String, secondText: String, typeFaceFirst: CalligraphyTypefaceSpan, typeFaceSecond: CalligraphyTypefaceSpan, sizeFirst: Int, siceSecond: Int) {
 
     val sBuilder = SpannableStringBuilder()
 
     sBuilder.append(firstText)
-            .append(" ") //Insert a space
+            .append(" ") // Insert a space
             .append(secondText)
 
     sBuilder.setSpan(typeFaceFirst, 0, firstText.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
@@ -47,12 +46,12 @@ fun TextView.setTextWithDifferentFonts(firstText : String, secondText : String, 
     this.text = sBuilder
 }
 
-fun TextView.setTextColorId(id: Int){
+fun TextView.setTextColorId(id: Int) {
     this.setTextColor(this.context.getColorCompat(id))
 }
 
 fun TextView.setRightDrawable(@DrawableRes resId: Int) {
-    setCompoundDrawablesWithIntrinsicBounds(0,0,resId,0)
+    setCompoundDrawablesWithIntrinsicBounds(0, 0, resId, 0)
 }
 
 fun TextView.setFont(@FontRes font: Int) {

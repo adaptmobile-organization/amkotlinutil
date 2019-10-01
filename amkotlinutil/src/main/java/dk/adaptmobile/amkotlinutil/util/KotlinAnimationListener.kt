@@ -40,5 +40,4 @@ class KotlinAnimationListener : Animator.AnimatorListener {
     fun onAnimationCancel(func: (animation: Animator?) -> Unit) {
         onAnimationCancel = func
     }
-
 }
