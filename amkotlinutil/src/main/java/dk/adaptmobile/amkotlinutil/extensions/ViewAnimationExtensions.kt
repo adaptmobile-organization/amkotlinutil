@@ -21,11 +21,8 @@ import android.view.animation.LinearInterpolator
  * Fades in the View
  */
 fun View?.fadeIn(duration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()): ViewPropertyAnimator? {
-
-
-
     this?.let {
-        if(alpha > 0f) {
+        if (alpha > 0f) {
             alpha = 0f
         }
 
