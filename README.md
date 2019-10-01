@@ -8,10 +8,11 @@ Kotlin extensions and utility
 ## Installing
 
 #### Add jitpack repository to top (project) build.gradle file:
+
+Example:
 ```groovy
 maven { url 'https://jitpack.io' }
 
-Example:
 allprojects {
     repositories {
         jcenter()
