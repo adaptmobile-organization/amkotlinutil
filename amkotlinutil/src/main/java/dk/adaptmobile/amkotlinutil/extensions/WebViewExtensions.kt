@@ -2,7 +2,6 @@ package dk.adaptmobile.amkotlinutil.extensions
 
 import android.webkit.WebView
 
-
 /**
  * Loads html into a webview styled by a stylesheet from assets. Example
  * AMUtil.loadStyledHTML(webview, "style.css", "&lt;p&gt;Example&lt;/p&gt;");

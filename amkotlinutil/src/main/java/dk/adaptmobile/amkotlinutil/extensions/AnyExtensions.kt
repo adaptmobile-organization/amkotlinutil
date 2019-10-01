@@ -38,6 +38,3 @@ inline fun waitRx(delayMillis: Long, crossinline function: () -> Unit) {
                 function()
             }
 }
-
-
-

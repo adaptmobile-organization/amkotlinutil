@@ -12,17 +12,15 @@ fun GroupAdapter<ViewHolder>.addWithAnimation(recyclerView: RecyclerView, group:
     recyclerView.itemAnimator = animator
     recyclerView.addOnChildAttachStateChangeListener(object : RecyclerView.OnChildAttachStateChangeListener {
         override fun onChildViewDetachedFromWindow(view: View) {
-
         }
 
         override fun onChildViewAttachedToWindow(view: View) {
             viewAttached()
             recyclerView.removeOnChildAttachStateChangeListener(this)
         }
-
     })
     this.add(group)
-    wait(animator.addDuration) { //The animator can't be changed back until it's done animating
+    wait(animator.addDuration) { // The animator can't be changed back until it's done animating
         recyclerView.itemAnimator = currentAnimator
     }
 }

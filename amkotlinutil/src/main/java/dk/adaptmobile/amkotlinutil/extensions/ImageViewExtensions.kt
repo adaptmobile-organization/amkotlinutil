@@ -7,11 +7,9 @@ import android.util.Base64
 import android.widget.ImageView
 import androidx.annotation.ColorRes
 import com.bumptech.glide.Glide
-import com.bumptech.glide.RequestBuilder
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
-import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 
 /**
@@ -64,7 +62,6 @@ private fun ImageView.loadImage(imageResource: Any, skipMemoryCache: Boolean, tr
                 imageLoadedCallback()
                 return false
             }
-
         })
     }
 
@@ -108,4 +105,3 @@ fun ImageView.loadBase64Image(base64Image: String?) {
                 .into(this)
     }
 }
-
