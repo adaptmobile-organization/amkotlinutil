@@ -122,3 +122,12 @@ fun String.toColor(): Int? {
 
 fun String.urlEncoded(): String? = URLEncoder.encode(this, "utf-8")
 
+/**
+ * Adds https prefix if link does not have prefix. It will also change old prefix http to https.
+ * @return link/url with https prefix
+ */
+fun String.toHttpsPrefix(): String? = if (this.isNotEmpty() && !this.startsWith("https://") && !this.startsWith("http://")) {
+    "https://$this"
+} else if (this.startsWith("http://")) {
+    this.replace("http://", "https://")
+} else this
