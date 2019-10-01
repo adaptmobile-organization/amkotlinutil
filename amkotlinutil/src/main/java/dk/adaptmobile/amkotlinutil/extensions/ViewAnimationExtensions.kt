@@ -258,33 +258,30 @@ fun ViewPropertyAnimator.reset(): ViewPropertyAnimator {
 }
 
 /**
- * Rotates view as a bounce effect. It does infinite.
- * The returned ObjectAnimator can the be called to cancel the animation if needed.
- *
- * @param rotation for how many degrees view should rotate back and fourth.
- * @param rotateDuration for how long it takes to reach the rotate degree.
- *
- * @return ObjectAnimator
- *
+ * Animation: Rotates and can execute a function when animation is finished.
+ * @param onFinish executes function after animation is finished
  */
-fun View.rotateBounceInfinite(rotation: Float = 45f, rotateDuration: Long = 1400) =
-    ObjectAnimator.ofPropertyValuesHolder(
-        this,
-        PropertyValuesHolder.ofFloat("rotation", rotation)
-    ).apply {
-        duration = rotateDuration
-        repeatMode = ObjectAnimator.REVERSE
-        repeatCount = ObjectAnimator.INFINITE
-        start()
-    }
-
-fun View.rotate(rotation: Float, animated: Boolean = true, animationDuration: Long = 400, startDelay: Long = 0, interpolator: Interpolator = AccelerateDecelerateInterpolator()) {
+fun View.rotate(
+    rotation: Float,
+    animated: Boolean = true,
+    animationDuration: Long = 400,
+    startDelay: Long = 0,
+    interpolator: Interpolator = AccelerateDecelerateInterpolator(),
+    onFinish: () -> Unit = {}
+) {
     when (animated) {
-        true -> this.animate().rotationBy(rotation)
-                .setStartDelay(startDelay)
-                .setInterpolator(interpolator)
-                .setDuration(animationDuration)
-                .start()
+        true -> this.animate().apply {
+            rotationBy(rotation)
+            setStartDelay(startDelay)
+            setInterpolator(interpolator)
+            duration = animationDuration
+            setAnimationListener {
+                onAnimationEnd {
+                    onFinish()
+                }
+            }
+            start()
+        }
         false -> this.rotation = this.rotation + rotation
     }
 }
