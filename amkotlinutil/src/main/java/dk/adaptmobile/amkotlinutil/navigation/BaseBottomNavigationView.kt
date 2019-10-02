@@ -1,22 +1,28 @@
 package dk.adaptmobile.amkotlinutil.navigation
 
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.view.View
 import com.bluelinelabs.conductor.ChangeHandlerFrameLayout
 import com.bluelinelabs.conductor.Router
+import com.bluelinelabs.conductor.rxlifecycle2.ControllerEvent
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.jakewharton.rxbinding3.material.itemSelections
 import dk.adaptmobile.amkotlinutil.extensions.*
 import io.reactivex.rxkotlin.addTo
 
 
 @SuppressLint("CheckResult")
-abstract class BaseBottomNavigationView<T : BaseViewModel<*, T2>, T2: BaseViewModel.IOutput> : BaseView<T, T2>() {
+abstract class BaseBottomNavigationView<T : BaseViewModel<*, T2>, T2 : BaseViewModel.IOutput> : BaseView<T, T2>() {
     private lateinit var tabRouter: Router
 
-    fun setupRouting(view: View, activity: Activity, tabContainer: ChangeHandlerFrameLayout, bottomNavigation: BottomNavigationView) {
+    fun setupRouting(tabContainer: ChangeHandlerFrameLayout, bottomNavigation: BottomNavigationView) {
 
         tabRouter = getChildRouter(tabContainer)
+
+        bottomNavigation.itemSelections()
+                .compose(bindUntilEvent(ControllerEvent.DESTROY))
+                .subscribe {
+                    NavManager.tabSelected(it)
+                }
 
         NavManager.tabRouting
                 .doOnAndroidMain()
