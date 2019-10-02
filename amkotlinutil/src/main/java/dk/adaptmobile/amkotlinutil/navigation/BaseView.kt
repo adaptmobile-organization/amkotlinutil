@@ -3,7 +3,6 @@ package dk.adaptmobile.amkotlinutil.navigation
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
-import android.util.Log.d
 import android.util.Log.e
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +16,6 @@ import dk.adaptmobile.amkotlinutil.extensions.disposeSafe
 import dk.adaptmobile.amkotlinutil.extensions.doOnAndroidMain
 import dk.adaptmobile.amkotlinutil.extensions.inflate
 import dk.adaptmobile.amkotlinutil.navigation.BaseViewModel.IOutput
-import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.*
 
@@ -40,7 +38,6 @@ abstract class BaseView<T : BaseViewModel<*, T2>, T2: IOutput> : RxRestoreViewOn
 
                 viewModel = setViewModel()
             }
-
 
             override fun onChangeEnd(controller: Controller, changeHandler: ControllerChangeHandler, changeType: ControllerChangeType) {
                 super.onChangeEnd(controller, changeHandler, changeType)
@@ -69,33 +66,6 @@ abstract class BaseView<T : BaseViewModel<*, T2>, T2: IOutput> : RxRestoreViewOn
                 super.postCreateView(controller, view)
                 activity?.let { activity ->
                     onViewBound(view, activity)
-
-                    viewModel.loading
-                            .compose(bindUntilEvent(ControllerEvent.DESTROY))
-                            .doOnAndroidMain()
-                            .subscribe {
-//                                showLoadingBar(it)
-                            }
-
-                    viewModel.error
-                            .compose(bindUntilEvent(ControllerEvent.DESTROY))
-                            .doOnAndroidMain()
-                            .subscribe {
-                                //TODO: Handle error
-                            }
-
-                    val application = activity.application as BaseApplicationController
-                    application.noNetworkSubject
-                            .compose(bindUntilEvent(ControllerEvent.DESTROY))
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe({ hasNetwork ->
-                                           if (!hasNetwork) {
-                                               d(this.javaClass.name, "NoInternetDialog opens")
-//                                               NavManager.openModally(Routing.NoInternetDialog())
-                                           }
-                                       }, {
-//                                           NavManager.openModally(Routing.NoInternetDialog())
-                                       })
                 }
             }
         }

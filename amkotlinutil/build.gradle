@@ -8,10 +8,7 @@ apply plugin: "org.jlleitschuh.gradle.ktlint-idea"
 apply from: '../DokkaConfig.gradle'
 
 ext {
-    supportLibVersion = '27.1.1'
-    playLibVersion = '10.0.1'
     conductorVersion = '2.1.5'
-    firebaseVersion = '11.0.0'
     rxBindingVersion = '3.0.0'
 }
 

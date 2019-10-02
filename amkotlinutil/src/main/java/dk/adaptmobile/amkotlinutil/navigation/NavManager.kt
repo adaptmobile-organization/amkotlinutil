@@ -117,7 +117,7 @@ object NavManager {
 
         val state = tab.state
         when (state == null) {
-            true -> tabRouting.onNext(BaseRouting.SetTabRoot(tab.getInitialView()))
+            true -> tabRouting.onNext(BaseRouting.SetTabRoot(tab.initalView()))
             false -> tabRouting.onNext(BaseRouting.OpenTab(state))
         }
 

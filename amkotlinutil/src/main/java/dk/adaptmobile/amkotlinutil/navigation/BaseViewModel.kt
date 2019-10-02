@@ -11,13 +11,10 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
-import io.reactivex.subjects.PublishSubject
 import io.reactivex.subjects.ReplaySubject
 
 abstract class BaseViewModel<T : IInput, T2: IOutput> {
     val disposeBag: CompositeDisposable = CompositeDisposable()
-    open val error: PublishSubject<ErrorMessage> = PublishSubject.create()
-    open val loading: BehaviorSubject<Boolean> = BehaviorSubject.create()
     val output: ReplaySubject<T2> = ReplaySubject.create()
     val input: BehaviorSubject<T> = BehaviorSubject.create()
 
