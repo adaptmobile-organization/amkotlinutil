@@ -18,12 +18,6 @@ abstract class BaseBottomNavigationView<T : BaseViewModel<*, T2>, T2 : BaseViewM
 
         tabRouter = getChildRouter(tabContainer)
 
-        bottomNavigation.itemSelections()
-                .compose(bindUntilEvent(ControllerEvent.DESTROY))
-                .subscribe {
-                    NavManager.tabSelected(it)
-                }
-
         NavManager.tabRouting
                 .doOnAndroidMain()
                 .subscribe {
@@ -40,6 +34,15 @@ abstract class BaseBottomNavigationView<T : BaseViewModel<*, T2>, T2 : BaseViewM
 
                     }
                 }.addTo(viewModel.disposeBag)
+
+        bottomNavigation.itemSelections()
+                .distinctUntilChanged()
+                .compose(bindUntilEvent(ControllerEvent.DESTROY))
+                .subscribe {
+                    NavManager.tabSelected(it)
+                }
+
+
     }
 
     override fun onDestroy() {
