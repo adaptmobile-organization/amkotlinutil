@@ -1,5 +1,6 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
+import android.os.Bundle
 import android.view.WindowManager
 import androidx.annotation.DimenRes
 import androidx.annotation.StringRes
@@ -12,6 +13,7 @@ import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
 import com.bluelinelabs.conductor.changehandler.SimpleSwapChangeHandler
 import com.bluelinelabs.conductor.changehandler.VerticalChangeHandler
 import dk.adaptmobile.amkotlinutil.conductor.*
+import dk.adaptmobile.amkotlinutil.navigation.BaseView
 
 /**
  * Created by christiansteffensen on 05/06/2017.
@@ -159,3 +161,50 @@ var Controller.brightness: Float?
 
 val Router.secondLastController: Controller?
     get() = if (this.backstack.size > 1) this.backstack[this.backstack.lastIndex - 1].controller() else null
+
+
+fun Router.isNotEmpty(): Boolean {
+    return !isEmpty()
+}
+
+fun Router.isEmpty(): Boolean {
+    return backstackSize == 0
+}
+
+fun Router.goBack(amount: Int = 1, data: Any? = null) {
+    if (amount <= 1) {
+        popCurrentController()
+    } else {
+        val tempBackStack = backstack
+        for (i in 1..amount) {
+            tempBackStack.removeAt(tempBackStack.lastIndex)
+        }
+        setBackstack(tempBackStack, HorizontalChangeHandler())
+    }
+
+    //make callback with data on view under the top one
+    data?.let {
+        (lastController as? BaseView<*, *>)?.callback(it)
+    }
+}
+
+fun Router.getStateAsBundle(): Bundle {
+    val routerBundle = Bundle()
+    saveInstanceState(routerBundle)
+    return routerBundle
+}
+
+fun Router.restoreState(routerBundle: Bundle) {
+    //Removes the current controllers
+    setPopsLastView(true) // Ensure the last view can be removed while we do this
+    popToRoot()
+    if (backstackSize > 0) {
+        popCurrentController()
+    }
+    setPopsLastView(false)
+    //Restore the saved satate
+    restoreInstanceState(routerBundle)
+
+    //Attaches the controllers from the state to the container
+    rebindIfNeeded()
+}
