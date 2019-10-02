@@ -59,8 +59,8 @@ abstract class BaseActivity : FragmentActivity() {
         if (routing == NavManager.modalRouting && router.isEmpty()) {
             NavManager.clearCurrentRouting()
 
-            val mainController = mainRouter.lastController as BaseView<*, *>
-            mainController.callback(data)
+            val mainController = mainRouter.lastController as? BaseView<*, *>
+            mainController?.callback(data)
         }
     }
 
