@@ -3,7 +3,7 @@ package dk.adaptmobile.amkotlinutil.navigation
 import android.os.Bundle
 import dk.adaptmobile.amkotlinutil.extensions.AnimationType
 
-sealed class BaseRouting(val controller: BaseView<*,*>? = null,
+abstract class BaseRouting(val controller: BaseView<*,*>? = null,
                          val animationType: AnimationType = AnimationType.Slide,
                          open val asRoot: Boolean = false,
                          val retain: Boolean = false) {
