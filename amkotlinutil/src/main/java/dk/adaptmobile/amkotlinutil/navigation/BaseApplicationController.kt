@@ -1,7 +1,8 @@
 package dk.adaptmobile.amkotlinutil.navigation
 
+import androidx.multidex.MultiDexApplication
 import io.reactivex.subjects.PublishSubject
 
-class BaseApplicationController {
+open class BaseApplicationController : MultiDexApplication() {
     val noNetworkSubject: PublishSubject<Boolean> = PublishSubject.create()
 }
