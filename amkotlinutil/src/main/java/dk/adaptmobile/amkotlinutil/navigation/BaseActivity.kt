@@ -15,7 +15,7 @@ abstract class BaseActivity : FragmentActivity() {
     protected lateinit var mainRouter: Router
     protected lateinit var modalRouter: Router
     private val disposeBag = CompositeDisposable()
-    private var previousController : Controller? = null
+    private var previousController: Controller? = null
 
     protected fun handleRouting() {
         subscribeToRouting(NavManager.mainRouting, mainRouter)
@@ -40,7 +40,7 @@ abstract class BaseActivity : FragmentActivity() {
                                     handleEmptyModalRouter(routing, router)
                                 }
 
-                                else ->  {
+                                else -> {
                                     if (modalRouter.backstackSize <= 0 || it.controller?.javaClass != modalRouter.lastController?.javaClass) {
                                         router.pushView(it.controller, it.animationType, asRoot = it.asRoot, retain = it.retain)
                                     }
@@ -48,14 +48,14 @@ abstract class BaseActivity : FragmentActivity() {
                             }
                         },
                         {
-                            e (javaClass.name, "Error subscribing: $it")
+                            e(javaClass.name, "Error subscribing: $it")
                         }
                 )
                 .addTo(disposeBag)
     }
 
     private fun handleEmptyModalRouter(routing: PublishSubject<BaseRouting>, router: Router, data: Any? = null) {
-        //If the modal router is empty, we need to clear it in the nav manager
+        // If the modal router is empty, we need to clear it in the nav manager
         if (routing == NavManager.modalRouting && router.isEmpty()) {
             NavManager.clearCurrentRouting()
 
@@ -94,6 +94,4 @@ abstract class BaseActivity : FragmentActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         mainRouter.onActivityResult(requestCode, resultCode, data)
     }
-
-
 }

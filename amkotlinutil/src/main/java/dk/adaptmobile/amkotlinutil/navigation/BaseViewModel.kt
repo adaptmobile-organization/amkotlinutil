@@ -13,7 +13,7 @@ import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.ReplaySubject
 
-abstract class BaseViewModel<T : IInput, T2: IOutput> {
+abstract class BaseViewModel<T : IInput, T2 : IOutput> {
     val disposeBag: CompositeDisposable = CompositeDisposable()
     val output: ReplaySubject<T2> = ReplaySubject.create()
     val input: BehaviorSubject<T> = BehaviorSubject.create()

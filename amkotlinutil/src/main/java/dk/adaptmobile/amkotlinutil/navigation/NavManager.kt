@@ -11,9 +11,9 @@ object NavManager {
     private lateinit var tabs: List<BaseTab>
     private lateinit var baseBottomRouting: BaseRouting
 
-    private var bottomNavShown: Boolean = false //Keeps track of whether the bottom navigation view is shown or not.
+    private var bottomNavShown: Boolean = false // Keeps track of whether the bottom navigation view is shown or not.
     private var currentTab: BaseTab? = null
-    private var previousTab: BaseTab? = null //Holding a reference to the previous tab is necessary in order to save the state after navigating away from it
+    private var previousTab: BaseTab? = null // Holding a reference to the previous tab is necessary in order to save the state after navigating away from it
 
     internal val mainRouting = PublishSubject.create<BaseRouting>()
     internal val modalRouting = PublishSubject.create<BaseRouting>()
@@ -88,7 +88,7 @@ object NavManager {
      */
     fun openTab(tab: BaseTab) {
         closeAllModalViews()
-        if (!bottomNavShown) { //TODO: Could maybe be if (currentRouting == tabRouting)?
+        if (!bottomNavShown) { // TODO: Could maybe be if (currentRouting == tabRouting)?
             mainRouting.onNext(baseBottomRouting)
         }
         tabRouting.onNext(BaseRouting.MarkTabAsSelected(tab.id))
@@ -120,7 +120,6 @@ object NavManager {
             true -> tabRouting.onNext(BaseRouting.SetTabRoot(tab.initalView()))
             false -> tabRouting.onNext(BaseRouting.OpenTab(state))
         }
-
     }
 
     /**
@@ -137,7 +136,7 @@ object NavManager {
         tabs.forEach { it.state = null }
         currentTab = null
         previousTab = null
-        clearCurrentRouting() //When the tabview detaches, we want the current routing subject to change back to the main routing
+        clearCurrentRouting() // When the tabview detaches, we want the current routing subject to change back to the main routing
     }
 
     /**
@@ -152,6 +151,4 @@ object NavManager {
         currentRoutingSubject = mainRouting
         previousRoutingSubject = null
     }
-
-
 }
