@@ -4,10 +4,10 @@ import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.res.Resources
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import com.github.ajalt.timberkt.e
 import java.util.*
 
 /**
@@ -60,7 +60,7 @@ fun Activity.datePickerContext(): ContextWrapper {
                         try {
                             return super.getString(id, *formatArgs)
                         } catch (ifce: IllegalFormatConversionException) {
-                            Log.e("DatePickerDialogFix", "IllegalFormatConversionException Fixed!", ifce)
+                            e {"IllegalFormatConversionException Fixed! $ifce" }
                             var template = super.getString(id)
                             template = template.replace(("%" + ifce.conversion).toRegex(), "%s")
                             return String.format(configuration.locale, template, *formatArgs)

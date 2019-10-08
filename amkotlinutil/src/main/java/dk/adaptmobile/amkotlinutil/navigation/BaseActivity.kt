@@ -2,14 +2,18 @@ package dk.adaptmobile.amkotlinutil.navigation
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log.e
+import androidx.annotation.NonNull
 import androidx.fragment.app.FragmentActivity
 import com.bluelinelabs.conductor.Controller
 import com.bluelinelabs.conductor.Router
+import com.github.ajalt.timberkt.e
+import com.greysonparrelli.permiso.Permiso
 import dk.adaptmobile.amkotlinutil.extensions.*
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.subjects.PublishSubject
+
+
 
 abstract class BaseActivity : FragmentActivity() {
     protected lateinit var mainRouter: Router
@@ -48,7 +52,7 @@ abstract class BaseActivity : FragmentActivity() {
                             }
                         },
                         {
-                            e (javaClass.name, "Error subscribing: $it")
+                            e { "Error subscribing: $it" }
                         }
                 )
                 .addTo(disposeBag)
@@ -76,10 +80,7 @@ abstract class BaseActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    }
-
-    override fun onResume() {
-        super.onResume()
+        Permiso.getInstance().setActivity(this)
     }
 
     override fun onDestroy() {
@@ -93,6 +94,11 @@ abstract class BaseActivity : FragmentActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         mainRouter.onActivityResult(requestCode, resultCode, data)
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, @NonNull permissions: Array<String>, @NonNull grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        Permiso.getInstance().onRequestPermissionResult(requestCode, permissions, grantResults)
     }
 
 

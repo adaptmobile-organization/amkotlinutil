@@ -6,7 +6,6 @@ import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.Uri
-import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import androidx.core.app.NotificationManagerCompat
@@ -17,6 +16,7 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import com.github.ajalt.timberkt.e
 import io.reactivex.Observable
 import java.io.File
 
@@ -115,8 +115,8 @@ fun Context.goToPlayStoreDetails() {
     val linkToMarket = Intent(Intent.ACTION_VIEW, uri)
     try {
         startActivity(linkToMarket)
-    } catch (e: ActivityNotFoundException) {
-        Log.e(TAG, "Unable to find market app")
+    } catch (ex: ActivityNotFoundException) {
+        e { "Unable to find market app: $ex" }
     }
 }
 

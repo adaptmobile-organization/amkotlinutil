@@ -3,7 +3,6 @@ package dk.adaptmobile.amkotlinutil.navigation
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
-import android.util.Log.e
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,7 @@ import com.bluelinelabs.conductor.ControllerChangeHandler
 import com.bluelinelabs.conductor.ControllerChangeType
 import com.bluelinelabs.conductor.rxlifecycle2.ControllerEvent
 import com.bluelinelabs.conductor.rxlifecycle2.RxRestoreViewOnCreateController
+import com.github.ajalt.timberkt.e
 import dk.adaptmobile.amkotlinutil.extensions.disposeSafe
 import dk.adaptmobile.amkotlinutil.extensions.doOnAndroidMain
 import dk.adaptmobile.amkotlinutil.extensions.inflate
@@ -57,7 +57,7 @@ abstract class BaseView<T : BaseViewModel<*, T2>, T2: IOutput> : RxRestoreViewOn
                                     }
                                 },
                                 {
-                                    e(this.javaClass.name, "Error in BaseView output: $it")
+                                    e { "Error in BaseView output: $it" }
                                 }
                         )
             }

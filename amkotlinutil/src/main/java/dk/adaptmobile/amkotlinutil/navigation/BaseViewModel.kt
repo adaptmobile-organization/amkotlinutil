@@ -1,6 +1,6 @@
 package dk.adaptmobile.amkotlinutil.navigation
 
-import android.util.Log.e
+import com.github.ajalt.timberkt.e
 import dk.adaptmobile.amkotlinutil.extensions.subscribeOnAndroidMain
 import dk.adaptmobile.amkotlinutil.navigation.BaseViewModel.IInput
 import dk.adaptmobile.amkotlinutil.navigation.BaseViewModel.IOutput
@@ -28,7 +28,7 @@ abstract class BaseViewModel<T : IInput, T2: IOutput> {
                 .observeOn(Schedulers.computation())
                 .subscribe(
                         { handleInput(it) },
-                        { e(this.javaClass.name, "Error subscring to input: $it") }
+                        { e {"Error subscring to input: $it"} }
                 )
                 .addTo(disposeBag)
     }
@@ -41,7 +41,7 @@ abstract class BaseViewModel<T : IInput, T2: IOutput> {
                             callback(it)
                         },
                         {
-                            e(this.javaClass.name, "Error: $it")
+                            e { "Error: $it" }
                         }
                 ).addTo(disposeBag)
     }
@@ -54,7 +54,7 @@ abstract class BaseViewModel<T : IInput, T2: IOutput> {
                             callback(it)
                         },
                         {
-                            e(this.javaClass.name, "Error: $it")
+                            e { "Error: $it" }
                         }
                 ).addTo(disposeBag)
     }
