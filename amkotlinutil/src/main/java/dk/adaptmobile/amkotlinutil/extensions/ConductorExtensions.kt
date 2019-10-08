@@ -162,7 +162,6 @@ var Controller.brightness: Float?
 val Router.secondLastController: Controller?
     get() = if (this.backstack.size > 1) this.backstack[this.backstack.lastIndex - 1].controller() else null
 
-
 fun Router.isNotEmpty(): Boolean {
     return !isEmpty()
 }
@@ -182,7 +181,7 @@ fun Router.goBack(amount: Int = 1, data: Any? = null) {
         setBackstack(tempBackStack, HorizontalChangeHandler())
     }
 
-    //make callback with data on view under the top one
+    // make callback with data on view under the top one
     data?.let {
         (lastController as? BaseView<*, *>)?.callback(it)
     }
@@ -195,16 +194,16 @@ fun Router.getStateAsBundle(): Bundle {
 }
 
 fun Router.restoreState(routerBundle: Bundle) {
-    //Removes the current controllers
+    // Removes the current controllers
     setPopsLastView(true) // Ensure the last view can be removed while we do this
     popToRoot()
     if (backstackSize > 0) {
         popCurrentController()
     }
     setPopsLastView(false)
-    //Restore the saved satate
+    // Restore the saved satate
     restoreInstanceState(routerBundle)
 
-    //Attaches the controllers from the state to the container
+    // Attaches the controllers from the state to the container
     rebindIfNeeded()
 }

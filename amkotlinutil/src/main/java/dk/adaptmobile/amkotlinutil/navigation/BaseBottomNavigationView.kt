@@ -9,7 +9,6 @@ import com.jakewharton.rxbinding3.material.itemSelections
 import dk.adaptmobile.amkotlinutil.extensions.*
 import io.reactivex.rxkotlin.addTo
 
-
 @SuppressLint("CheckResult")
 abstract class BaseBottomNavigationView<T : BaseViewModel<*, T2>, T2 : BaseViewModel.IOutput> : BaseView<T, T2>() {
     private lateinit var tabRouter: Router
@@ -31,7 +30,6 @@ abstract class BaseBottomNavigationView<T : BaseViewModel<*, T2>, T2 : BaseViewM
                         is BaseRouting.Back -> tabRouter.goBack(it.amount, it.data)
                         is BaseRouting.MarkTabAsSelected -> bottomNavigation.selectedItemId = it.menuId
                         else -> tabRouter.pushView(it.controller, it.animationType, asRoot = it.asRoot)
-
                     }
                 }.addTo(viewModel.disposeBag)
 
@@ -41,8 +39,6 @@ abstract class BaseBottomNavigationView<T : BaseViewModel<*, T2>, T2 : BaseViewM
                 .subscribe {
                     NavManager.tabSelected(it)
                 }
-
-
     }
 
     override fun onDestroy() {
@@ -55,8 +51,5 @@ abstract class BaseBottomNavigationView<T : BaseViewModel<*, T2>, T2 : BaseViewM
         tabRouter.lastController?.let {
             (it as BaseView<*, *>).callback(data)
         }
-
     }
-
 }
-

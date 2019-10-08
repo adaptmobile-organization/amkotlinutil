@@ -19,9 +19,8 @@ import dk.adaptmobile.amkotlinutil.navigation.BaseViewModel.IOutput
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.*
 
-
 @SuppressLint("CheckResult")
-abstract class BaseView<T : BaseViewModel<*, T2>, T2: IOutput> : RxRestoreViewOnCreateController(), LayoutContainer {
+abstract class BaseView<T : BaseViewModel<*, T2>, T2 : IOutput> : RxRestoreViewOnCreateController(), LayoutContainer {
 
     open var savedViewState: Bundle? = null
     private val listener: LifecycleListener
@@ -76,7 +75,7 @@ abstract class BaseView<T : BaseViewModel<*, T2>, T2: IOutput> : RxRestoreViewOn
 
     protected abstract fun inflateView(): Int
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedViewState: Bundle?): View  {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedViewState: Bundle?): View {
         this.savedViewState = savedViewState
         return container.inflate(inflateView(), false)
     }
@@ -92,8 +91,4 @@ abstract class BaseView<T : BaseViewModel<*, T2>, T2: IOutput> : RxRestoreViewOn
         clearFindViewByIdCache()
         viewModel.disposeBag.disposeSafe()
     }
-
-
-
 }
-
