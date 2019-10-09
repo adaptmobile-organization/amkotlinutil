@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.NonNull
 import androidx.fragment.app.FragmentActivity
+import com.bluelinelabs.conductor.ChangeHandlerFrameLayout
+import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Controller
 import com.bluelinelabs.conductor.Router
 import com.github.ajalt.timberkt.e
@@ -16,12 +18,15 @@ import io.reactivex.subjects.PublishSubject
 
 
 abstract class BaseActivity : FragmentActivity() {
-    protected lateinit var mainRouter: Router
-    protected lateinit var modalRouter: Router
+    private lateinit var mainRouter: Router
+    private lateinit var modalRouter: Router
     private val disposeBag = CompositeDisposable()
-    private var previousController: Controller? = null
 
-    protected fun handleRouting() {
+    protected fun setup(mainContainer: ChangeHandlerFrameLayout, modalContainer: ChangeHandlerFrameLayout, savedInstanceState: Bundle?) {
+        mainRouter = Conductor.attachRouter(this, mainContainer, savedInstanceState)
+        modalRouter = Conductor.attachRouter(this, modalContainer, savedInstanceState)
+        modalRouter.setPopsLastView(true) //We want it to be possible to pop the last view on the modal controller only
+
         subscribeToRouting(NavManager.mainRouting, mainRouter)
         subscribeToRouting(NavManager.modalRouting, modalRouter)
     }
