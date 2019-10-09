@@ -1,1 +1,1 @@
-include ':amkotlinutil'
+include ':amkotlinutil', ':navigation'
