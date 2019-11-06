@@ -3,10 +3,9 @@ package dk.adaptmobile.amkotlinutil.navigation
 import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.NonNull
-import androidx.fragment.app.FragmentActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.bluelinelabs.conductor.ChangeHandlerFrameLayout
 import com.bluelinelabs.conductor.Conductor
-import com.bluelinelabs.conductor.Controller
 import com.bluelinelabs.conductor.Router
 import com.github.ajalt.timberkt.e
 import com.greysonparrelli.permiso.Permiso
@@ -17,7 +16,7 @@ import io.reactivex.subjects.PublishSubject
 
 
 
-abstract class BaseActivity : FragmentActivity() {
+abstract class BaseActivity : AppCompatActivity() {
     private lateinit var mainRouter: Router
     private lateinit var modalRouter: Router
     private val disposeBag = CompositeDisposable()

@@ -47,7 +47,7 @@ abstract class BaseView<T : BaseViewModel<*, T2>, T2 : IOutput> : RxRestoreViewO
                 }
 
                 viewModel.output
-                        .compose(bindUntilEvent(ControllerEvent.DETACH))
+                        .compose(bindUntilEvent(ControllerEvent.DESTROY))
                         .doOnAndroidMain()
                         .subscribe(
                                 {
