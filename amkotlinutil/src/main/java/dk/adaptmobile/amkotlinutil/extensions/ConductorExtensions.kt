@@ -13,7 +13,6 @@ import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
 import com.bluelinelabs.conductor.changehandler.SimpleSwapChangeHandler
 import com.bluelinelabs.conductor.changehandler.VerticalChangeHandler
 import dk.adaptmobile.amkotlinutil.conductor.*
-import dk.adaptmobile.amkotlinutil.navigation.BaseView
 
 /**
  * Created by christiansteffensen on 05/06/2017.
