@@ -169,23 +169,6 @@ fun Router.isEmpty(): Boolean {
     return backstackSize == 0
 }
 
-fun Router.goBack(amount: Int = 1, data: Any? = null) {
-    if (amount <= 1) {
-        popCurrentController()
-    } else {
-        val tempBackStack = backstack
-        for (i in 1..amount) {
-            tempBackStack.removeAt(tempBackStack.lastIndex)
-        }
-        setBackstack(tempBackStack, HorizontalChangeHandler())
-    }
-
-    // make callback with data on view under the top one
-    data?.let {
-        (lastController as? BaseView<*, *>)?.callback(it)
-    }
-}
-
 fun Router.getStateAsBundle(): Bundle {
     val routerBundle = Bundle()
     saveInstanceState(routerBundle)
