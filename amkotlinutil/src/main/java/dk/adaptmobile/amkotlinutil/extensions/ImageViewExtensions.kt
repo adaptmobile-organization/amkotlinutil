@@ -7,6 +7,7 @@ import android.util.Base64
 import android.widget.ImageView
 import androidx.annotation.ColorRes
 import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestBuilder
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
@@ -104,4 +105,16 @@ fun ImageView.loadBase64Image(base64Image: String?) {
                 .load(Base64.decode(base64Image, Base64.DEFAULT))
                 .into(this)
     }
+}
+
+fun ImageView.loadImageResourceWithThumbnail(thumbnailImageUrl: String, imageUrl: String) {
+    val thumbnailRequest: RequestBuilder<Drawable> = Glide
+            .with(context)
+            .load(thumbnailImageUrl)
+
+    Glide
+            .with(context)
+            .load(imageUrl)
+            .thumbnail(thumbnailRequest)
+            .into(this)
 }

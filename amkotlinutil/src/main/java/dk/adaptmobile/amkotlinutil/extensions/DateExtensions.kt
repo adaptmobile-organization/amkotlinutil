@@ -61,3 +61,30 @@ fun Date.lastDayOfWeek(): Date {
     c.set(Calendar.DAY_OF_MONTH, c.getActualMaximum(Calendar.DAY_OF_WEEK))
     return c.time
 }
+
+fun Date.isBetween(startDate: Date, endDate: Date): Boolean {
+    return this.after(startDate) && this.before(endDate)
+}
+
+fun Date.toHoursAndMinutes(): String {
+    val calendar =  Calendar.getInstance().apply {
+        time = this@toHoursAndMinutes
+    }
+
+    return String.format("%02d:%02d", calendar.get(Calendar.HOUR_OF_DAY),  calendar.get(Calendar.MINUTE))
+}
+
+fun Date.addHours(hours: Int) : Date {
+    val validToCalendar: Calendar = Calendar.getInstance()
+    validToCalendar.time = this
+    validToCalendar.add(Calendar.HOUR, hours)
+    return validToCalendar.time
+}
+
+fun Date.toHours(): String {
+    return Calendar.getInstance().apply {
+        time = this@toHours
+    }.get(Calendar.HOUR_OF_DAY).toString()
+}
+
+

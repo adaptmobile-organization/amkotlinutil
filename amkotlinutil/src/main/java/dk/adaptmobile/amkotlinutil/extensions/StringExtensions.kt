@@ -9,9 +9,13 @@ import android.telephony.PhoneNumberUtils
 import android.text.Html
 import android.text.Spanned
 import android.text.TextUtils
+import android.util.Base64
 import java.net.URLEncoder
+import java.nio.charset.StandardCharsets
+import java.security.MessageDigest
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.regex.Pattern
 
 /**
  * Created by bjarkeseverinsen on 20/09/2017.
@@ -135,3 +139,29 @@ fun String.toHttpsPrefix(): String? = if (this.isNotEmpty() && !this.startsWith(
 } else if (this.startsWith("http://")) {
     this.replace("http://", "https://")
 } else this
+
+fun String.toHashSha256(salt: String = ""): String {
+    val rawTextAppendedWithSalt = this + salt
+    val digest = MessageDigest.getInstance("SHA-256")
+    val hash = digest.digest(rawTextAppendedWithSalt.toByteArray(StandardCharsets.UTF_8))
+    val encodedHash = Base64.encodeToString(hash, Base64.NO_WRAP)
+
+    return encodedHash
+}
+
+/**
+ * Validates email which has at least two characters top level domain for example: .dk but not .d
+ */
+
+fun String.isEmailValid(): Boolean {
+    val EMAIL_ADDRESS = Pattern.compile(
+            "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                    "\\@" +
+                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+                    "(" +
+                    "\\." +
+                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{1,25}" +
+                    ")+"
+    )
+    return !TextUtils.isEmpty(this) && EMAIL_ADDRESS.matcher(this).matches()
+}

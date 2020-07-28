@@ -1,14 +1,15 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.graphics.Typeface
-import android.text.SpannableStringBuilder
-import android.text.Spanned
-import android.text.TextUtils
+import android.text.*
 import android.text.style.AbsoluteSizeSpan
+import android.text.style.ForegroundColorSpan
 import android.widget.TextView
+import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.FontRes
 import androidx.annotation.StringRes
+import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputLayout
 import uk.co.chrisjenx.calligraphy.CalligraphyTypefaceSpan
 import uk.co.chrisjenx.calligraphy.CalligraphyUtils
@@ -78,4 +79,26 @@ fun TextView.ellipsizeViewPager(text: String) {
         this.maxLines = noOfLinesVisible
         this.ellipsize = TextUtils.TruncateAt.END
     }
+}
+
+fun TextView.setTextColorFromStartTilIndex(index: Int, text: String, @ColorRes color: Int): TextView {
+    val spannable = SpannableString(text)
+    val color = ContextCompat.getColor(context, color)
+    if (index <= text.length) {
+        spannable.setSpan(ForegroundColorSpan(color), 0, index, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+    } else {
+        spannable.setSpan(ForegroundColorSpan(color), 0, text.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+    }
+    this.setText(spannable, TextView.BufferType.SPANNABLE)
+    return this
+}
+
+fun TextView.setTextColorForWordInText(text: String, coloredText: String, @ColorRes color: Int): TextView {
+    val spannable = SpannableString(text)
+    val color = ContextCompat.getColor(context, color)
+    val startIndex = text.indexOf(coloredText)
+    val lastIndex = startIndex + coloredText.length
+    spannable.setSpan(ForegroundColorSpan(color), startIndex, lastIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+    this.setText(spannable, TextView.BufferType.SPANNABLE)
+    return this
 }
