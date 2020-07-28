@@ -6,10 +6,7 @@ import android.graphics.Bitmap
 import android.graphics.PorterDuff
 import android.view.*
 import android.view.inputmethod.InputMethodManager
-import android.widget.FrameLayout
-import android.widget.LinearLayout
-import android.widget.PopupMenu
-import android.widget.RelativeLayout
+import android.widget.*
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.annotation.StyleRes
@@ -339,4 +336,21 @@ fun View.showPopupMenu(items: List<PopupMenuItem>, anchor: View = this, gravity:
     }
 
     popupMenu.show()
+}
+
+/**
+ * Loops through all focused children until it finds a focused EditText
+ * @return the focused edittext or null if not edittext has focus
+ */
+fun ViewGroup.findFocusedEditText(): EditText? {
+    var viewGroup = this
+    while (viewGroup !is EditText) {
+        val view = viewGroup.focusedChild
+        if (view is EditText) {
+            return view
+        } else {
+            viewGroup = view as? ViewGroup ?: break
+        }
+    }
+    return null
 }

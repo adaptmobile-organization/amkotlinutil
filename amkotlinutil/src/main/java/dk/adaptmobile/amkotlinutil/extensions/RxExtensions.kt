@@ -1,12 +1,15 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import com.github.ajalt.timberkt.e
-import io.reactivex.Observable
-import io.reactivex.Single
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.rxkotlin.addTo
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.Flowable
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Completable
+import io.reactivex.rxjava3.core.Single
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.rxjava3.kotlin.addTo
+import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 
 typealias DisposeBag = CompositeDisposable
@@ -108,6 +111,22 @@ fun <T> Observable<T>.subscribeOnNewThread(): Observable<T> {
     return this.subscribeOn(Schedulers.newThread())
 }
 
+fun Completable.subscribeOnAndroidMain(): Completable {
+    return this.subscribeOn(AndroidSchedulers.mainThread())
+}
+
+fun Completable.subscribeOnComputation(): Completable {
+    return this.subscribeOn(Schedulers.computation())
+}
+
+fun Completable.subscribeOnIo(): Completable {
+    return this.subscribeOn(Schedulers.io())
+}
+
+fun Completable.subscribeOnNewThread(): Completable {
+    return this.subscribeOn(Schedulers.newThread())
+}
+
 val <T> BehaviorSubject<T>.requireValue: T
     get() = value ?: throw IllegalStateException("Value must be set before calling this method")
 
@@ -122,3 +141,5 @@ fun <T> BehaviorSubject<MutableList<T>>.addAll(value: List<T>) {
     list.addAll(value)
     onNext(list)
 }
+
+

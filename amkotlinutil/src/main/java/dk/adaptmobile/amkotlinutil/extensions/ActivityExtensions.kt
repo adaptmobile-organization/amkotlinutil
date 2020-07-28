@@ -3,10 +3,15 @@ package dk.adaptmobile.amkotlinutil.extensions
 import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
+import android.content.Intent
 import android.content.res.Resources
+import android.net.Uri
+import android.util.DisplayMetrics
+import android.util.Size
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import com.bluelinelabs.conductor.Controller
 import com.github.ajalt.timberkt.e
 import java.util.*
 
@@ -76,3 +81,26 @@ fun Activity.datePickerContext(): ContextWrapper {
 fun Activity.enableFullScreen() {
     window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 }
+
+fun Activity.getScreenDimensions(): Size {
+    val displayMetrics = DisplayMetrics()
+    windowManager.defaultDisplay.getMetrics(displayMetrics)
+    val height = displayMetrics.heightPixels.toFloat()
+    val width = displayMetrics.widthPixels.toFloat()
+    val convertHeight = height.toInt()
+    val convertWidth = width.toInt()
+    return Size(convertWidth, convertHeight)
+}
+
+fun Activity?.openNativeShareDialog(url: String, subject: String = "", chooserText: String) {
+    this ?: return
+    val intent = Intent(Intent.ACTION_SEND).apply {
+        type = "text/plain"
+        flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        putExtra(Intent.EXTRA_TEXT, url)
+        putExtra(Intent.EXTRA_SUBJECT, subject)
+    }
+
+    this.startActivity(Intent.createChooser(intent, chooserText))
+}
+

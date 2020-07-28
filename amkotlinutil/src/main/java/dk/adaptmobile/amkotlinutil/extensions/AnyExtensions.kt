@@ -3,6 +3,8 @@ package dk.adaptmobile.amkotlinutil.extensions
 import android.annotation.SuppressLint
 import android.os.Handler
 import android.os.Looper
+import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
 import dk.adaptmobile.amkotlinutil.model.PostDelay
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -37,4 +39,11 @@ inline fun waitRx(delayMillis: Long, crossinline function: () -> Unit) {
             .subscribe {
                 function()
             }
+}
+
+inline fun <reified T> Any.deepCopy(): T {
+    val gson = GsonBuilder().create()
+    val jsonString = gson.toJson(this)
+    val type = object : TypeToken<T>() { }.type
+    return gson.fromJson(jsonString, type)
 }

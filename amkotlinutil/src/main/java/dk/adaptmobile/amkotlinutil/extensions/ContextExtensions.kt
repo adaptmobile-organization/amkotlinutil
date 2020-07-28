@@ -2,10 +2,14 @@ package dk.adaptmobile.amkotlinutil.extensions
 
 import android.annotation.SuppressLint
 import android.content.*
+import android.content.pm.PackageManager
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.Uri
+import android.os.Build
+import android.provider.Settings
+import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.View
 import androidx.core.app.NotificationManagerCompat
@@ -63,6 +67,14 @@ fun Int.dp(context: Context?): Float {
 
 fun Float.dp(context: Context?): Float {
     return this.dpToPixels(context)
+}
+
+fun Int.convertPixelsToDp(context: Context): Int {
+    return (this / (context.resources.displayMetrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)).toInt()
+}
+
+fun Float.convertPixelsToDp(context: Context): Int {
+    return (this / (context.resources.displayMetrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)).toInt()
 }
 
 fun Context.unRegisterReceiverSafe(broadcastReceiver: BroadcastReceiver) {
@@ -183,4 +195,45 @@ fun Context.cacheImage(url: String): Observable<Boolean> {
 
 fun Context.areNotificationsEnabled(): Boolean {
     return NotificationManagerCompat.from(this).areNotificationsEnabled()
+}
+
+/**
+ * Loads String from json by assets filename.
+ * The file needs to be in the main -> assets folder
+ */
+fun Context?.loadJSONFromAssetsFileName(fileName: String): String {
+    this ?: return ""
+    return this.assets.open(fileName).bufferedReader().use { reader ->
+        reader.readText()
+    }
+}
+
+fun Context?.isGmailInstalled(): Boolean {
+    this ?: return false
+    return this.packageManager.getInstalledApplications(PackageManager.GET_META_DATA).firstOrNull { it.packageName == "com.google.android.gm" } != null
+}
+
+fun Context?.navigateToGmailInbox() {
+    this ?: return
+    val packageManager = this.packageManager
+    val gmailIntent = packageManager?.getLaunchIntentForPackage("com.google.android.gm")
+    gmailIntent?.addCategory(Intent.CATEGORY_LAUNCHER)
+    this.startActivity(gmailIntent)
+}
+
+fun Context?.navigateToAndroidAppSettings() {
+    this ?: return
+    val intent = Intent().apply {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
+            putExtra(Settings.EXTRA_APP_PACKAGE, this@navigateToAndroidAppSettings.packageName)
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        } else {
+            action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+            addCategory(Intent.CATEGORY_DEFAULT)
+            data = Uri.parse("package:" + this@navigateToAndroidAppSettings.packageName)
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        }
+    }
+    this.startActivity(intent)
 }

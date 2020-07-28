@@ -1,13 +1,15 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.view.View
+import android.view.ViewGroup
+import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
 import com.xwray.groupie.Group
 import com.xwray.groupie.GroupAdapter
-import com.xwray.groupie.kotlinandroidextensions.ViewHolder
+import com.xwray.groupie.GroupieViewHolder
 import jp.wasabeef.recyclerview.animators.BaseItemAnimator
 
-fun GroupAdapter<ViewHolder>.addWithAnimation(recyclerView: RecyclerView, group: Group, animator: BaseItemAnimator, viewAttached: () -> Unit) {
+fun GroupAdapter<GroupieViewHolder>.addWithAnimation(recyclerView: RecyclerView, group: Group, animator: BaseItemAnimator, viewAttached: () -> Unit) {
     val currentAnimator = recyclerView.itemAnimator
     recyclerView.itemAnimator = animator
     recyclerView.addOnChildAttachStateChangeListener(object : RecyclerView.OnChildAttachStateChangeListener {
