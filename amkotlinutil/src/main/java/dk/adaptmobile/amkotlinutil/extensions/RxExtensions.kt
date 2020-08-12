@@ -10,7 +10,9 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.kotlin.addTo
 import io.reactivex.rxjava3.schedulers.Schedulers
-import io.reactivex.subjects.BehaviorSubject
+import io.reactivex.rxjava3.subjects.BehaviorSubject
+import retrofit2.HttpException
+import retrofit2.Retrofit
 
 typealias DisposeBag = CompositeDisposable
 
@@ -142,4 +144,25 @@ fun <T> BehaviorSubject<MutableList<T>>.addAll(value: List<T>) {
     onNext(list)
 }
 
+data class ErrorResponse(var statusCode: Int)
 
+inline fun <reified T: ErrorResponse> Throwable.toErrorResponse(retrofit: Retrofit): T? {
+    val response = (this as? HttpException)?.response()
+    var error: T? = null
+
+    if (response == null) {
+        this.printStackTrace()
+    } else {
+        val converter = retrofit.responseBodyConverter<T>(T::class.java, arrayOfNulls<Annotation>(0))
+        try {
+            error = converter.convert(response.errorBody())?.apply {
+                statusCode = response.code()
+            }
+        } catch (exception: Exception) {
+            e { "Convert to ErrorResponse error: $exception" }
+            error = null
+        }
+    }
+
+    return error
+}
