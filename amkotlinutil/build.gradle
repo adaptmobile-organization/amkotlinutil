@@ -72,6 +72,7 @@ dependencies {
     compileOnly 'io.reactivex.rxjava3:rxandroid:3.0.0'
     compileOnly "io.reactivex.rxjava3:rxkotlin:3.0.0"
     compileOnly 'jp.wasabeef:blurry:3.0.0'
+    compileOnly "com.github.akarnokd:rxjava3-extensions:3.0.0"
     compileOnly 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
     compileOnly 'com.jakewharton.rxbinding4:rxbinding-core:4.0.0'
     compileOnly 'com.jakewharton.rxbinding4:rxbinding-appcompat:4.0.0'
