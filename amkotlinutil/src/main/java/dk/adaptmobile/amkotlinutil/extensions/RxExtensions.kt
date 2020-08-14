@@ -1,7 +1,6 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import com.github.ajalt.timberkt.e
-import io.reactivex.Flowable
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Single
