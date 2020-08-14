@@ -6,8 +6,8 @@ import android.os.Looper
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import dk.adaptmobile.amkotlinutil.model.PostDelay
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Observable
 import java.util.*
 import java.util.concurrent.TimeUnit
 
