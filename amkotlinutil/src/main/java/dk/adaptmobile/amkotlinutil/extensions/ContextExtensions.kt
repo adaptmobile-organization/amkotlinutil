@@ -99,8 +99,10 @@ fun Context?.openInBrowser(url: String?) {
     if (url != null && url.isNotEmpty()) {
         val page = Uri.parse(url)
         val intent = Intent(Intent.ACTION_VIEW, page)
-        if (intent.resolveActivity(this?.packageManager) != null) {
+        try {
             this?.startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            e { "Unable to find market app: $e" }
         }
     }
 }
@@ -111,13 +113,16 @@ fun Context.getFontCompat(fontRes: Int): Typeface? {
 
 fun Context?.composeEmail(addresses: Array<String>, subject: String, text: String) {
     this?.let {
-        val intent = Intent(Intent.ACTION_SENDTO)
-        intent.data = Uri.parse("mailto:") // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_EMAIL, addresses)
-        intent.putExtra(Intent.EXTRA_SUBJECT, subject)
-        intent.putExtra(Intent.EXTRA_TEXT, text)
-        if (intent.resolveActivity(packageManager) != null) {
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:") // only email apps should handle this
+            putExtra(Intent.EXTRA_EMAIL, addresses)
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+            putExtra(Intent.EXTRA_TEXT, text)
+        }
+        try {
             startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            e { "Unable to find market app: $e" }
         }
     }
 }
@@ -144,17 +149,25 @@ fun Context.getProductionApplicationId(): String {
 fun Context?.dial(number: String) {
     this?.let {
         val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number"))
-        this.startActivity(intent)
+        try {
+            startActivity(intent)
+        } catch (ex: ActivityNotFoundException) {
+            e { "Unable to find market app: $ex" }
+        }
     }
 }
 
 fun Context?.openGoogleMaps(query: String, placeId: String) {
     val queryEncoded = Uri.encode(query)
     val gmmIntentUri = Uri.parse("https://www.google.com/maps/search/?api=1&query=$queryEncoded&query_place_id=$placeId")
-    val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-    mapIntent.setPackage("com.google.android.apps.maps")
-    if (mapIntent.resolveActivity(this?.packageManager) != null) {
+    val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri).apply {
+        setPackage("com.google.android.apps.maps")
+    }
+
+    try {
         this?.startActivity(mapIntent)
+    } catch (ex: ActivityNotFoundException) {
+        e { "Unable to find market app: $ex" }
     }
 }
 

@@ -1,6 +1,7 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
@@ -96,11 +97,14 @@ fun Activity?.openNativeShareDialog(url: String, subject: String = "", chooserTe
     this ?: return
     val intent = Intent(Intent.ACTION_SEND).apply {
         type = "text/plain"
-        flags = Intent.FLAG_ACTIVITY_NEW_TASK
         putExtra(Intent.EXTRA_TEXT, url)
         putExtra(Intent.EXTRA_SUBJECT, subject)
     }
 
-    this.startActivity(Intent.createChooser(intent, chooserText))
+    try {
+        this.startActivity(Intent.createChooser(intent, chooserText))
+    } catch (e: ActivityNotFoundException) {
+        e { "Unable to find market app: $e" }
+    }
 }
 
