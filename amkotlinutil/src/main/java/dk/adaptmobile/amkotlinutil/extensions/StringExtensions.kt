@@ -1,5 +1,6 @@
 package dk.adaptmobile.amkotlinutil.extensions
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -38,8 +39,10 @@ fun String?.openInBrowser(context: Context?) {
         val page = Uri.parse(this)
         val intent = Intent(Intent.ACTION_VIEW, page)
 
-        if (intent.resolveActivity(context?.packageManager) != null) {
+        try {
             context?.startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            com.github.ajalt.timberkt.e { "Unable to find market app: $e" }
         }
     }
 }
