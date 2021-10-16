@@ -1,7 +1,8 @@
-apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
-apply plugin: 'kotlin-android'
-
+plugins {
+    id 'kotlin-android'
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 android {
     compileSdkVersion 31
@@ -62,4 +63,21 @@ dependencies {
     compileOnly 'com.greysonparrelli.permiso:permiso:0.3.0'
     compileOnly 'com.github.ajalt:timberkt:1.5.1'
     compileOnly 'com.google.code.gson:gson:2.8.6'
+
 }
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId = 'com.github.adaptmobile-organization'
+                artifactId = 'amkotlinutil'
+                version = '8.0.0'
+
+                from components.release
+            }
+        }
+    }
+}
+
