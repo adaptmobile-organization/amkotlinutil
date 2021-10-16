@@ -1,21 +1,19 @@
 package dk.adaptmobile.amkotlinutil.conductor;
 
-import android.annotation.TargetApi;
-import android.os.Build;
-import androidx.annotation.NonNull;
-import android.transition.ArcMotion;
-import android.transition.ChangeBounds;
-import android.transition.ChangeClipBounds;
-import android.transition.ChangeTransform;
-import android.transition.Fade;
-import android.transition.Transition;
-import android.transition.TransitionSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bluelinelabs.conductor.changehandler.TransitionChangeHandler;
+import androidx.annotation.NonNull;
+import androidx.transition.ArcMotion;
+import androidx.transition.ChangeBounds;
+import androidx.transition.ChangeClipBounds;
+import androidx.transition.ChangeTransform;
+import androidx.transition.Fade;
+import androidx.transition.Transition;
+import androidx.transition.TransitionSet;
 
-@TargetApi(Build.VERSION_CODES.LOLLIPOP)
+import com.bluelinelabs.conductor.changehandler.androidxtransition.TransitionChangeHandler;
+
 public class ArcFadeMoveChangeHandler extends TransitionChangeHandler {
 
     public ArcFadeMoveChangeHandler() { }

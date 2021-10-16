@@ -1,18 +1,17 @@
 package dk.adaptmobile.amkotlinutil.conductor;
 
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import android.transition.Transition;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.transition.Transition;
+
 import com.bluelinelabs.conductor.Controller;
 import com.bluelinelabs.conductor.ControllerChangeHandler;
-import com.bluelinelabs.conductor.changehandler.TransitionChangeHandler;
+import com.bluelinelabs.conductor.changehandler.androidxtransition.TransitionChangeHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +24,6 @@ import java.util.List;
  * are removed from their containers, then immediately re-added within the beginDelayedTransition call so
  * the system picks them up as shared elements.
  */
-@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class SharedElementDelayingChangeHandler extends ArcFadeMoveChangeHandler {
 
     private static final String KEY_WAIT_FOR_TRANSITION_NAMES = "SharedElementDelayingChangeHandler.waitForTransitionNames";

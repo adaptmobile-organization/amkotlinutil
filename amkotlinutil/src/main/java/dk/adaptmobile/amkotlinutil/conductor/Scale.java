@@ -3,16 +3,13 @@ package dk.adaptmobile.amkotlinutil.conductor;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.os.Build;
 import android.transition.TransitionValues;
 import android.transition.Visibility;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class Scale extends Visibility {
 
     public Scale() {}

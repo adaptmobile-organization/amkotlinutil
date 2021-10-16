@@ -1,20 +1,18 @@
 package dk.adaptmobile.amkotlinutil.conductor;
 
 import android.animation.Animator;
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
 
 import com.bluelinelabs.conductor.changehandler.AnimatorChangeHandler;
 
 /**
  * An {@link AnimatorChangeHandler} that will perform a circular reveal
  */
-@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class CircularRevealChangeHandler extends AnimatorChangeHandler {
 
     private static final String KEY_CX = "CircularRevealChangeHandler.cx";
